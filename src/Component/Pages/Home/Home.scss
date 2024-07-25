@@ -1,0 +1,9 @@
+@import "../../MediaQuery/Mixin.scss";
+.main-content{
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+
+    @include tablet{
+        max-width: 1200px;
+    }
+}

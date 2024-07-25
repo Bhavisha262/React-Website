@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+.about-main{
+  background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
+    height: max-content;
+    display: grid;
+    grid-template-columns: auto auto ;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-family: 'Salsa', cursive;
+    padding: 30px 10px;
+    .text1{
+      width: 400px;
+      height: 200px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+
+      h2{
+        color: rgb(125, 13, 13);
+      }
+    }
+
+    .image{
+      width: 500px;
+      justify-content: center;
+    align-items: center;
+      height: 500px;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .image2{
+        width: 512px;
+        height: 512px;
+        border-radius: 30%;
+        justify-content: center;
+        align-items: center;
+  
+        img{
+          width: 100%;
+          height: 100%;
+          border-radius: 50px;
+        }
+      }
+
+      .text2{
+        width: 400px;
+        height: 200px;
+        background:linear-gradient(150deg,floralwhite,rgb(255, 194, 194));
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+          :nth-child(2){
+            color: purple;
+          }
+        h2{
+          color: rgb(125, 13, 13);
+        }
+      }
+      .text3{
+        width: 400px;
+        height: 200px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+  
+        h2{
+          color: rgb(125, 13, 13);
+        }
+      }
+
+      .image3{
+        width: 500px;
+        justify-content: center;
+      align-items: center;
+        height: 500px;
+  
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+     
+}

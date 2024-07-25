@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes tickMark {
+    0% {
+      stroke-dasharray: 0, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+  
+  .confirmation-page {
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    font-family: 'Fresca', sans-serif;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  
+    &.animate {
+      animation: fadeIn 0.5s forwards;
+    }
+  
+    .tick-mark {
+      margin-bottom: 20px;
+      svg {
+        stroke: #4CAF50;
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: 0;
+        animation: tickMark 1s ease-in-out forwards;
+      }
+    }
+  
+    h1 {
+      color: #0e00a5;
+    }
+  
+    button {
+      background-color: white;
+      color: darkblue;
+      padding: 10px 20px;
+      border: 1px solid darkblue;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: 'Fresca', sans-serif;
+  
+      &:hover {
+        color:white ;
+        background-color:darkblue;
+      }
+    }
+  }

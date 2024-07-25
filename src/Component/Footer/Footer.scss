@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+.footer-main{
+    background-color:black;
+    display: flex;
+    height: max-content;
+    justify-content:space-around;
+    align-items:flex-start;
+    font-family: 'Salsa', cursive;
+    padding: 10px;
+    border-top: 2px solid goldenrod;
+
+    li{
+        list-style: none;
+        color: floralwhite;
+        
+    }
+
+    a{
+        text-decoration: none;
+        color: floralwhite;
+    }
+.box1{
+  
+    text-align: justify;
+    font-size: 15px;
+    h3{
+        color:gold;
+    }
+h4{
+    color: floralwhite;
+}
+form{
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightpink;
+    margin-bottom: 50px;
+  
+  .fa-solid{
+    font-size: 20px;
+    margin-right: 10px;
+    color: lightpink;
+  }
+   input{
+    width: 100%;
+    background: transparent;
+    color: lightpink;
+    font-family: 'Salsa', cursive;
+    border: 0;
+    outline: none;
+  }
+   button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+
+    .fa-solid{
+        font-size: 20px;
+        color: lightpink;
+      }
+  }
+
+}
+.social{
+    display: flex;
+    gap: 10px;
+    font-size: 30px;
+    cursor: pointer;
+   
+
+}
+
+}
+.box2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+    font-size: 15px;
+    h3{
+        color:gold;
+    }
+    li{
+        cursor: pointer;
+        
+        &:hover{
+            color: cyan;
+        }
+    }
+}
+
+.box3{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+    font-size: 15px;
+    h3{
+        color:gold;
+    }
+    li{
+        cursor: pointer;
+        
+        &:hover{
+            color: cyan;
+        }
+    }
+}
+.box4{
+    text-align: justify;
+    font-size: 15px;
+    h3{
+        color:gold;
+    }
+    p{
+        color:floralwhite;
+    }
+
+    b{
+        cursor: pointer;
+        color:palegreen;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+}

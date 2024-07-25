@@ -1,0 +1,51 @@
+.order-details-page {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  .order-summary, .shipping-details {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .order-details, .details {
+      p {
+        margin: 8px 0;
+        
+        strong {
+          font-weight: bold;
+          margin-right: 5px;
+        }
+      }
+      
+      .order-items {
+        margin-top: 10px;
+        
+        .item {
+          margin-bottom: 8px;
+          
+          span {
+            display: block;
+            margin-bottom: 5px;
+            
+            &:first-child {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+.button-with-dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-family: 'Salsa', cursive;
+
+  button {
+    background-color: floralwhite;
+    border: 1px solid maroon;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Salsa', cursive;
+    
+    
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    z-index: 10;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 3px solid maroon;
+    border-right: 3px solid maroon;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+
+    .dropdown-item {
+     
+      cursor: pointer;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+   
+    }
+  }
+
+  .fas {
+    margin-left: 5px;
+  }
+}
+.contents{
+  position: absolute;
+  left: 10px;
+  z-index: 10;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid midnightblue;
+ border-radius: 10px;
+  outline: none;
+  width: 170px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  font-family: "Lato", sans-serif;
+ 
+  option{
+    background-color: white;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-family: "Lato", sans-serif;
+    border: 1px solid midnightblue;
+    font-size: 16px;
+    color: maroon;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  
+    
+  }
+  
+ 
+ }
+.title2{
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: max-content;
+  text-align: center;
+
+  .content{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+    h1{
+      color: maroon;
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-underline-offset: 15px;
+      text-decoration-thickness: 2px;
+      text-decoration-color:mediumvioletred;
+      text-align: center;
+      font-family: 'Salsa', cursive;
+     
+    }
+  }
+  
+  
+  
+  }
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 0px 10px;
+    font-family: 'Salsa', cursive;
+    .product-card {
+      width: 280px;
+      height: max-content;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid mediumvioletred;;
+      border-radius: 5px;
+    box-shadow: rgba(103, 1, 6, 0.219) 0px 25px 25px -20px,
+    rgba(255, 253, 237, 0.25) 0px 25px 25px -20px;
+
+
+      img {
+        width: 100%;
+        height: 250px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover{
+          transform: scale(1.03);
+        }
+      }
+      h3 {
+        margin-top: 10px;
+        font-size: 18px;
+        color:mediumvioletred;
+      }
+      p {
+        margin-top: 5px;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+      }
+      h4{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+      }
+      .button{
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+
+        h4{
+          cursor: pointer;
+          width: fit-content;
+          height: fit-content;
+          border-radius: 50%;
+          background-color: rgb(232, 255, 206);
+          padding: 10px;
+          display: flex;
+          justify-content:center;
+        align-items: center;
+        }
+      Button {
+        background: linear-gradient(to right, rgb(252, 198, 198) , gold, rgb(255, 165, 165) );
+        background-size: 200% 100%;
+        color: maroon;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-position 0.3s;
+        font-family: 'Salsa', cursive;
+        
+        &:hover {
+          background-position: -100% 0;
+          color: maroon;
+        }
+
+       
+      }
+      
+    }
+    }
+  }
+  

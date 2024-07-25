@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+.user-main{
+    width: 100%;
+    height: 700px;
+    padding: 20px 0px;
+    background-image: url("../../../../Assets/User/User\ bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Salsa', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+     
+    hr{
+        height: 350px;
+        width: 3px;
+        background-color: rgb(255, 0, 0);
+    }
+    h1{
+        color: brown;
+    }
+  
+    Button{
+        background-color: floralwhite;
+        font-family: 'Salsa', cursive;
+        color: maroon;
+
+        &:hover{
+            background-color: maroon;
+            color: floralwhite;
+            
+        }
+    }
+    .frame{
+        width: 60%;
+        display: flex;
+        height: max-content;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: rgba(rgb(255, 231, 231) , 1);
+        text-align: center;
+        padding: 30px;
+    
+    .div1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        
+
+        .form1{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+    
+            p{
+                font-size: 13px;
+                color: maroon;
+                cursor: pointer;
+            }
+        }
+    }
+    .div2{
+        width: 100%;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        
+
+}
+    }
+}

@@ -1,0 +1,29 @@
+.shareme{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    height: 20vh;
+    align-items: center;
+
+    span{
+        border-radius:100%;
+        padding: 10px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        width: 20px;
+        background-color: rgb(255, 237, 240);
+        color: white;
+        cursor: pointer;
+        transition: all 0.5s ease-in;
+
+        &:hover{
+            background-color: white;
+            color: purple;
+            border: 1px solid black;
+        }
+
+    }
+}

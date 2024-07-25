@@ -1,0 +1,26 @@
+.terms{
+    width: 100%;
+    height: max-content;
+    background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Salsa', cursive;
+    padding: 30px 0px;
+   
+.conditions{
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    h1{
+        color: maroon;
+    }
+    h4{
+        color: darkmagenta;
+    }
+}
+}

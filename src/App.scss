@@ -1,0 +1,19 @@
+@import "./Component/MediaQuery/Mixin.scss";
+
+.toggle{
+
+    button{
+@include btn(pink)
+    }
+}
+.color{
+    .btn1{
+        color: floralwhite;
+        background-color: blue;
+    }
+
+    .btn2{
+        color: floralwhite;
+        background-color: red;
+    }
+}

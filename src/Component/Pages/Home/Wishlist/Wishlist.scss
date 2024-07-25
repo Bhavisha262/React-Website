@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+h1{
+    text-align: center;
+    color: maroon;
+    font-family: 'Salsa', cursive;
+}
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 500px;
+    height: max-content;
+    border: 1px solid maroon;
+    font-family: 'Salsa', cursive;
+    border-radius: 20px;
+    text-align: center;
+  
+    &__image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+      
+      padding: 10px;
+    }
+  
+    &__details {
+        padding: 10px;
+    
+    }
+  
+    &__name {
+      font-size: 18px;
+     
+      color: darkmagenta;
+    }
+  
+    &__price {
+      font-size: 16px;
+      color: #555;
+    }
+    Button{
+        background-color: floralwhite;
+        font-family: 'Salsa', cursive;
+        color: maroon;
+
+        &:hover{
+            background-color: maroon;
+            color: floralwhite;
+            
+        }
+    }
+  }
+
+  .wishlist-item2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Salsa', cursive;
+    margin: 20px auto;
+    width: 500px;
+    height: max-content;
+    border: 1px solid maroon;
+    border-radius: 20px;
+    text-align: center;
+  
+    &__image2 {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+      
+    }
+  
+    &__details2 {
+        padding: 10px ;
+    
+    }
+  
+    &__name2 {
+      font-size: 18px;
+     
+      color: darkmagenta;
+    }
+  
+    &__price2 {
+      font-size: 16px;
+      color: #555;
+    }
+    Button{
+        background-color: floralwhite;
+        font-family: 'Salsa', cursive;
+        color: maroon;
+
+        &:hover{
+            background-color: maroon;
+            color: floralwhite;
+            
+        }
+    }
+  }
+  

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+.grace{
+    width: 100%;
+    height: max-content;
+    font-family: 'Salsa', cursive;
+    padding: 20px 0px;
+    background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
+   
+    h1{
+        color: maroon;
+        text-align: center;
+    }
+    h3{
+        color: darkblue;
+        text-align: center;
+    }
+    
+    .health{
+        display: flex;
+        padding: 10px 50px;
+
+        .pics{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+            p{
+                text-align: justify;
+                padding: 0px 30px ;
+            }
+            img{
+                width: 400px;
+                height: 300px;
+              
+            }
+        }
+
+        .founder{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             
+            h2{
+                color: darkmagenta;
+            }
+
+            p{
+                text-align: justify;
+                padding: 0px 30px ;
+            }
+
+            hr{
+                width: 300px;
+                
+            }
+           
+            Button{
+                background-color: floralwhite;
+                font-family: 'Salsa', cursive;
+                color: maroon;
+        
+                &:hover{
+                    background-color: maroon;
+                    color: floralwhite;
+                    
+                }
+            }
+            img{
+                width: 200px;
+                height: 200px;
+                border-radius: 20px;
+            }
+        }
+    }
+
+    .updates{
+        text-align: center;
+        Button{
+            background-color: floralwhite;
+            font-family: 'Salsa', cursive;
+            color: maroon;
+    
+            &:hover{
+                background-color: maroon;
+                
+                color: floralwhite;
+                
+            }
+        }
+    }
+}

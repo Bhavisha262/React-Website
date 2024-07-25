@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+.title1{
+h1{
+  color: maroon;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 15px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: teal;
+  text-align: center;
+  font-family: 'Salsa', cursive;
+}
+}
+.category-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  font-family: 'Salsa', cursive;
+width: 100%;
+height: max-content;
+
+
+
+  .category {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+      box-shadow: 0 10px 16px rgba(255, 129, 205, 0.768), 0 10px 16px rgba(255, 153, 64, 0.768) ;
+    }
+
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 270px;
+      height: 270px;
+      border: 3px solid rgb(255, 193, 36);
+      border-radius: 20px 20px 0px 0px;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        .image {
+          transform: scale(1.05);
+        }
+
+        
+        
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit:contain;
+        transition: transform 0.5s ease;
+
+      }
+
+      
+    }
+
+    .category-info {
+      width: 270px;
+      height: max-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      color: floralwhite;
+      border-radius: 0px 0px 20px 20px;
+      border: 3px solid black;
+
+     
+      h2 {
+        font-size: 20px;
+        text-align: center;
+        display: flex;
+        gap: 3px;
+        justify-content: center;
+        align-items: center;
+      }
+
+     
+        
+      }
+  }
+}
