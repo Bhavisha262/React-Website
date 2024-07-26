@@ -11,8 +11,8 @@ const Home = () => {
         
         <Slider/>
         <Category/>
-        <Countup/>
-      
+        <Countup/> 
+        
     </div>
   )
 }
