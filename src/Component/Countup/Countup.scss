@@ -6,9 +6,10 @@ align-items: center;
 gap: 100px;
 flex-flow: wrap;
 width: 100%;
-height: 200px;
+height: 100%;
 border-bottom: 1px solid gold;
 background-image: url("../../Assets/Slider/countup.jpg");
+background-size: 100% 100%;
 background-repeat: no-repeat;
 font-size: 18px;
 font-weight: bold;
@@ -22,7 +23,7 @@ font-family: 'Salsa', cursive;
     align-items: center;
    color: rgb(0, 81, 32);
    flex-direction: column;
-   
+   padding-top: 10px;
 
     .counting{
         display: flex;
@@ -39,7 +40,7 @@ font-family: 'Salsa', cursive;
     align-items: center;
     color: #003694;
     flex-direction: column;
-    
+    padding-top: 10px;
 
     .counting1{
         display: flex;
@@ -55,7 +56,7 @@ font-family: 'Salsa', cursive;
     align-items: center;
     color: #a85100;
     flex-direction: column;
- 
+    padding-top: 10px;
 
     .counting2{
         display: flex;
