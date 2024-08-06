@@ -1,13 +1,14 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useState } from 'react';
 import "./OrderDetails.scss";
 
 import { useNavigate } from 'react-router-dom';
-import MyContext from '../../../Context/MyContext';
+
 
 
 const OrderDetails = () => {
-  const { setLoader, setAlert, setMessage} = useContext(MyContext);
-  const navigate = useNavigate();
+
+  
+  const Navigate = useNavigate();
   const [orderInfo, setOrderInfo] = useState({
     name:'',
     email:'',
@@ -46,7 +47,7 @@ const OrderDetails = () => {
                 <p>&#8377; {orderInfo.price}</p>
                 <h4>Total Value</h4>
               </div>
-              <button onClick={() => navigate('/')} className="home-button">Back to Home</button>
+              <button onClick={() => Navigate('/')} className="home-button">Back to Home</button>
             </div>
           </div>
         </>

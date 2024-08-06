@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
 import ScrollToTop from "react-scroll-to-top";
 import User from './Component/Pages/Home/User/User';
 import Wishlist from './Component/Pages/Home/Wishlist/Wishlist';
@@ -8,7 +7,6 @@ import Header from './Component/Header/Header';
 import Loader from './Component/Loader/Loader';
 import About from './Component/Pages/About/About';
 import ContactForm from './Component/Pages/Contact/ContactForm';
-
 import NewAccount from './Component/Pages/Home/NewAccount/NewAccount';
 import gif2 from "../src/Assets/Slider/roll-out carpet.gif"
 import Category from './Component/Category/Category';
@@ -17,7 +15,6 @@ import SinglePro from './Component/SingleProPage/SinglePro';
 import Footer from './Component/Footer/Footer';
 import PrivacyPolicy from './Component/Pages/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './Component/Pages/Terms-Conditions/TermsConditions';
-import ShippingReturns from './Component/Pages/Shipping/ShippingReturns';
 import Accessibility from './Component/Pages/Accessibility/Accessibility';
 import FAQ from './Component/Pages/FAQs/FAQ';
 import StoreLocator from './Component/Pages/StoreLocator/StoreLocator';
@@ -30,6 +27,9 @@ import Checkout from './Component/Pages/Checkout/Checkout';
 import PaymentForm from './Component/Pages/PaymentForm/PaymentForm';
 import ConfirmationPage from './Component/Pages/ConfirmationPage/ConfirmationPage';
 import Home from './Component/Pages/Home/Home';
+import OrderDetails from './Component/Pages/Home/OrderDetails/OrderDetails';
+import Profile from './Component/Pages/Home/Profile/Profile';
+import Reset from './Component/Pages/Home/Reset/Reset';
 
 
 
@@ -59,13 +59,15 @@ const App = () => {
       <Route path='/checkout' element={<Checkout/>}/>
       <Route path='/payment' element={<PaymentForm/>}/>
       <Route path='/confirmation' element={<ConfirmationPage/>}/>
+      <Route path='/profile' element={<Profile/>}/>
+      <Route path='/reset' element={<Reset/>}/>
       <Route path='/wishlist' element={<Wishlist/>}/>
+      <Route path='/order' element={<OrderDetails/>}/>
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/about-us' element={<About/>}/>
       <Route path='/contact-us' element={<ContactForm/>}/>
       <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
       <Route path='/terms-conditions' element={<TermsConditions/>}/>
-      <Route path='/shipping-returns' element={<ShippingReturns/>}/>
       <Route path='/accessibility' element={<Accessibility/>}/>
       <Route path='/FAQs' element={<FAQ/>}/>
       <Route path='/store-locator' element={<StoreLocator/>}/>

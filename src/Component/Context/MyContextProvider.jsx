@@ -5,7 +5,6 @@ import MyContext from './MyContext';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
-
 const MyContextProvider = ({children}) => {
   const [num,setNum] = useState([])
   const[loader, setLoader] = useState(false)
@@ -18,34 +17,46 @@ const MyContextProvider = ({children}) => {
 useEffect(()=>{
 axios.get('http://localhost:3025/api')
 .then((res)=> setNum(res.data.data)
-  
 )
 },[])
 
 useEffect(()=>{
   axios.get('http://localhost:3025/contact-admin-table')
   .then((res)=> setCinfo(res.data.data)
-    
-  )
-  },[])
+)
+},[])
+
+  useEffect(()=>{
+    axios.get('http://localhost:3025/new-admin-table')
+    .then((res)=> setRegister(res.data.data)   
+)
+},[])
 
 const [alert,setAlert] = useState(false)
 const [message,setMessage] = useState('')
 
 const handlelogout = () =>{
-const confirm = window.confirm('are you sure want to logout?')
-if(confirm){
-  sessionStorage.removeItem('token')
-  setToken('')
-  window.location.href='/'
+  const confirm = window.confirm('Are You Sure You Want To Logout?')
+  if (confirm) {
+    sessionStorage.removeItem('token')
+    setToken('')
+    Navigate('/')  
+  }
 }
-}
-const [userdata, setUserData] = useState('');
+
 const Navigate = useNavigate()
 
 const [cart,setCart] = useState([])
 const [wish,setWish] = useState([])
+const [isOpenC, setIsOpenC] = React.useState(false)
+  const toggleDrawer2 = () => {
+      setIsOpenC((prevState) => !prevState)
+  }
 
+  const [isOpenW, setIsOpenW] = React.useState(false)
+  const toggleDrawer3 = () => {
+      setIsOpenW((prevState) => !prevState)
+  }
 
 const handleCart = async(categoryid,productid,img,price,name) =>{
   if(!sessionStorage.getItem('token')){
@@ -177,8 +188,9 @@ const handleremove = async(categoryid,productid) =>{
   
 
 }
+
 return (
-<MyContext.Provider value={{wish,setWish,handleWish,handleremove,handleCart,handledelete,cart,token,setToken,form, setForm,register, setRegister,handlelogout , userdata,setUserData,  search, setSearch,num,loader,setLoader,alert,setAlert,message,setMessage,cinfo, setCinfo}} >
+<MyContext.Provider value={{isOpenW, setIsOpenW,toggleDrawer3,isOpenC, setIsOpenC,toggleDrawer2,handlelogout,handleremove,handleWish,wish,setWish,handledelete,cart,setCart,handleCart,search,setSearch,form,setForm,message,token,setToken,setMessage,alert,setAlert,num,loader,setLoader,cinfo, setCinfo ,register,setRegister}} >
 {children}
 </MyContext.Provider>
 )

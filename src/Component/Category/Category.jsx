@@ -3,9 +3,6 @@ import './Category.scss';
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../Context/MyContext';
 
-
-
-
 const Category = () => {
   const Navigate = useNavigate()
   const {num} = useContext(MyContext)

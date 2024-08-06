@@ -8,7 +8,7 @@ import MyContext from '../../../Context/MyContext';
 
 const Cart = () => {
 
-  const {cart,handledelete,setIsOpen2} = useContext(MyContext)
+  const {cart,handledelete,setIsOpenC} = useContext(MyContext)
   const [count, setCount] = useState(1);
   const Navigate2 = useNavigate()
   
@@ -57,7 +57,7 @@ const Cart = () => {
 <p>&#8377; {item.price} </p>
 <h4>Total Value</h4>
 </div>
-<button  onClick={() => Navigate2('/checkout') || setIsOpen2(false)}>Checkout</button>
+<button  onClick={() => Navigate2('/checkout') || setIsOpenC(false)}>Checkout</button>
 </div>
 </>
       )

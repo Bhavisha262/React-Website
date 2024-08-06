@@ -5,10 +5,13 @@ import { FaSquareTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-import { Link} from 'react-router-dom';
+import { Link, useLocation} from 'react-router-dom';
 
 const Footer = () => {
- 
+   const location = useLocation();
+   if (location.pathname.match(/contact/g))
+   return null 
+
   return (
     
     <div className='footer-main'>

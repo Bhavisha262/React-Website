@@ -5,7 +5,6 @@ import { TiTick } from "react-icons/ti";
 import MyContext from '../../Context/MyContext';
 const Alert = () => {
     const {alert,setAlert,message} = useContext(MyContext)
-    
     useEffect(()=>{
         if(alert){
         setTimeout(() => {

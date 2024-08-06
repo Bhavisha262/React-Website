@@ -16,7 +16,7 @@ const SinglePro = () => {
 
   const{product} = useParams()
   const{single} = useParams()
-  const {num,handleCart} = useContext(MyContext)
+  const {num,handleCart,handleWish} = useContext(MyContext)
   
   const [count, setCount] = useState(1);
 
@@ -76,7 +76,7 @@ const SinglePro = () => {
                 <span className="count">{count}</span>
                 <button onClick={increment}><SlPlus fontSize={20}/></button>
                 </button>
-                <Button variant='contained' className='buy' ><FaRegHeart fontSize={25} color='mediumvioletred'/>Add To Wishlist</Button>
+                <Button variant='contained' className='buy' onClick={()=>handleWish(item.id,pro.id,pro.pro_main_img,pro.price,pro.name)}><FaRegHeart fontSize={25} color='mediumvioletred'/>Add To Wishlist</Button>
               </div>
               <br/>
 
@@ -86,6 +86,7 @@ const SinglePro = () => {
               <br/>
 
               <div className={`accordion ${isOpen ? 'open' : ''}`}>
+                
       <div className="accordion-header" onClick={toggleAccordion}>
         <h3>{pro.ques}</h3>
         <div className="arrow-icon">&#9660;</div>

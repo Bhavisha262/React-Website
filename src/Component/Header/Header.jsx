@@ -10,33 +10,32 @@ import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import search1 from "../../Assets/magnifying-glass (1).png"
 import ShopAll from '../ShopAll/ShopAll';
-import MyContext from '../Context/MyContext';
 import { Button } from '@mui/material';
 import { LiaUserCheckSolid } from "react-icons/lia";
 import Cart from '../Pages/Home/Cart/Cart';
-
+import Wishlist from '../Pages/Home/Wishlist/Wishlist';
+import MyContext from '../Context/MyContext';
 
 const Header = () => {
   
-  const {handlelogout,num,search,setSearch,cart} = useContext(MyContext)
+  const {handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2} = useContext(MyContext)
   const Token = sessionStorage.getItem('token')
   const Navigate = useNavigate()
-  const Navigate1 = useNavigate()
-  const [isOpen, setIsOpen] = React.useState(false)
-    const toggleDrawer = () => {
-        setIsOpen((prevState) => !prevState)
+  
+  const [isDropdown,setIsDropdown] = useState(false)
+  const toggleDropdown = () => {
+    setIsDropdown(!isDropdown);
+};
+
+  const [isOpenS, setIsOpenS] = React.useState(false)
+    const toggleDrawer1 = () => {
+        setIsOpenS((prevState) => !prevState)
     }
 
-  const [isOpen1, setIsOpen1] = React.useState(false)
-  const toggleDrawer1 = () => {
-      setIsOpen1((prevState) => !prevState)
-  }
+  
  
-  const [isOpen2, setIsOpen2] = useState(false);
 
-  const toggleDropdown = () => {
-      setIsOpen2(!isOpen2);
-  };
+  
   return (
     <>
     <div className='header-main'>
@@ -56,26 +55,27 @@ const Header = () => {
 
       <div className="right">
     
-        <HiSearch size={25} onClick={toggleDrawer}/>
-       {!Token ?  <Link to="/user"><TbUserHexagon  size={25}/></Link>:
+        <HiSearch size={25} onClick={toggleDrawer1}/>
+       {!Token ?  <Link to="/user"><TbUserHexagon size={25}/></Link>:
        <div className="dropdown">
        <LiaUserCheckSolid onClick={toggleDropdown} className="dropbtn" fontSize={25}/>
-       <div className={`dropdown-content ${isOpen2 ? 'show' : ''}`}>
+       <div className={`dropdown-content ${isDropdown ? 'show' : ''}`}>
            <Button onClick={handlelogout}>Logout</Button>
-           <Button onClick={() => Navigate('/order') || setIsOpen2(false)} >Order Details</Button>
-           <Button onClick={() => Navigate1('/profile')|| setIsOpen2(false)}>Your Profile</Button>
+           <Button onClick={() => Navigate('/order') || setIsDropdown(false)} >Order Details</Button>
+           <Button onClick={() => Navigate('/profile')|| setIsDropdown(false)}>Your Profile</Button>
+           <Button onClick={() => Navigate('/shipping')|| setIsDropdown(false)}>Shipping Details</Button>
        </div>
    </div>
 }
-        <Link to="/wishlist"><FaRegHeart  size={25}/></Link>  
-        <LuShoppingBag onClick={toggleDrawer1} size={25} /> {cart ? cart.length:0}
+        <FaRegHeart onClick={toggleDrawer3} size={25}/> {wish ? wish.length:0}
+        <LuShoppingBag onClick={toggleDrawer2} size={25} /> {cart ? cart.length:0}
        </div>
     </div>
               
   
-    <Drawer
-                open={isOpen}
-                onClose={toggleDrawer}
+             <Drawer
+                open={isOpenS}
+                onClose={toggleDrawer1}
                 direction='top'
                 style={{height:'100px', backgroundColor:'floralwhite'}}
               >
@@ -103,21 +103,32 @@ const Header = () => {
 }).map((a)=>{
   return(
     <div className="list">
-<li onClick={() => Navigate(`/category/${a.category_url}`) || setSearch('') || setIsOpen(false)}  >{a.name}</li>
+<li onClick={() => Navigate(`/category/${a.category_url}`) || setSearch('') || setIsOpenS(false)}  >{a.name}</li>
 </div>
   )
 })}
    
    
               </Drawer>
+              
               <Drawer
-                open={isOpen1}
-                onClose={toggleDrawer1}
-                direction='right'
-                className='bla bla bla' 
+                open={isOpenC}
+                onClose={toggleDrawer2}
+                direction='right' 
                 zIndex={9999}
+                style={{overflow:'auto'}}
               >
                 <Cart/>
+              </Drawer>
+
+              <Drawer
+                open={isOpenW}
+                onClose={toggleDrawer3}
+                direction='bottom'
+                zIndex={9999}
+                style={{overflow:'auto'}}
+              >
+                <Wishlist/>
               </Drawer>
     </>
 

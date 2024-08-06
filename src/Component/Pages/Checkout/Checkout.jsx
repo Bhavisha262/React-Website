@@ -2,7 +2,6 @@ import React, { useEffect, useContext, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import "./Checkout.scss"
 import * as Yup from 'yup';
-
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../../Context/MyContext';
 

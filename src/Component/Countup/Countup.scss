@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 .countup-main{
 display: flex;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
+gap: 100px;
+flex-flow: wrap;
 width: 100%;
 height: 200px;
 border-bottom: 1px solid gold;
