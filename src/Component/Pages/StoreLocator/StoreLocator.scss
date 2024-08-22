@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .store{
     width: 100%;
     height: max-content;
@@ -6,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     padding: 30px 0px;
 
     .location{

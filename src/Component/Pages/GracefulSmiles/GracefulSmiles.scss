@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 .grace{
     width: 100%;
     height: max-content;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     padding: 20px 0px;
     background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
    
@@ -58,7 +58,7 @@
            
             Button{
                 background-color: floralwhite;
-                font-family: 'Salsa', cursive;
+                font-family: "Philosopher", sans-serif;
                 color: maroon;
         
                 &:hover{
@@ -79,7 +79,7 @@
         text-align: center;
         Button{
             background-color: floralwhite;
-            font-family: 'Salsa', cursive;
+            font-family: "Philosopher", sans-serif;
             color: maroon;
     
             &:hover{

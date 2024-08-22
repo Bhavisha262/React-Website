@@ -12,7 +12,7 @@ const ShopAll = () => {
 <>
         {num.map( Data => (
          <div className='shop-category'>
-         <div className="image-wrapper"  key={Data.id}  onClick={() => Navigate (`/category/${Data.category_url}`)}>
+         <div className="image-wrapper"  key={Data.id}  onClick={() => Navigate (`/category/${Data.category_url}`)  }>
          <img
             src={Data.category_img}
             alt={Data.name}

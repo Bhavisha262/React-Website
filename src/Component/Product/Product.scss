@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .button-with-dropdown {
   position: relative;
   display: inline-block;
   padding: 10px;
-  font-family: 'Salsa', cursive;
+  font-family: "Mooli", system-ui;
 
   button {
     background-color: floralwhite;
@@ -11,7 +12,7 @@
     border-radius: 10px;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     
     
     span {
@@ -63,13 +64,13 @@
   font-size: 16px;
   cursor: pointer;
   background-color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Mooli", system-ui;
  
   option{
     background-color: white;
     cursor: pointer;
     padding: 10px 10px;
-    font-family: "Lato", sans-serif;
+    font-family: "Mooli", system-ui;
     border: 1px solid midnightblue;
     font-size: 16px;
     color: maroon;
@@ -103,7 +104,7 @@
       text-decoration-thickness: 2px;
       text-decoration-color:mediumvioletred;
       text-align: center;
-      font-family: 'Salsa', cursive;
+      font-family: "Mooli", system-ui;
      
     }
   }
@@ -118,7 +119,7 @@
     align-items: center;
     text-align: center;
     padding: 0px 10px;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     .product-card {
       width: 280px;
       height: max-content;
@@ -185,7 +186,7 @@
         font-weight: bold;
         cursor: pointer;
         transition: background-position 0.3s;
-        font-family: 'Salsa', cursive;
+        font-family: "Mooli", system-ui;
         
         &:hover {
           background-position: -100% 0;

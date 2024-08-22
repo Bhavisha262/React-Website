@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
 $primary-color: #4CAF50;
 $error-color: #ff0000;
@@ -14,12 +14,12 @@ $border-color: #ccc;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  font-family: 'Fresca', sans-serif;
+  font-family: "Mooli", system-ui;
 
   .captcha-display {
     margin-bottom: 10px;
     font-size: 24px;
-    font-family: 'Fresca', sans-serif;
+    font-family: "Mooli", system-ui;
     padding: 10px;
     border: 1px solid $border-color;
     border-radius: $border-radius;
@@ -34,7 +34,7 @@ $border-color: #ccc;
     color: #fff;
     border: none;
     border-radius: $border-radius;
-    font-family: 'Fresca', sans-serif;
+    font-family: "Mooli", system-ui;
     cursor: pointer;
     &:hover {
       background-color: darken($primary-color, 10%);

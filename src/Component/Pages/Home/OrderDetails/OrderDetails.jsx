@@ -1,68 +1,75 @@
-import React, { useState } from 'react';
-import "./OrderDetails.scss";
-
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import './OrderDetails.scss';
+import MyContext from '../../../Context/MyContext';
 
 
 
 const OrderDetails = () => {
+  const { order, setOrder, token } = useContext(MyContext);
+  const [loading, setLoading] = useState(true);
 
-  
-  const Navigate = useNavigate();
-  const [orderInfo, setOrderInfo] = useState({
-    name:'',
-    email:'',
-    orderId:'',
-    date:'',
-    quantity:'',
-    price:'',
-  });
- 
+  // Fetch order items on component mount
+  useEffect(() => {
+
+    if(!token){
+      setLoading(false)
+      return 
+    }
+    const fetchOrderItems = async () => {
+      try {
+        const response = await fetch('https://localhost:3025/save-order-info', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+     
+        const data = await response.json();
+        setOrder(data.orderInfo);
+        sessionStorage.setItem('order', JSON.stringify(data.orderInfo));
+      } catch (error) {
+        alert('Please try again');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchOrderItems();
+  }, [order,setOrder, token]);
+
+
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <div className="order-details-main">
-      <h2>Order Details</h2>
-      { orderInfo && orderInfo.length>0?( orderInfo.map((item) =>{
-          return(
+    <div className="order-container">
+    {order && <h1>order Details</h1>}
+      {order && order.length > 0 ? (
         <>
-          <div className="order-summary">
-            <div className="order-info">
-            <p>Name: {orderInfo.name}</p>
-            <p>Email: {orderInfo.email}</p>
-              <h3>Order ID: {orderInfo.orderId}</h3>
-              <p>Order Date: {orderInfo.date}</p>
-            </div>
-            
-              <div className="order-item" key={item.productid}>
-                <img src={item.img} alt='' />
-                <div className="order-details">
-                  <h3>{item.name}</h3>
-                  <span> &#8377; {item.price} &nbsp; <del>&#8377; {item.del}</del></span>
-                  <span className="quantity">Quantity: {item.quantity}</span>
-                </div>
-              </div>
+          {order
+            .sort((a,b)=>b._id.localeCompare(a._id))
+            .map((item) => (
+            <div className="order-item" key={item._id}>
           
-            <div className="order-total">
-              <div className="value">
-                <p>&#8377; {orderInfo.price}</p>
-                <h4>Total Value</h4>
+              <img src={item.img} alt={item.name} className="order-item-img" />
+              <div className="order-item-details">
+              <p>Order Date: {item.orderDate.slice(0,10)}</p>
+                <h3>{item.name}</h3>
+                <p>Price: ${item.price}</p>
+                <p>Quantity: {item.quantity}</p>
+                <p>Order ID: {item._id.slice(-4)}</p>
               </div>
-              <button onClick={() => Navigate('/')} className="home-button">Back to Home</button>
             </div>
-          </div>
-        </>
+          ))}
         
-      )
-    })
-  
-    ):
-    <p>no item available</p>
-  
-  }
+        </>
+      ) : (
+        <p>No Order data</p>
+      )}
     </div>
-  )
+  );
+};
 
-}
-
-
-export default OrderDetails
+export default OrderDetails; 

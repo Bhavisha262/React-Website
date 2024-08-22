@@ -2,18 +2,23 @@ import React, { useContext } from 'react';
 import './Category.scss';
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../Context/MyContext';
-
+import up from "../../Assets/Slider/down.jpg";
 const Category = () => {
   const Navigate = useNavigate()
-  const {num} = useContext(MyContext)
+  const {num,setIsDropdown} = useContext(MyContext)
     
   return (
     <>
-    <div className="title1">
-     <h1>Shop By Category</h1></div><br/>
+
     <div className="category-section">
+    
+    <div className="title1">
+    <div className="wavy-heading-container">
+      <h1 className="wavy-heading">Shop By Category</h1>
+    </div>
+    </div><br/>
       {num.map( Data => (
-        <div key={Data.id} className="category" onClick={() => Navigate(`/category/${Data.category_url}`)}>
+        <div key={Data.id} className="category" onClick={() => Navigate(`/category/${Data.category_url}`)|| setIsDropdown(false)}>
          <div className="image-wrapper">
          <img
             src={Data.category_img}

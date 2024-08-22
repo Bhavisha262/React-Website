@@ -16,7 +16,7 @@ const Alert = () => {
   return (
 <>
     { alert &&
-    <div class="alert" style={{backgroundColor:message.match('Thanks')&&'green'}}>
+    <div className='alert' style={{backgroundColor: message.match('Thanks') && 'green'}}>
     <span>{message.match('Thanks')?<TiTick />:<IoAlertCircleOutline />}</span>
     {message}
   </div>

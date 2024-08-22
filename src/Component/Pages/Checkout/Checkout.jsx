@@ -23,12 +23,11 @@ const Checkout = () => {
     const fetchShippingInfo = async () => {
       setLoader(true);
       try {
-        const response = await fetch('http://localhost:3025/get-user-address', {
+        const response = await fetch('http://localhost:3025/get-shipping-info', {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`, // Ensure your token is correctly retrieved
           },
         });
-
         const data = await response.json();
         if (data.success && data.data) {
           setInitialValues(data.data);
@@ -86,7 +85,8 @@ const Checkout = () => {
   };
 
   return (
-    <div className='checkout'>
+    <div 
+    >
       
       <Formik
         enableReinitialize

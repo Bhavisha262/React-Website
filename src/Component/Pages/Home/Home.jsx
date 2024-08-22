@@ -3,6 +3,7 @@ import "./Home.scss"
 import Slider from '../../Slider/Slider'
 import Category from '../../Category/Category'
 import Countup from '../../Countup/Countup'
+import Featured from './Featured/Featured'
 
 
 const Home = () => {
@@ -10,8 +11,9 @@ const Home = () => {
     <div>
         
         <Slider/>
-        <Category/>
-        <Countup/> 
+        <Featured/>
+       <Category/>
+         <Countup/> 
         
     </div>
   )

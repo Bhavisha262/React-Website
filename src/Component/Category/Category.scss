@@ -1,29 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
-.title1{
-h1{
-  color: maroon;
-  text-decoration-line: underline;
-  text-decoration-style: wavy;
-  text-underline-offset: 15px;
-  text-decoration-thickness: 2px;
-  text-decoration-color: teal;
-  text-align: center;
-  font-family: 'Salsa', cursive;
-}
-}
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .category-section {
   display: flex;
   justify-content: center;
   gap: 30px;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px 0;
-  font-family: 'Salsa', cursive;
+  font-family: "Mooli", system-ui;
 width: 100%;
 height: max-content;
+margin: 20px 0;
 
 
+.title1{
+  width: 100%;
+  .wavy-heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .wavy-heading {
+    background: linear-gradient(270deg, rgb(79, 0, 0), rgb(255, 130, 151), brown); 
+    background-size: 300% 300%; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: wave 4s ease-in-out infinite;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 15px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: teal;
+    text-align: center;
+    font-family: "Mooli", system-ui;
+  }
+  
+  // Animation keyframes
+  @keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
+ 
+  
+  }
   .category {
     position: relative;
     display: flex;

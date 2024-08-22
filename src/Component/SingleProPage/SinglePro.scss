@@ -3,8 +3,7 @@ $ig-floralwhite: floralwhite !default;
 $ig-maroon: maroon !default;
 $ig-teal: teal !default;
 $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
 .single-product-page {
     display: flex;
@@ -13,7 +12,8 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     align-items: flex-start;
     margin-top: 30px;
     padding: 20px;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
+    font-weight: 500;
     
     .product-image {
       width: 350px;
@@ -229,7 +229,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
       font-weight: bold;
       cursor: pointer;
       transition: background-position 0.3s;
-      font-family: 'Salsa', cursive;
+      font-family: "Mooli", system-ui;
       
       &:hover {
         background-position: -100% 0;
@@ -260,7 +260,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   font-weight: bold;
   cursor: pointer;
   transition: background-position 0.3s;
-  font-family: 'Salsa', cursive;
+  font-family: "Mooli", system-ui;
   
   &:hover {
     background-position: -100% 0;

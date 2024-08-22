@@ -2,36 +2,39 @@ import React, { useContext,useState } from 'react'
 import "./Header.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../Assets/Logo/mainlogo.png"
-import { HiSearch } from "react-icons/hi";
-import { TbUserHexagon } from "react-icons/tb";
-import { FaRegHeart } from "react-icons/fa";
-import { LuShoppingBag } from "react-icons/lu";
+import { IoIosSearch } from "react-icons/io";
+import { CiUser } from "react-icons/ci";
+import { LiaUserCheckSolid } from "react-icons/lia";
+import { IoIosHeartEmpty } from "react-icons/io";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
-import search1 from "../../Assets/magnifying-glass (1).png"
+import search1 from "../../Assets/search.gif"
 import ShopAll from '../ShopAll/ShopAll';
 import { Button } from '@mui/material';
-import { LiaUserCheckSolid } from "react-icons/lia";
+
 import Cart from '../Pages/Home/Cart/Cart';
 import Wishlist from '../Pages/Home/Wishlist/Wishlist';
 import MyContext from '../Context/MyContext';
+import { LuMenuSquare } from "react-icons/lu";
 
 const Header = () => {
   
-  const {handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2} = useContext(MyContext)
+  const {toggleDropdown,isDropdown,setIsDropdown,handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2} = useContext(MyContext)
   const Token = sessionStorage.getItem('token')
   const Navigate = useNavigate()
   
-  const [isDropdown,setIsDropdown] = useState(false)
-  const toggleDropdown = () => {
-    setIsDropdown(!isDropdown);
-};
+  
 
   const [isOpenS, setIsOpenS] = React.useState(false)
     const toggleDrawer1 = () => {
         setIsOpenS((prevState) => !prevState)
     }
-
+     
+    const[menu,setMenu]= React.useState(false)
+    const toggleDrawer4 = () => {
+      setMenu((prevState) => !prevState)
+    }
   
  
 
@@ -39,10 +42,12 @@ const Header = () => {
   return (
     <>
     <div className='header-main'>
+    <span className='menubar' onClick={()=>setMenu(true)}> <LuMenuSquare  color='white' size={25}/></span>
       <div className="left">
         <div className="shop-all">
           <li>Shop</li>
-        <span className='shop'><ShopAll/></span>
+        <span className='shop'>
+          <ShopAll/></span>
         </div>
         <Link to="/about-us"><li>About</li></Link>
         <Link to="/contact-us"><li>Contact</li></Link>
@@ -55,10 +60,10 @@ const Header = () => {
 
       <div className="right">
     
-        <HiSearch size={25} onClick={toggleDrawer1}/>
-       {!Token ?  <Link to="/user"><TbUserHexagon size={25}/></Link>:
+        <IoIosSearch  onClick={toggleDrawer1}/>
+       {!Token ?  <Link to="/user"><CiUser /></Link>:
        <div className="dropdown">
-       <LiaUserCheckSolid onClick={toggleDropdown} className="dropbtn" fontSize={25}/>
+       <LiaUserCheckSolid   onClick={toggleDropdown} className="dropbtn" fontSize={25}/>
        <div className={`dropdown-content ${isDropdown ? 'show' : ''}`}>
            <Button onClick={handlelogout}>Logout</Button>
            <Button onClick={() => Navigate('/order') || setIsDropdown(false)} >Order Details</Button>
@@ -67,12 +72,34 @@ const Header = () => {
        </div>
    </div>
 }
-        <FaRegHeart onClick={toggleDrawer3} size={25}/> {wish ? wish.length:0}
-        <LuShoppingBag onClick={toggleDrawer2} size={25} /> {cart ? cart.length:0}
+        <div className="wish-icon">
+        <span><IoIosHeartEmpty  onClick={toggleDrawer3}/></span> 
+        <p>{wish ? wish.length:0}</p>
+        </div>
+
+        <div className="cart-icon">
+        <span><HiOutlineShoppingBag onClick={toggleDrawer2}/></span> 
+        <p>{cart ? cart.length:0}</p>
+        </div>
        </div>
     </div>
               
-  
+              
+    <Drawer
+                open={menu}
+                onClose={toggleDrawer4}
+                direction='left'
+                style={{backgroundColor:'black', color:'gold' ,listStyle:'none', display:'flex', flexDirection:'column', gap:'30px',justifyContent:'center', alignItems:'center', cursor:'pointer'}}
+                zIndex={99999}
+              >
+              
+<li onClick={() => Navigate('/shop-by-category') || setMenu(false)}>Shop </li>
+<li onClick={() => Navigate('/about-us') || setMenu(false)}>About</li>
+<li onClick={() => Navigate('/contact-us') ||  setMenu(false)}>Contact</li>
+<li onClick={() => Navigate('/smiles') || setMenu(false)}>Graceful Smiles</li>
+   
+   
+              </Drawer>
              <Drawer
                 open={isOpenS}
                 onClose={toggleDrawer1}
@@ -83,7 +110,7 @@ const Header = () => {
                 <div class="search-container">
                 
     <input type="text" id="search-bar" class="search-input" onChange={(e) => setSearch(e.target.value)} value={search}  placeholder="Search..."/>
-    <button id="search-button" class="search-button"><img src={search1} alt=''/></button><br/>
+    <button id="search-button" class="search-button"><img src={search1} alt='' /></button><br/>
     
 
     </div>

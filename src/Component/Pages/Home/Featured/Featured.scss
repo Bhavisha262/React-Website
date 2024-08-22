@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+.featured{
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 20px 0;
+align-items: center;
+width: 100%;
+height: 200px;
+font-family: "Mooli", system-ui;
+
+
+.wavy-heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .wavy-heading {
+    background: linear-gradient(270deg, rgb(79, 0, 0), rgb(255, 130, 151), brown); 
+    background-size: 300% 300%; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: wave 4s ease-in-out infinite;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 15px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: teal;
+    text-align: center;
+    font-family: "Mooli", system-ui;
+  }
+  
+  // Animation keyframes
+  @keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+img{
+    width: 100%;
+    height: 100%;
+}
+
+
+    
+}

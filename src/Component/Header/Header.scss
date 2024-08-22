@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
  @import "../MediaQuery/Mixin.scss";
 .header-main{
-    background-color:black;
-    font-family: 'Salsa', cursive;
+    background-color:rgb(48, 0, 0);
+    font-family: "Mooli", system-ui;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content:space-between;
     padding: 10px 20px ;
     border-bottom: 2px solid goldenrod;
-    height: 50px;
+    
+    @include m528{
+      padding: 10px;
+     }
+ 
     a{
         text-decoration: none;
         color: floralwhite;
@@ -19,14 +25,20 @@
         cursor: pointer;
         list-style: none;
       }
-    
+      .menubar{
+        display: none;
+        
+        @include m528{
+          display: block;
+          cursor: pointer;
+        }}
   
       .left{
         display: flex;
-        gap: 20px;
-        justify-content:center;
+        gap: 18px;
         align-items: center;
         font-size: 16px;
+       
 
         .shop-all{
           position: relative;
@@ -61,7 +73,7 @@
           
         }
         
-        @include tablet{
+        @include m1100{
           display: none;
         }
 
@@ -74,6 +86,11 @@
        display: flex;
        justify-content:center;
        align-items: center;
+
+       @include m528{
+        width: 100px;
+        height: auto
+       }
       
      img{
        width: 100%;
@@ -86,7 +103,14 @@
      gap: 20px;
       justify-content: center;
       align-items: center;
-      font-family: 'Salsa', cursive;
+      font-family: "Mooli", system-ui;
+
+      @include m528{
+       gap: 10px;
+       }
+
+
+
  
       .content{
         position: absolute;
@@ -112,6 +136,11 @@
      gap: 20px;
       justify-content: center;
       align-items: center;
+      font-size: 25px;
+
+      @include m528{
+    font-size: 17px;
+       }
       }
       .dropdown {
         position: relative;
@@ -154,6 +183,60 @@
         display: block;
       }
       
+      .wish-icon {
+        position: relative;
+        cursor: pointer;
+    
+       
+    
+        span {
+            font-size: 32px;
+        }
+    
+        p {
+            position: absolute;
+            transition: all 0.5s ease-in;
+            top: -30px;
+            right: -10px;
+            background-color: floralwhite;
+            color: maroon;
+            height: 20px;
+            width: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%; // Changed to 50% for clarity
+
+           
+        }
+    }
+
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+  
+     
+  
+      span {
+          font-size: 32px;
+      }
+  
+      p {
+          position: absolute;
+          transition: all 0.5s ease-in;
+          top: -30px;
+          right: -10px;
+          background-color: floralwhite;
+          color: maroon;
+          height: 20px;
+          width: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%; // Changed to 50% for clarity
+      }
+  }
+    
 }
 
 }
@@ -162,14 +245,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Salsa', cursive;
+  font-family: "Mooli", system-ui;
   
 .search-container {
   display: flex;
-
   align-items: center;
   width: 600px;
-  margin: 30px 10px;
+  margin: 28px 10px;
   background-color: white;
   border-radius: 25px;
   border: 1px solid midnightblue;
@@ -190,7 +272,7 @@
       outline: none;
       border-radius: 25px;
       transition: width 0.3s ease-in-out;
-      font-family: 'Salsa', cursive;
+      font-family: "Mooli", system-ui;
 
       ::placeholder{
         color: midnightblue;
@@ -212,8 +294,8 @@
     align-items: center;
     
       img{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         cursor: pointer;
       }
   }
@@ -230,7 +312,7 @@
   align-items: center;
   cursor: pointer;
   padding: 20px 0px;
-  font-family: 'Salsa', cursive;
+  font-family: "Mooli", system-ui;
 
   li{
     color: rgb(160, 67, 0);

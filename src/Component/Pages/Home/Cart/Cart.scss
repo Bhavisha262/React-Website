@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 .cart-main{
-    font-family: 'Salsa', cursive;
-    height: 300px;
+    font-family: "Mooli", system-ui;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 0px;
-
+   
     h2{
         color: rgb(125, 13, 13);
     }
     .cart-item{
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 20px;
         align-items: center;
         transition: all 0.4s;
-        padding: 10px;
+        padding: 5px 0px 5px 0px;
         position: relative;
         border-bottom: 1px solid rgba(0, 0, 0, 0.212);
 
@@ -82,77 +81,6 @@
     }
 }
 
-.cart-item1{
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    align-items: center;
-    transition: all 0.4s;
-    padding: 10px;
-    position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.212);
-
-    &:hover{
-        background-color: rgba(0, 0, 0, 0.046);
-    }
-
-img{
-    height: 70px;
-    width: 70px;
-}
-
-.cart-details1{
-    display: flex;
-    flex-direction: column;
-   
-        h3{
-        font-size: 15px;
-        color: darkmagenta;
-        }
-        .full1{
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background-color: #ffffff;
-            border: 1.5px solid maroon;
-            outline: none;
-            border-radius: 10px;
-        
-            button{
-              display: flex;
-              justify-content: center;
-            align-items: center;
-            padding: 10px;
-            border: none;
-             outline: none;
-             color: maroon;
-             background-color: #ffffff;
-             
-             cursor: pointer;
-            }
-        
-            .count1{
-              font-size: 20px;
-              color: mediumvioletred;
-            }
-          }
-    .close{
-        position: absolute;
-        top: 1px;
-        right: 10px;
-        font-size: 20px;
-        color: rgba(0, 0, 0, 0.409);
-        transition: all 0.2s;
-        cursor: pointer;
-
-        &:hover{
-            color: black;
-            transform:scale(1.1) ;
-        }
-    }
-
-}
-}
 .cart-total{
 
     display: flex;
@@ -176,7 +104,7 @@ img{
         font-size: 16px;
         color: floralwhite;
         background-color: maroon;
-        font-family: 'Salsa', cursive;
+        font-family: "Mooli", system-ui;
         border: 1px solid maroon;
         transition: all 0.4s;
         cursor: pointer;

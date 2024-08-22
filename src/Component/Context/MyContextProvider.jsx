@@ -8,9 +8,10 @@ import {useNavigate} from 'react-router-dom';
 const MyContextProvider = ({children}) => {
   const [num,setNum] = useState([])
   const[loader, setLoader] = useState(false)
-  const[cinfo, setCinfo] = useState([])
   const[search, setSearch] = useState('')
+  const[cinfo, setCinfo] = useState([])
   const[register, setRegister] = useState([])
+  const[orderadmin, setOrderadmin] = useState([])
   const[form, setForm] = useState([])
   const[token, setToken] = useState('')
 
@@ -32,6 +33,12 @@ useEffect(()=>{
 )
 },[])
 
+useEffect(()=>{
+  axios.get('http://localhost:3025/order-admin-table')
+  .then((res)=> setOrderadmin(res.data.data)   
+)
+},[])
+
 const [alert,setAlert] = useState(false)
 const [message,setMessage] = useState('')
 
@@ -39,21 +46,46 @@ const handlelogout = () =>{
   const confirm = window.confirm('Are You Sure You Want To Logout?')
   if (confirm) {
     sessionStorage.removeItem('token')
+    sessionStorage.removeItem('cart')
+    sessionStorage.removeItem('wishlist')
+    sessionStorage.removeItem('order')
     setToken('')
+    setCart([])
+    setWish([])
+    setOrder([])
     Navigate('/')  
   }
 }
 
 const Navigate = useNavigate()
 
-const [cart,setCart] = useState([])
-const [wish,setWish] = useState([])
+const [cart, setCart] = useState(() =>{
+  const savedCart = sessionStorage.getItem('cart');
+  return savedCart ? JSON.parse(savedCart) : [];
+})
+const [wish, setWish] = useState(() =>{
+  const savedWish = sessionStorage.getItem('wishlist');
+  return savedWish ? JSON.parse(savedWish) : [];
+})
+
+const [order, setOrder] = useState(() =>{
+  const savedOrder = sessionStorage.getItem('order');
+  return savedOrder ? JSON.parse(savedOrder) : [];
+})
+const [shippingInfo,setShippingInfo] = useState([])
 const [isOpenC, setIsOpenC] = React.useState(false)
+const [isOpenW, setIsOpenW] = React.useState(false)
+const [isDropdown,setIsDropdown] = useState(false)
+
+  const toggleDropdown = () => {
+    setIsDropdown(!isDropdown);
+};
+
   const toggleDrawer2 = () => {
       setIsOpenC((prevState) => !prevState)
   }
 
-  const [isOpenW, setIsOpenW] = React.useState(false)
+  
   const toggleDrawer3 = () => {
       setIsOpenW((prevState) => !prevState)
   }
@@ -81,6 +113,7 @@ const handleCart = async(categoryid,productid,img,price,name) =>{
 
   if(data.success){
     setAlert(true)
+    sessionStorage.setItem('cart' , JSON.stringify(data.cartInfo));
     setMessage(data.message)
     setCart(data.cartInfo)
 
@@ -118,6 +151,7 @@ const handleWish = async(categoryid,productid,img,price,name) =>{
 
   if(data.success){
     setAlert(true)
+    sessionStorage.setItem('wishlist' , JSON.stringify(data.wishInfo));
     setMessage(data.message)
     setWish(data.wishInfo)
 
@@ -125,6 +159,81 @@ const handleWish = async(categoryid,productid,img,price,name) =>{
   else{
     setAlert(true)
     setMessage(data.error)
+  }
+
+  
+
+}
+
+const handleOrder = async() =>{
+  if(!sessionStorage.getItem('token')){
+    setAlert(true)
+    setMessage('Please Login First')
+    setTimeout(() => {
+      Navigate('/user')  
+    }, 3000);
+
+  }
+
+  const response = await fetch('http://localhost:3025/save-order-info', {
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    },
+    body: JSON.stringify({orderDate:new Date()})
+  });
+
+  const data = await response.json()
+
+  if(data.success){
+    setAlert(true)
+    sessionStorage.getItem('order' , JSON.stringify(data.orderInfo));
+    sessionStorage.getItem('cart' , JSON.stringify(data.cartInfo));
+    sessionStorage.setItem('order' , JSON.stringify(data.orderInfo));
+    setMessage(data.message)
+    setOrder(data.orderInfo)
+    setCart(data.cartInfo)
+    window.location.href='/confirmation'
+  }
+  else{
+    setAlert(true)
+    setMessage(data.error)
+  }
+
+  
+
+}
+
+const handleShipping = async(name,number,email,address,landmark,state,city,pincode) =>{
+  if(!sessionStorage.getItem('token')){
+    setAlert(true)
+
+
+  }
+
+  const response = await fetch('http://localhost:3025/save-shipping-info', {
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    },
+    body: JSON.stringify({name,number,email,address,landmark,state,city,pincode})
+  });
+
+  const data = await response.json()
+
+  if(data.success){
+    setAlert(true)
+    
+    setShippingInfo(data.shippingInfoInfo)
+
+  }
+  else{
+    setAlert(true)
+   
   }
 
   
@@ -177,7 +286,84 @@ const handleremove = async(categoryid,productid) =>{
   if(data.success){
     setAlert(true)
     setMessage(data.message)
+   
     setWish(data.wishInfo)
+
+    
+  }
+  else{
+    setAlert(true)
+    setMessage(data.error)
+  }
+
+  
+
+}
+
+const handleIncreaseQuantity = async(categoryid,productid) =>{
+  if(!sessionStorage.getItem('token')){
+    setAlert(true)
+    setMessage('please login first')
+    setTimeout(() => {
+      Navigate('/user')  
+    }, 3000);
+
+  }
+
+  const response = await fetch('http://localhost:3025/increase-quantity', {
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    },
+    body: JSON.stringify({categoryid,productid})
+  });
+
+  const data = await response.json()
+
+  if(data.success){
+    setAlert(true)
+    sessionStorage.setItem('cart', JSON.stringify(data.cartInfo));
+    setMessage(data.message)
+    setCart(data.cartInfo)
+
+  }
+  else{
+    setAlert(true)
+    setMessage(data.error)
+  }
+
+  
+
+}
+const handleDecreaseQuantity = async(categoryid,productid) =>{
+  if(!sessionStorage.getItem('token')){
+    setAlert(true)
+    setMessage('please login first')
+    setTimeout(() => {
+      Navigate('/user')  
+    }, 3000);
+
+  }
+
+  const response = await fetch('http://localhost:3025/decrease-quantity', {
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    },
+    body: JSON.stringify({categoryid,productid})
+  });
+
+  const data = await response.json()
+
+  if(data.success){
+    setAlert(true)
+    sessionStorage.setItem('cart', JSON.stringify(data.cartInfo));
+    setMessage(data.message)
+    setCart(data.cartInfo)
 
   }
   else{
@@ -190,7 +376,7 @@ const handleremove = async(categoryid,productid) =>{
 }
 
 return (
-<MyContext.Provider value={{isOpenW, setIsOpenW,toggleDrawer3,isOpenC, setIsOpenC,toggleDrawer2,handlelogout,handleremove,handleWish,wish,setWish,handledelete,cart,setCart,handleCart,search,setSearch,form,setForm,message,token,setToken,setMessage,alert,setAlert,num,loader,setLoader,cinfo, setCinfo ,register,setRegister}} >
+<MyContext.Provider value={{handleDecreaseQuantity,handleIncreaseQuantity,orderadmin, setOrderadmin,handleShipping,shippingInfo,setShippingInfo,handleOrder,order,setOrder,toggleDropdown,isDropdown,setIsDropdown,isOpenW, setIsOpenW,toggleDrawer3,isOpenC, setIsOpenC,toggleDrawer2,handlelogout,handleremove,handleWish,wish,setWish,handledelete,cart,setCart,handleCart,search,setSearch,form,setForm,message,token,setToken,setMessage,alert,setAlert,num,loader,setLoader,cinfo, setCinfo ,register,setRegister}} >
 {children}
 </MyContext.Provider>
 )

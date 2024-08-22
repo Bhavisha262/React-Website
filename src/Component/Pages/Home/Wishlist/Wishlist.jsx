@@ -3,6 +3,7 @@ import "./Wishlist.scss"
 import { Button } from '@mui/material'
 import MyContext from '../../../Context/MyContext'
 
+
 const Wishlist = () => {
   const{wish,handleremove} = useContext(MyContext)
   return (

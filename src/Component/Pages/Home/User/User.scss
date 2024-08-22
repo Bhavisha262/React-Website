@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
 .user-main{
     width: 100%;
@@ -7,7 +7,7 @@
     background-image: url("../../../../Assets/User/User\ bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
   
     Button{
         background-color: floralwhite;
-        font-family: 'Salsa', cursive;
+        font-family: "Mooli", system-ui;
         color: maroon;
 
         &:hover{

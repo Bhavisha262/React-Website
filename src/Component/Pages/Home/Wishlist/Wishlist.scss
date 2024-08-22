@@ -1,9 +1,10 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 h1{
     text-align: center;
     color: maroon;
-    font-family: 'Salsa', cursive;
+    font-family: "Philosopher", sans-serif;
 }
 .wishlist-item {
     display: flex;
@@ -13,7 +14,7 @@ h1{
     width: 500px;
     height: max-content;
     border: 1px solid maroon;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     border-radius: 20px;
     text-align: center;
   
@@ -43,7 +44,7 @@ h1{
     }
     Button{
         background-color: floralwhite;
-        font-family: 'Salsa', cursive;
+        font-family: "Mooli", system-ui;
         color: maroon;
 
         &:hover{
@@ -54,51 +55,5 @@ h1{
     }
   }
 
-  .wishlist-item2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-family: 'Salsa', cursive;
-    margin: 20px auto;
-    width: 500px;
-    height: max-content;
-    border: 1px solid maroon;
-    border-radius: 20px;
-    text-align: center;
   
-    &__image2 {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 20px;
-      
-    }
-  
-    &__details2 {
-        padding: 10px ;
-    
-    }
-  
-    &__name2 {
-      font-size: 18px;
-     
-      color: darkmagenta;
-    }
-  
-    &__price2 {
-      font-size: 16px;
-      color: #555;
-    }
-    Button{
-        background-color: floralwhite;
-        font-family: 'Salsa', cursive;
-        color: maroon;
-
-        &:hover{
-            background-color: maroon;
-            color: floralwhite;
-            
-        }
-    }
-  }
   

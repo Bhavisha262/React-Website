@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .countup-main{
 display: flex;
 justify-content: center;
@@ -6,16 +7,14 @@ align-items: center;
 gap: 100px;
 flex-flow: wrap;
 width: 100%;
-height: 100%;
+height: 250px;
 border-bottom: 1px solid gold;
 background-image: url("../../Assets/Slider/countup.jpg");
 background-size: 100% 100%;
 background-repeat: no-repeat;
 font-size: 18px;
 font-weight: bold;
-font-family: 'Salsa', cursive;
-
-
+font-family: "Mooli", system-ui;
 
 .vegan{
     display: flex;

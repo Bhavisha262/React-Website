@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import "./SinglePro.scss"
 import { useParams } from 'react-router-dom'
-import { SlMinus } from "react-icons/sl";
-import { SlPlus } from "react-icons/sl";
+
 import { Button } from '@mui/material';
 import ReactImageGallery from 'react-image-gallery';
 
@@ -18,18 +17,7 @@ const SinglePro = () => {
   const{single} = useParams()
   const {num,handleCart,handleWish} = useContext(MyContext)
   
-  const [count, setCount] = useState(1);
-
-  const increment = () => {
-    setCount(prevCount => prevCount + 1);
-  };
-
-  const decrement = () => {
-    if (count > 1) {
-      setCount(prevCount => prevCount - 1);
-    }
-  }
-
+  
   const [isOpen, setIsOpen] = useState(false);
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
@@ -71,11 +59,6 @@ const SinglePro = () => {
                 <h6>Free Shipping on orders above ₹750</h6>
                 
               <div className="number">
-                <button className='full'>
-                <button onClick={decrement}><SlMinus fontSize={20} /></button>
-                <span className="count">{count}</span>
-                <button onClick={increment}><SlPlus fontSize={20}/></button>
-                </button>
                 <Button variant='contained' className='buy' onClick={()=>handleWish(item.id,pro.id,pro.pro_main_img,pro.price,pro.name)}><FaRegHeart fontSize={25} color='mediumvioletred'/>Add To Wishlist</Button>
               </div>
               <br/>

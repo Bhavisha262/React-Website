@@ -1,17 +1,57 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Footer.scss"
 import { FaInstagram } from "react-icons/fa";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-import { Link, useLocation} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+import TextField from '@mui/material/TextField';
+import MyContext from '../Context/MyContext';
 
 const Footer = () => {
-   const location = useLocation();
-   if (location.pathname.match(/contact/g))
-   return null 
+    const validationSchema = yup.object({
+        email: yup
+        .string('Enter your email')
+        .email('Enter a valid email')
+        .required('Email is required'),
+    });
 
+    const{setLoader,setAlert,setMessage} = useContext(MyContext)
+
+    const formik = useFormik({
+        initialValues: {
+        email: '',
+        password: '',
+        },
+        validationSchema: validationSchema,
+        onSubmit: async(values, {resetForm}) => {
+          setLoader(true)
+          const response = await fetch('http://localhost:3025/new-account', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+            'Content-type': 'application/json',
+            },
+            });
+            const data = await response.json()
+    
+            if(data.success){
+            setMessage(data.message)
+            setAlert(true)
+            resetForm()
+            window.location.href='/'
+            
+            }else{
+            setMessage(data.error)
+            setAlert(true)
+             
+            }
+            setLoader(false)
+          },
+        });
   return (
     
     <div className='footer-main'>
@@ -21,11 +61,17 @@ const Footer = () => {
             <h4>Join us on the Grace Beauty for a graceful glow.</h4>
             <h4>Glaze your inbox with tips, tricks & exclusive content from Us.</h4>
 
-            <form>
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <input type="email" placeholder="Enter Your Email Id" required/>
-                    <button type="submit"><i class="fa-solid fa-circle-right"></i></button>
-       </form>
+            <form className='form1' onSubmit={formik.handleSubmit}>
+                <TextField 
+                id="email"
+                name="email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email} 
+                label="Email" 
+                variant="standard" />
+            </form>
        <div className="social">
        <FaWhatsapp color='lime' />
        <FaInstagram color='magenta'/>
@@ -33,16 +79,15 @@ const Footer = () => {
        <FaYoutube color='red'/>
       <FaTiktok color='black'/>
         </div>
-            </div>
+        </div>
         
         <div className="box2">
             <h3>NAVIGATE</h3>
-           
           <Link to="/about-us"><li>About</li></Link>
           <Link to="/smiles"> <li>Smiles</li></Link>
-           <Link to="/contact-us"><li>Contact</li></Link>
-           <Link to="/store-locator"><li>Store Locator</li></Link>
-            </div>
+          <Link to="/contact-us"><li>Contact</li></Link>
+          <Link to="/store-locator"><li>Store Locator</li></Link>
+        </div>
 
 
         <div className="box3">

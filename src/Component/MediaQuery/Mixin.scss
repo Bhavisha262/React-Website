@@ -4,6 +4,19 @@
     }
     }
 
+    
+@mixin m1100 {
+    @media only screen and (max-width: 1100px) {
+    @content;
+    }
+    }
+
+    @mixin m528 {
+        @media only screen and (max-width: 528px) {
+        @content;
+        }
+        }
+
 @mixin tablet {
     @media only screen and (max-width: 900px) {
     @content;
@@ -23,4 +36,278 @@
 }
 
 
+
+
+@mixin btn($pad,$fs){
+   
+       
+    background:#000000;
+    color: rgb(255, 255, 255);
+    border-radius: 0.625em;
+    font-size: $fs;
+    padding: $pad;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    outline: 0;
+    border: 0;
+    border-bottom: 3px solid #000000;
+    flex-grow: 1;
+
+
+ 
+   
+   &:hover {
+    color: rgb(255, 255, 255);
+    border-bottom: 3px solid #000000;
+   }
+   
+   &:after {
+    content: "";
+    background: rgb(0, 0, 0);
+   
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   &:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.6s;
+   }
+
+}
+
+@mixin mbtn($pad,$brad){
+  
+    background: black;
+   
+    color: rgb(255, 255, 255);
+    border: 0.5px solid rgba(0, 0, 0, 0.285);
+    border-radius: $brad;
+    font-size: 16px;
+    padding: $pad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+
+
+}
+
+
+
+
+
+@mixin sm {
+@media only screen and (min-width: 640px) {
+    @content;
+}
+}
+
+
+@mixin md {
+@media only screen and (min-width: 768px) {
+    @content;
+}
+}
+
+@mixin mv {
+@media only screen and (max-width: 768px) {
+    @content;
+}
+}
+
+@mixin mvm {
+@media only screen and (max-width: 1030px) {
+    @content;
+}
+}
+
+@mixin cardmd {
+@media only screen and (max-width: 540px) {
+    @content;
+}
+}
+@mixin f1{
+    @media only screen and (max-width:350px){
+        @content
+    }
+};
+
+@mixin product {
+@media only screen and (min-width: 1230px) {
+    @content;
+}
+}
+
+@mixin productlap {
+@media only screen and (min-width: 600px) {
+    @content;
+}
+}
+
+@mixin mdd {
+@media only screen and (min-width: 838px) {
+    @content;
+}
+}
+
+@mixin ml {
+@media only screen and (min-width: 970px){
+    @content;
+}
+}
+
+
+
+@mixin lg {
+@media only screen and (min-width: 1024px) {
+    @content;
+}
+}
+
+@mixin lgg {
+@media only screen and (min-width: 2024px) {
+    @content;
+}
+}
+
+@mixin s {
+@media only screen and (min-width: 590px) {
+    @content;
+}
+}
+
+@mixin me {
+@media only screen and (max-width: 768px) {
+    @content;
+}
+}
+@mixin xxxs {
+@media only screen and (min-width: 400px) {
+    @content;
+}
+}
+
+@mixin xxxxs {
+@media only screen and (max-width: 400px) {
+    @content;
+}
+}
+
+@mixin cardf {
+@media only screen and (max-width: 500px) {
+    @content;
+}
+}
+
+@mixin ss {
+@media only screen and (max-width: 640px) {
+    @content;
+}
+}
+
+
+@mixin payment {
+@media only screen and (max-width: 375px) {
+    @content;
+}
+}
+
+@mixin sx{
+@media only screen and (max-width: 592px) {
+    @content;
+}
+}
+
+@mixin xxs {
+@media only screen and (max-width: 450px) {
+    @content;
+}
+}
+
+@mixin xl {
+@media only screen and (min-width: 1280px) {
+    @content;
+}
+}
+
+@mixin xsx{
+@media only screen and (max-width:386px){
+    @content;
+}
+}
+
+@mixin xxl {
+@media only screen and (min-width: 1536px) {
+    @content;
+}
+}
+
+@mixin ssms {
+@media only screen and (max-width: 1058px) {
+    @content;
+}
+
+}
+
+@mixin ssm {
+@media only screen and (min-width: 1058px) {
+    @content;
+}
+
+}
+
+@mixin inps {
+@media only screen and (max-width: 320px) {
+    @content;
+}
+
+
+
+}
+
+@mixin ssmi {
+@media only screen and (max-width: 1058px) and (min-width: 768px) {
+    @content;
+}
+
+
+}
+
+@mixin formp {
+@media only screen and (max-width: 950px) {
+    @content;
+}
+
+}
+
+@mixin big {
+@media only screen and (max-width: 1165px) {
+    @content;
+}
+
+}
+
+@mixin nami {
+@media only screen and (max-width: 855px) {
+    @content;
+}
+
+}
 

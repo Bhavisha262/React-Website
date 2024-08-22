@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 .footer-main{
-    background-color:black;
+    background-color:rgb(48, 0, 0);
     display: flex;
     height: max-content;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items:flex-start;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     padding: 10px;
     border-top: 2px solid goldenrod;
     flex-flow: wrap;
@@ -23,7 +24,7 @@
 .box1{
   
     text-align: justify;
-    font-size: 15px;
+    font-size: 13px;
     h3{
         color:gold;
     }
@@ -47,7 +48,7 @@ form{
     width: 100%;
     background: transparent;
     color: lightpink;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
     border: 0;
     outline: none;
   }
@@ -79,7 +80,7 @@ form{
     flex-direction: column;
     gap: 10px;
     text-align: justify;
-    font-size: 15px;
+    font-size: 13px;
     h3{
         color:gold;
     }
@@ -97,7 +98,7 @@ form{
     flex-direction: column;
     gap: 10px;
     text-align: justify;
-    font-size: 15px;
+    font-size: 13px;
     h3{
         color:gold;
     }
@@ -111,7 +112,7 @@ form{
 }
 .box4{
     text-align: justify;
-    font-size: 15px;
+    font-size: 13px;
     h3{
         color:gold;
     }

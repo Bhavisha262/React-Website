@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .about-main{
   background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
     height: max-content;
@@ -7,7 +8,8 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    font-family: 'Salsa', cursive;
+    font-family: "Mooli", system-ui;
+  
     padding: 30px 10px;
     .text1{
       width: 400px;
@@ -51,7 +53,7 @@
       .text2{
         width: 400px;
         height: 200px;
-        background:linear-gradient(150deg,floralwhite,rgb(255, 194, 194));
+        background:floralwhite;
         padding: 10px;
         justify-content: center;
         align-items: center;

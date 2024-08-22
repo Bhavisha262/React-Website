@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
 .contact-main{
     width: 100%;
@@ -6,7 +6,7 @@
    background-image: url("../../../Assets/Contactus/bg2.jpg");
    background-size: 100% 170vh;
    background-repeat: no-repeat;
-    font-family: 'Salsa', cursive;
+   font-family: "Mooli", system-ui;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
         width: 50%;
         height: 450px;
         background-color: rgba( white,  0.9);
-        font-family: 'Salsa', cursive;
+        font-family: "Philosopher", sans-serif;
         display: flex;
         gap: 30px;
         justify-content: center;
@@ -50,7 +50,7 @@
 
         Button{
             background-color: floralwhite;
-            font-family: 'Salsa', cursive;
+            font-family: "Philosopher", sans-serif;
             color: maroon;
     
             &:hover{

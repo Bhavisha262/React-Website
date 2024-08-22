@@ -1,111 +1,43 @@
 import React from 'react'
-import "./Slider.scss"
+import AwesomeSlider from 'react-awesome-slider';
+import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
+import AnimationStyles from 'react-awesome-slider/src/styled/cube-animation/cube-animation.scss';
+import "./Slider.scss";
 
-import img1 from "../../Assets/Slider/slider1.png";
-import img2 from "../../Assets/Slider/slider2.png";
-import img3 from "../../Assets/Slider/slider3.png";
-import img4 from "../../Assets/Slider/slider4.png";
-import img5 from "../../Assets/Slider/slider5.png";
+import img1 from "../../Assets/Slider/F14_Desk_top_size.jpg";
+import img2 from "../../Assets/Slider/Nudes_HP-Banner_Med_Desktop_1.jpg";
+import img3 from "../../Assets/Slider/05_2024_TeaParty_Launch_Banner_2000x.progressive.jpg";
+import img4 from "../../Assets/Slider/Glycolic-desktop-homepage_1_1400x.jpg";
+import img5 from "../../Assets/Slider/SINFUL-PLUMP-LIP-GLOSS-OP-1_web.jpg";
+import img6 from "../../Assets/Slider/Sinful-Lipstick-Banner-Desktop1.jpg";
+import img7 from "../../Assets/Slider/Homepage_banner-02-02_1400x.jpg";
 
-import down from "../../Assets/Slider/down.png";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+
 
 const Slider = () => {
+  const slider = (
+    <AwesomeSlider
+      animation="cubeAnimation"
+      cssModule={[CoreStyles, AnimationStyles]}
+      
+    >
+      <div data-src={img1} />
+      <div data-src={img2} />
+      <div data-src={img3} />
+      <div data-src={img4} />
+      <div data-src={img5} />
+      <div data-src={img6} />
+      <div data-src={img7} />
+    </AwesomeSlider>
+  );
+  
   return (
-    <>
-    <div className='slider-container'>
-     
-     <Carousel
-  additionalTransfrom={0}
-  arrows
-  autoPlay
-  autoPlaySpeed={7000}
-  centerMode={false}
-  className=""
-  containerClass="container-with-dots"
-  dotListClass=""
-  draggable
-  focusOnSelect={false}
-  infinite
-  itemClass=""
-  keyBoardControl
-  minimumTouchDrag={80}
-  pauseOnHover
-  renderArrowsWhenDisabled={false}
-  renderButtonGroupOutside={false}
-  renderDotsOutside={false}
-  responsive={{
-    desktop: {
-      breakpoint: {
-        max: 3000,
-        min: 1024
-      },
-      items: 1,
-      partialVisibilityGutter: 40
-    },
-    mobile: {
-      breakpoint: {
-        max: 464,
-        min: 0
-      },
-      items: 1,
-      partialVisibilityGutter: 30
-    },
-    tablet: {
-      breakpoint: {
-        max: 1024,
-        min: 464
-      },
-      items: 1,
-      partialVisibilityGutter: 30
-    }
-  }}
-  rewind={false}
-  rewindWithAnimation={false}
-  rtl={false}
-  shouldResetAutoplay
-  showDots={false}
-  sliderClass=""
-  slidesToSlide={1}
-  swipeable
->
-
-    <div class="slide1">
-      <img src={img1} alt=""/>
-      <button class="overlay-button1" > Shop Now</button>
-    </div>
-
-    <div class="slide2">
-      <img src={img2} alt=""/>
-      <button class="overlay-button2" > Shop Now</button>
-    </div>
-
-    <div class="slide3">
-      <img src={img3} alt=""/>
-      <button class="overlay-button3" > Shop Now</button>
-    </div>
-
-    <div class="slide4">
-      <img src={img4} alt=""/>
-      <button class="overlay-button4" > Shop Now</button>
-    </div>
-
-    <div class="slide5">
-      <img src={img5} alt=""/>
-      <button class="overlay-button5" > Shop Now</button>
-    </div>
-
-  
-  
     
-  
-</Carousel>
-</div>
-
-<img src={down} alt='' className='down'/>
-</>
+    <div className='slider-main'>{slider}</div>
+    
+    
   )
+  
 }
 
 export default Slider

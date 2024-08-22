@@ -27,7 +27,7 @@ const validationSchema = yup.object({
 const User = () => {
   const Navigate = useNavigate();
   const [showPassword, setShowPassword] = React.useState(false);
-  const{loader,setLoader,setAlert,setMessage,setToken,setCart,setWish} = useContext(MyContext)
+  const{loader,setLoader,setAlert,setMessage,setToken,setCart,setWish,setOrder} = useContext(MyContext)
 
   const formik = useFormik({
     initialValues: {
@@ -51,7 +51,11 @@ const User = () => {
         setAlert(true)
         setCart(data.cartInfo)
         setWish(data.wishInfo)
+        setOrder(data.orderInfo)
         sessionStorage.setItem('token',data.data)
+        sessionStorage.setItem('cart', JSON.stringify(data.cartInfo));
+        sessionStorage.setItem('wishlist', JSON.stringify(data.wishInfo));
+        sessionStorage.setItem('order', JSON.stringify(data.orderInfo));
         setToken(data.data)
         resetForm()
         window.location.href='/'
