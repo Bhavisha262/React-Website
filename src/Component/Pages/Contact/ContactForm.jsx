@@ -25,7 +25,7 @@ const validationSchema = yup.object({
   .required('Mobile No. is required'),
   message: yup
   .string('Enter your message')
-  .required('message is required'),
+  .required('Message is required'),
 });
 const ContactForm = () => {
 
@@ -73,14 +73,16 @@ const ContactForm = () => {
 
   return (
     <div className='contact-main'>
-<h1>Contact Us !!</h1>
-<p>Hours of Operation : Monday - Saturday 9 AM - 6 PM IST </p>
+ <div className="wavy-heading-container">
+  <h1 className="wavy-heading">Contact Us</h1>
+    </div>
+<p>Hours of Operation : Monday - Saturday : 9 AM - 6 PM IST </p>
 <p>Toll-Free within India : +1800-657-7637</p>
 <p>Mobile No. : <a href='tel:8200913637'><b>8200913637</b></a></p>
 <p>Email Id : <a href="mailto:gracebeauty@gmail.com?subject=Subject%20Here&body=Body%20Here"><b>gracebeauty@gmail.com</b></a></p>
 <p>Type questions or feedback below and a Customer Service Specialist will reply within 24 business hours.</p>
 <form className='form' onSubmit={formik.handleSubmit}>
-<Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
+<Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center'}}>
       <BadgeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
       <TextField 
         id="name"
@@ -90,7 +92,8 @@ const ContactForm = () => {
         error={formik.touched.name && Boolean(formik.errors.name)}
         helperText={formik.touched.name && formik.errors.name} 
         label="Your Name" 
-        variant="outlined" />
+        variant="outlined"
+        />
 </Box>
 
 
@@ -134,7 +137,8 @@ const ContactForm = () => {
           rows={1} 
           variant="outlined" />
 </Box>
-<Button variant="contained" type='submit'>{loader ? 'Wait...' : 'Submit'}</Button>
+
+<Button variant="contained" type='submit'><span>{loader ? 'Wait...' : 'Submit'}</span></Button>
 </form><br/>
 </div>
   )

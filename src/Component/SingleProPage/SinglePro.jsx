@@ -1,10 +1,8 @@
 import React, { useContext, useState } from 'react'
 import "./SinglePro.scss"
 import { useParams } from 'react-router-dom'
-
 import { Button } from '@mui/material';
 import ReactImageGallery from 'react-image-gallery';
-
 import { LuShoppingBag } from "react-icons/lu";
 import MyContext from '../Context/MyContext';
 import Link from './Link';
@@ -53,21 +51,16 @@ const SinglePro = () => {
                <div className="box"> 
                 
                 <h2>{pro.name}</h2>
-                <span>{pro.price} &nbsp; <del>{pro.del}</del> &nbsp; &nbsp; {pro.off}</span>
+                <span>&#8377;{pro.price} &nbsp; <del>&#8377;{pro.del}</del> &nbsp; &nbsp; {pro.off}</span>
                 <h5><span>⭐</span>{pro.ratings} | <span>☑️</span> {pro.numofverify}</h5>
                 <b>Shade:</b>&nbsp;<i>{pro.color}</i>
                 <h6>Free Shipping on orders above ₹750</h6>
-                
-              <div className="number">
-                <Button variant='contained' className='buy' onClick={()=>handleWish(item.id,pro.id,pro.pro_main_img,pro.price,pro.name)}><FaRegHeart fontSize={25} color='mediumvioletred'/>Add To Wishlist</Button>
-              </div>
-              <br/>
+              
 
-              <div className="add">
-              <Button variant='contained' onClick={()=>handleCart(item.id,pro.id,pro.pro_main_img,pro.price,pro.name)}><LuShoppingBag fontSize={25} color='darkblue' />Add to Cart</Button>
-              </div>
-              <br/>
-
+                <div className="buttons">
+                <Button variant='contained' onClick={()=>handleWish(item.id,pro.id,pro.pro_main_img,pro.price,pro.name)}><span>Add to Wishlist</span></Button><br/><br/>
+                <Button variant='contained' onClick={()=>handleCart(item.id,pro.id,pro.pro_main_img,pro.price,pro.name)}><span>Add to Cart</span></Button>
+                </div><br/><br/>
               <div className={`accordion ${isOpen ? 'open' : ''}`}>
                 
       <div className="accordion-header" onClick={toggleAccordion}>

@@ -1,9 +1,9 @@
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
 $ig-floralwhite: floralwhite !default;
-$ig-maroon: maroon !default;
-$ig-teal: teal !default;
+$ig-maroon: #800026 !default;
+$ig-teal: #004D2E !default;
 $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 
 .single-product-page {
     display: flex;
@@ -12,7 +12,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     align-items: flex-start;
     margin-top: 30px;
     padding: 20px;
-    font-family: "Mooli", system-ui;
+    font-family: "Josefin Sans", sans-serif;
     font-weight: 500;
     
     .product-image {
@@ -157,6 +157,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
 
     .box {
      text-align: center;
+     
 
   h2 {
     font-size: 24px;
@@ -169,6 +170,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   h5{
     display: flex;
     gap: 5px;
+    font-size: 17px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -181,93 +183,62 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     color: darkblue;
   }
   
+.buttons{
+ 
 
-
- .number{
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  .full{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: #ffffff;
-    border: 1.5px solid maroon;
-    outline: none;
-    border-radius: 10px;
-
-    button{
-      display: flex;
-      justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border: none;
-     outline: none;
-     color: maroon;
-     background-color: #ffffff;
-     cursor: pointer;
-    }
-
-    .count{
-      font-size: 20px;
-      color: mediumvioletred;
-    }
-  }
-
-  .buy{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-      padding: 8px 20px;
-      background: linear-gradient(to right, (floralwhite) , ( lightpink) , (floralwhite) );
-      background-size: 200% 100%;
-      color:mediumvioletred;
-      border: none;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-position 0.3s;
-      font-family: "Mooli", system-ui;
-      
-      &:hover {
-        background-position: -100% 0;
-        color:mediumvioletred;
-      }
-
-     
-      
-  }
- }
+  Button {
+    background: linear-gradient(to right, (floralwhite) , #ffc4cc, (floralwhite));
+    font-family: "Josefin Sans", sans-serif;
+    color: #800026; /* Initial text color */
+    position: relative;
+    overflow: hidden; /* Ensure no overflow issues */
+    border: none; /* Remove any default border */
+    padding: 8px 20px; /* Add padding for better appearance */
+    cursor: pointer; /* Add pointer cursor for button */
+    text-align: center; /* Center align text */
+    z-index: 1; /* Ensure button text is on top */
    
- .add{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  Button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  padding: 8px 20px;
-  background: linear-gradient(to right, (floralwhite) , ( #bffffb) , (floralwhite)  );
-  background-size: 200% 100%;
-  color: darkblue;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-position 0.3s;
-  font-family: "Mooli", system-ui;
-  
-  &:hover {
-    background-position: -100% 0;
-    color: darkblue;
-  }
- }
+
+    /* Add a background color transition */
+    &::before {
+        content: ''; 
+        position: absolute;
+        bottom: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background: linear-gradient(to right,#ffc4cc,floralwhite, #ffc4cc ); /* Background color */
+        color: #800026; /* Text color */
+        display: flex; /* Use flexbox for centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        transform: scaleX(0); 
+        transform-origin: right; 
+        transition: transform 0.5s ease; 
+        z-index: 0; /* Ensure the pseudo-element is behind the button text */
+        font-size: 16px; /* Adjust font size as needed */
+        white-space: nowrap; /* Prevent text from wrapping */
+    }
+    
+    &:hover::before {
+        transform: scaleX(1); /* Scale to full width on hover */
+        transform-origin: left; /* Scale from the left side */
+    }
+
+    /* Ensure the button text is visible above the pseudo-element */
+    span {
+        position: relative;
+        z-index: 1; /* Ensure text is above the pseudo-element */
+        transition: color 0.5s ease; /* Smooth color transition */
+        color: #800026;
+    }
+
+    &:hover span {
+        color: #800026; /* Change text color on hover */
+    }
 }
+}
+ 
 
 .accordion {
   border-top: 1px solid #000000;
@@ -285,7 +256,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     justify-content: space-between;
     padding: 0px 10px;
     align-items: center;
-    font-size: 13px;
+    font-size: 17px;
     cursor: pointer;
     background-color: white;
     color: purple;
@@ -298,8 +269,8 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   .accordion-content {
     padding: 10px 10px;
     text-align: justify;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 25px;
 
   }
 }
@@ -321,7 +292,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     justify-content: space-between;
     padding: 0px 10px;
     align-items: center;
-    font-size: 13px;
+    font-size: 17px;
     cursor: pointer;
     background-color: white;
     color: purple;
@@ -333,9 +304,9 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
 
   .accordion-content1 {
     text-align: justify;
-    font-size: 11px;
+    font-size: 16px;
     padding: 10px 10px;
-    line-height: 16px;
+    line-height: 25px;
 
   }
 }
@@ -357,7 +328,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     justify-content: space-between;
     padding: 0px 10px;
     align-items: center;
-    font-size: 13px;
+    font-size: 17px;
     cursor: pointer;
     background-color: white;
     color: purple;
@@ -369,9 +340,9 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
 
   .accordion-content2 {
     text-align: justify;
-    font-size: 11px;
+    font-size: 16px;
     padding: 10px 10px;
-    line-height: 16px;
+    line-height: 25px;
 
   }
 }
@@ -383,7 +354,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     align-items: center;
 
     h3{
-      color: brown;
+      color: #800026;
     }
 
   .icons{

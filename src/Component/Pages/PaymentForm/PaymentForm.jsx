@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import "./PaymentForm.scss"
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../../Context/MyContext';
+import {Button} from '@mui/material';
 
 const PaymentForm = () => {
   const [captcha, setCaptcha] = useState(generateCaptcha());
@@ -34,12 +35,16 @@ const PaymentForm = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '20px', display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column' }}>
-      <div style={{ marginBottom: '10px', fontSize: '24px', padding: '10px', border: '1px solid #ccc' , width:'fit-content' }}>
-        {captcha}
+    <div className='payment-form' style={{ textAlign: 'center', display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column' }}>
+      <div className="wavy-heading-container">
+        <h1 className="wavy-heading">Payment</h1>
       </div>
-      <button onClick={handleRefresh} style={{ marginBottom: '10px', padding: '10px', backgroundColor:'#000d73' , color:'floralwhite',width:'fit-content' }}>Refresh</button>
+      <div  className='captcha-display' style={{ marginBottom: '10px', fontSize: '24px', padding: '10px', border: '1px solid #800026' , width:'fit-content' }}>
+        {captcha}
+        <Button variant="contained" type='submit' onClick={handleRefresh}><span>Refresh</span></Button>
+      </div>
       <br />
+      <div className="captcha-input">
       <input
         type="text"
         value={input}
@@ -47,9 +52,12 @@ const PaymentForm = () => {
         placeholder="Enter captcha"
         style={{ marginBottom: '10px', padding: '5px', width: '200px' }}
       />
+      <Button variant="contained" type='submit' onClick={handleSubmit}><span>Submit</span></Button>
+      </div>
+      
       <br />
-      <button onClick={handleSubmit}  style={{ marginBottom: '10px', padding: '10px', backgroundColor:'#000d73',color:'floralwhite', width:'fit-content' }}>Submit</button>
-      <div style={{ marginTop: '10px', color: message === 'Captcha matched!' ? 'green' : 'red'}}>
+      
+      <div className='message' style={{ marginTop: '10px', color: message === 'Captcha matched!' ? 'green' : 'red'}}>
         {message}
       </div>
     </div>

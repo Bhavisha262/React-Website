@@ -18,18 +18,18 @@ font-family: "Mooli", system-ui;
   }
   
   .wavy-heading {
-    background: linear-gradient(270deg, rgb(79, 0, 0), rgb(255, 130, 151), brown); 
+    background: linear-gradient(270deg, #800026, #AE6E55, #800026);  
     background-size: 300% 300%; 
     background-clip: text; 
     -webkit-text-fill-color: transparent; 
-    animation: wave 4s ease-in-out infinite;
+    animation: wave 5s ease-in-out infinite;
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-underline-offset: 15px;
     text-decoration-thickness: 2px;
     text-decoration-color: teal;
     text-align: center;
-    font-family: "Mooli", system-ui;
+    font-family: "Croissant One", serif;
   }
   
   // Animation keyframes

@@ -28,12 +28,13 @@ import PaymentForm from './Component/Pages/PaymentForm/PaymentForm';
 import ConfirmationPage from './Component/Pages/ConfirmationPage/ConfirmationPage';
 import Home from './Component/Pages/Home/Home';
 
-import Profile from './Component/Pages/Home/Profile/Profile';
-import Reset from './Component/Pages/Home/Reset/Reset';
+
 import GotoTop from './Component/Common/GotoTop';
 import OrderDetails from './Component/Pages/Home/OrderDetails/OrderDetails';
-
-
+import ForgotPassword from './Component/Pages/Home/User/ForgotPassword/ForgotPassword';
+import ChangePassword from './Component/Pages/Home/User/ChangePassword/ChangePassword';
+import ShippingReturns from './Component/Pages/Shipping/ShippingReturns';
+import NoPage from './Component/Pages/Home/NoPage/NoPage';
 
 
 
@@ -43,7 +44,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
     setIsLoading(false);
-    }, 1700);
+    }, 2000);
     }, []);
 
   return (
@@ -68,14 +69,12 @@ const App = () => {
      <Header/>
     <Routes>
       <Route path='/' element={<Home/>}/>/
-
       <Route path='/user' element={<User/>}/>
-  
       <Route path='/checkout' element={<Checkout/>}/>
       <Route path='/payment' element={<PaymentForm/>}/>
       <Route path='/confirmation' element={<ConfirmationPage/>}/>
-      <Route path='/profile' element={<Profile/>}/>
-      <Route path='/reset' element={<Reset/>}/>
+      <Route path='/forgotpassword' element={<ForgotPassword/>}/>
+      <Route path='/changepassword' element={<ChangePassword/>}/>
       <Route path='/wishlist' element={<Wishlist/>}/>
       <Route path='/order' element={<OrderDetails/>}/>
       <Route path='/cart' element={<Cart/>}/>
@@ -83,6 +82,7 @@ const App = () => {
       <Route path='/contact-us' element={<ContactForm/>}/>
       <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
       <Route path='/terms-conditions' element={<TermsConditions/>}/>
+      <Route path='/shipping-returns' element={<ShippingReturns/>}/>
       <Route path='/accessibility' element={<Accessibility/>}/>
       <Route path='/FAQs' element={<FAQ/>}/>
       <Route path='/store-locator' element={<StoreLocator/>}/>
@@ -91,9 +91,10 @@ const App = () => {
       <Route path='/shop-by-category' element={<Category/>}/>
       <Route path='category/:products' element={<Product/>}/>
       <Route path='category/:product/:single' element={<SinglePro/>}/> 
+      <Route path='/no-page' element={<NoPage/>}/> 
     </Routes>
     <Footer/> 
-    
+   
     </MyContextProvider>
     </BrowserRouter>
     

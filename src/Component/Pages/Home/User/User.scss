@@ -4,10 +4,7 @@
     width: 100%;
     height: 700px;
     padding: 20px 0px;
-    background-image: url("../../../../Assets/User/User\ bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "Mooli", system-ui;
+    background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,33 +12,30 @@
      
     hr{
         height: 350px;
-        width: 3px;
-        background-color: rgb(255, 0, 0);
+        width: 5px;
+        background-color: #800026;
     }
     h1{
-        color: brown;
+        color: #800026;
+        font-family: "Croissant One", serif;
     }
   
-    Button{
-        background-color: floralwhite;
-        font-family: "Mooli", system-ui;
-        color: maroon;
-
-        &:hover{
-            background-color: maroon;
-            color: floralwhite;
-            
-        }
-    }
+   
     .frame{
         width: 60%;
         display: flex;
         height: max-content;
         justify-content: center;
         align-items: flex-start;
-        background-color: rgba(rgb(255, 231, 231) , 1);
+        background-color: rgba( white,  0.9);
         text-align: center;
         padding: 30px;
+        font-family: "Croissant One", serif;
+        box-shadow: rgba(103, 1, 6, 0.219) 0px 25px 25px -20px,
+        rgba(134, 5, 1, 0.347) 0px 25px 25px -20px;
+
+
+       
     
     .div1{
         width: 100%;
@@ -59,10 +53,60 @@
             align-items: center;
             flex-direction: column;
             gap: 30px;
+
+            Button {
+                background-color: floralwhite;
+                font-family: "Josefin Sans", sans-serif;
+                color: #800026; /* Initial text color */
+                position: relative;
+                overflow: hidden; /* Ensure no overflow issues */
+                border: none; /* Remove any default border */
+                padding: 8px 20px; /* Add padding for better appearance */
+                cursor: pointer; /* Add pointer cursor for button */
+                text-align: center; /* Center align text */
+                z-index: 1; /* Ensure button text is on top */
+            
+                /* Add a background color transition */
+                &::before {
+                    content: ''; 
+                    position: absolute;
+                    bottom: 0; 
+                    left: 0; 
+                    width: 100%; 
+                    height: 100%; 
+                    background-color: #800026; /* Background color */
+                    color: floralwhite; /* Text color */
+                    display: flex; /* Use flexbox for centering */
+                    align-items: center; /* Center vertically */
+                    justify-content: center; /* Center horizontally */
+                    transform: scaleX(0); 
+                    transform-origin: right; 
+                    transition: transform 0.5s ease; 
+                    z-index: 0; /* Ensure the pseudo-element is behind the button text */
+                    font-size: 16px; /* Adjust font size as needed */
+                    white-space: nowrap; /* Prevent text from wrapping */
+                }
+                
+                &:hover::before {
+                    transform: scaleX(1); /* Scale to full width on hover */
+                    transform-origin: left; /* Scale from the left side */
+                }
+            
+                /* Ensure the button text is visible above the pseudo-element */
+                span {
+                    position: relative;
+                    z-index: 1; /* Ensure text is above the pseudo-element */
+                    transition: color 0.5s ease; /* Smooth color transition */
+                }
+            
+                &:hover span {
+                    color: floralwhite; /* Change text color on hover */
+                }
+            }
     
             p{
                 font-size: 13px;
-                color: maroon;
+                color: #800026;
                 cursor: pointer;
             }
         }
@@ -75,7 +119,55 @@
         align-items: center;
         flex-direction: column;
         
+        Button {
+            background-color: floralwhite;
+            font-family: "Josefin Sans", sans-serif;
+            color: #800026; /* Initial text color */
+            position: relative;
+            overflow: hidden; /* Ensure no overflow issues */
+            border: none; /* Remove any default border */
+            padding: 8px 20px; /* Add padding for better appearance */
+            cursor: pointer; /* Add pointer cursor for button */
+            text-align: center; /* Center align text */
+            z-index: 1; /* Ensure button text is on top */
         
+            /* Add a background color transition */
+            &::before {
+                content: ''; 
+                position: absolute;
+                bottom: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #800026; /* Background color */
+                color: floralwhite; /* Text color */
+                display: flex; /* Use flexbox for centering */
+                align-items: center; /* Center vertically */
+                justify-content: center; /* Center horizontally */
+                transform: scaleX(0); 
+                transform-origin: right; 
+                transition: transform 0.5s ease; 
+                z-index: 0; /* Ensure the pseudo-element is behind the button text */
+                font-size: 16px; /* Adjust font size as needed */
+                white-space: nowrap; /* Prevent text from wrapping */
+            }
+            
+            &:hover::before {
+                transform: scaleX(1); /* Scale to full width on hover */
+                transform-origin: left; /* Scale from the left side */
+            }
+        
+            /* Ensure the button text is visible above the pseudo-element */
+            span {
+                position: relative;
+                z-index: 1; /* Ensure text is above the pseudo-element */
+                transition: color 0.5s ease; /* Smooth color transition */
+            }
+        
+            &:hover span {
+                color: floralwhite; /* Change text color on hover */
+            }
+        }
 
 }
     }

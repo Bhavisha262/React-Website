@@ -3,14 +3,15 @@ import "./Product.scss"
 import { useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@mui/material'
 import { FaRegHeart } from "react-icons/fa";
-
 import MyContext from '../Context/MyContext';
+
+
 
 
 const Product = () => {
   const Navigate = useNavigate()
   const {products} = useParams()
-  const {num} =useContext(MyContext)
+  const {num,handleCart,handleWish} = useContext(MyContext)
  
   const [sortOrder, setSortOrder] = useState("");
 
@@ -53,8 +54,9 @@ const Product = () => {
             <div className="title2" >
               <div className="content">
               <img src={Data['pro_icon']} alt='' width={50} height={50} />
-              <h1>{Data['pro_title']}</h1>
-              
+              <div className="wavy-heading-container">
+              <h1 className="wavy-heading">{Data['pro_title']}</h1>
+              </div>
               </div>
              
               <select onChange={handleSortChange} className='contents'>
@@ -79,12 +81,12 @@ const Product = () => {
                     <div key={pro.id} className="product-card" >
                     <img src={pro.pro_main_img} alt={pro.name} onClick={() => Navigate(`/category/${Data.category_url}/${pro.url}`)} />
                     <h3>{pro.name}</h3>
-                    <p>{pro.price} &nbsp; <del>{pro.del}</del> &nbsp; &nbsp; {pro.off}</p>
+                    <p>&#8377; {pro.price} &nbsp; <del>&#8377;{pro.del}</del> &nbsp; &nbsp; {pro.off}</p>
                     <h4><span>⭐</span>{pro.ratings} |<span>☑️</span> {pro.numofverify}</h4>
                    
                     <div className="button">
-                  <h4><FaRegHeart fontSize={25} color='maroon' /></h4>  
-                    <Button variant='contained'>Add to Cart</Button>
+                  <h4><FaRegHeart fontSize={25} color='floralwhite' onClick={()=>handleWish(Data.id,pro.id,pro.pro_main_img,pro.price,pro.name)}/></h4>  
+                    <Button variant='contained' onClick={()=>handleCart(Data.id,pro.id,pro.pro_main_img,pro.price,pro.name)}><span>Add to Cart</span></Button>
                     </div>
                     
                   </div>

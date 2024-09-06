@@ -35,7 +35,9 @@ const PrivacyPolicy = () => {
     <div className='privacy'>
     
       <div className="policy">
-        <h1>Privacy Policy</h1>
+      <div className="wavy-heading-container">
+      <h1 className="wavy-heading">Privacy Policy</h1>
+      </div>
         <h3>#yourdataisyours</h3>
         <p>We know that you care about your personal data and how it is used, and we want you to trust that Grace Beauty uses your personal data carefully. This Privacy Policy will help you understand what personal data we collect, why we collect it and what we do with it.</p>
         <p>As you read our Policy, please keep in mind that it applies to all Grace Beauty.</p>

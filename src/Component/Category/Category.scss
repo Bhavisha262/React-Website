@@ -2,18 +2,17 @@
 
 .category-section {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  font-family: "Mooli", system-ui;
-width: 100%;
-height: max-content;
-margin: 20px 0;
+  width: 100%;
+  height: max-content;
+  margin: 20px 0;
 
 
 .title1{
   width: 100%;
+  
   .wavy-heading-container {
     display: flex;
     justify-content: center;
@@ -22,18 +21,18 @@ margin: 20px 0;
   }
   
   .wavy-heading {
-    background: linear-gradient(270deg, rgb(79, 0, 0), rgb(255, 130, 151), brown); 
+    background: linear-gradient(270deg, #800026, #B76E79, #800026);  
     background-size: 300% 300%; 
     background-clip: text; 
     -webkit-text-fill-color: transparent; 
-    animation: wave 4s ease-in-out infinite;
+    animation: wave 5s ease-in-out infinite;
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-underline-offset: 15px;
     text-decoration-thickness: 2px;
-    text-decoration-color: teal;
+    text-decoration-color: #004D2E;
     text-align: center;
-    font-family: "Mooli", system-ui;
+    font-family: "Croissant One", serif;
   }
   
   // Animation keyframes
@@ -56,15 +55,18 @@ margin: 20px 0;
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: 20px;
     cursor: pointer;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.5s ease;
+    font-family: "Croissant One", serif;
+    color: floralwhite;
 
     &:hover {
-      box-shadow: 0 10px 16px rgba(255, 129, 205, 0.768), 0 10px 16px rgba(255, 153, 64, 0.768) ;
+      box-shadow: 0 10px 16px pink, 0 10px 16px  plum;
     }
 
     .image-wrapper {
@@ -72,9 +74,12 @@ margin: 20px 0;
       overflow: hidden;
       width: 270px;
       height: 270px;
-      border: 3px solid rgb(255, 193, 36);
+      border: 3px solid lightpink;
       border-radius: 20px 20px 0px 0px;
       transition: transform 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         .image {
@@ -86,10 +91,11 @@ margin: 20px 0;
       }
 
       .image {
-        width: 100%;
-        height: 100%;
-        object-fit:contain;
+        width: 98%;
+        height: 98%;
+        object-fit:cover;
         transition: transform 0.5s ease;
+        border-radius: 20px 20px 0px 0px;
 
       }
 
@@ -102,10 +108,10 @@ margin: 20px 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: black;
+      background-color: #800026;
       color: floralwhite;
       border-radius: 0px 0px 20px 20px;
-      border: 3px solid black;
+      border: 3px solid #800026;
 
      
       h2 {

@@ -1,24 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .grace{
     width: 100%;
     height: max-content;
-    font-family: "Mooli", system-ui;
     padding: 20px 0px;
     background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
    
-    h1{
-        color: maroon;
+    .wavy-heading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      
+      .wavy-heading {
+        background: linear-gradient(270deg, #800026, #B76E79, #800026); 
+        background-size: 300% 300%; 
+        background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        animation: wave 5s ease-in-out infinite;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 15px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: #004D2E;
         text-align: center;
+        font-family: "Croissant One", serif;
+      }
+      
+      // Animation keyframes
+      @keyframes wave {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      
+    h1{
+        color: #800026;
+        text-align: center;
+        font-family: "Croissant One", serif;
     }
     h3{
-        color: darkblue;
+        color: purple;
         text-align: center;
+        font-family: "Josefin Sans", sans-serif;
     }
     
     .health{
         display: flex;
         padding: 10px 50px;
-
+        font-family: "Josefin Sans", sans-serif;
+ 
         .pics{
             display: flex;
             flex-direction: column;
@@ -41,9 +79,58 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-             
+            font-family: "Josefin Sans", sans-serif;
+            Button {
+                background-color: floralwhite;
+                font-family: "Josefin Sans", sans-serif;
+                color: #800026; /* Initial text color */
+                position: relative;
+                overflow: hidden; /* Ensure no overflow issues */
+                border: none; /* Remove any default border */
+                padding: 8px 20px; /* Add padding for better appearance */
+                cursor: pointer; /* Add pointer cursor for button */
+                text-align: center; /* Center align text */
+                z-index: 1; /* Ensure button text is on top */
+            
+                /* Add a background color transition */
+                &::before {
+                    content: ''; 
+                    position: absolute;
+                    bottom: 0; 
+                    left: 0; 
+                    width: 100%; 
+                    height: 100%; 
+                    background-color: #800026; /* Background color */
+                    color: floralwhite; /* Text color */
+                    display: flex; /* Use flexbox for centering */
+                    align-items: center; /* Center vertically */
+                    justify-content: center; /* Center horizontally */
+                    transform: scaleX(0); 
+                    transform-origin: right; 
+                    transition: transform 0.5s ease; 
+                    z-index: 0; /* Ensure the pseudo-element is behind the button text */
+                    font-size: 16px; /* Adjust font size as needed */
+                    white-space: nowrap; /* Prevent text from wrapping */
+                }
+                
+                &:hover::before {
+                    transform: scaleX(1); /* Scale to full width on hover */
+                    transform-origin: left; /* Scale from the left side */
+                }
+            
+                /* Ensure the button text is visible above the pseudo-element */
+                span {
+                    position: relative;
+                    z-index: 1; /* Ensure text is above the pseudo-element */
+                    transition: color 0.5s ease; /* Smooth color transition */
+                }
+            
+                &:hover span {
+                    color: floralwhite; /* Change text color on hover */
+                }
+            }
             h2{
-                color: darkmagenta;
+                color: purple;
             }
 
             p{
@@ -51,22 +138,9 @@
                 padding: 0px 30px ;
             }
 
-            hr{
-                width: 300px;
-                
-            }
+          
            
-            Button{
-                background-color: floralwhite;
-                font-family: "Philosopher", sans-serif;
-                color: maroon;
-        
-                &:hover{
-                    background-color: maroon;
-                    color: floralwhite;
-                    
-                }
-            }
+           
             img{
                 width: 200px;
                 height: 200px;
@@ -77,16 +151,53 @@
 
     .updates{
         text-align: center;
-        Button{
+        Button {
             background-color: floralwhite;
-            font-family: "Philosopher", sans-serif;
-            color: maroon;
-    
-            &:hover{
-                background-color: maroon;
-                
-                color: floralwhite;
-                
+            font-family: "Josefin Sans", sans-serif;
+            color: #800026; /* Initial text color */
+            position: relative;
+            overflow: hidden; /* Ensure no overflow issues */
+            border: none; /* Remove any default border */
+            padding: 8px 20px; /* Add padding for better appearance */
+            cursor: pointer; /* Add pointer cursor for button */
+            text-align: center; /* Center align text */
+            z-index: 1; /* Ensure button text is on top */
+        
+            /* Add a background color transition */
+            &::before {
+                content: ''; 
+                position: absolute;
+                bottom: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #800026; /* Background color */
+                color: floralwhite; /* Text color */
+                display: flex; /* Use flexbox for centering */
+                align-items: center; /* Center vertically */
+                justify-content: center; /* Center horizontally */
+                transform: scaleX(0); 
+                transform-origin: right; 
+                transition: transform 0.5s ease; 
+                z-index: 0; /* Ensure the pseudo-element is behind the button text */
+                font-size: 16px; /* Adjust font size as needed */
+                white-space: nowrap; /* Prevent text from wrapping */
+            }
+            
+            &:hover::before {
+                transform: scaleX(1); /* Scale to full width on hover */
+                transform-origin: left; /* Scale from the left side */
+            }
+        
+            /* Ensure the button text is visible above the pseudo-element */
+            span {
+                position: relative;
+                z-index: 1; /* Ensure text is above the pseudo-element */
+                transition: color 0.5s ease; /* Smooth color transition */
+            }
+        
+            &:hover span {
+                color: floralwhite; /* Change text color on hover */
             }
         }
     }

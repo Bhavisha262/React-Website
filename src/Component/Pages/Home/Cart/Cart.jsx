@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MyContext from '../../../Context/MyContext';
 import { SlMinus } from "react-icons/sl";
 import { SlPlus } from "react-icons/sl";
+import { Button } from '@mui/material'
 
 const Cart = () => {
   const { cart, handledelete, setIsOpenC, handleIncreaseQuantity,handleDecreaseQuantity } = useContext(MyContext);
@@ -51,15 +52,20 @@ const Cart = () => {
             
           <div className="cart-total">
             <div className="value">
-              <p>&#8377; {total}</p>
-              <h4>Total Value</h4>
+              <h4>Total Value :-</h4>
+              <p><i>&#8377; {total}</i></p>
             </div>
-            <button onClick={() => { Navigate('/checkout') || setIsOpenC(false); }}>Checkout</button>
+            <div className="check">
+      <Button variant="contained" type='submit'  onClick={() => { Navigate('/checkout') || setIsOpenC(false); }}><span>Checkout</span></Button>
+      </div>
           </div>
+          
         </>
+        
       ) : (
-        <p>No items available</p>
+        <p>No Item Available</p>
       )}
+      
     </div>
   );
 }

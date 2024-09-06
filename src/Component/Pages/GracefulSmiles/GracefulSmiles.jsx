@@ -27,20 +27,21 @@ const GracefulSmiles = () => {
         });
   return (
     <div className='grace'>
-            <h1>Smiles</h1>
+            <div className="wavy-heading-container">
+      <h1 className="wavy-heading">Smiles</h1>
+           </div>
             <h3>Mental Health</h3>
-            <hr/>
             <div className="health">
                 
                 <div className="pics">
                     <img src={img} alt=''/>
                     <p>Grace Beauty’s Smiles initiative, aims to reduce the stigma associated with mental health and provide people with access to resources that support their mental health.Smiles Fund was started by Josephine Santiago as part of her commitment to addressing mental health and self-acceptance.</p>
                 </div>
-                <hr/>
+                <hr style={{width:'10px',backgroundColor:'#800026'}}/>
                 <div className="founder">
-                <Button variant="contained" type='submit'>Donate Now</Button>
+                <Button variant="contained" type='submit'><span>Donate Now</span></Button>
                 <br/>
-                <hr/>
+               
                 <h2>From Josephine</h2>
                 <img src={img1} alt=''/>
                 <p>Mental health is personal for me. Figuring out how to manage my own mental health hasn't always been easy, but it’s something I am constantly working on and I hope I can help others work on, too. </p>
@@ -63,7 +64,7 @@ const GracefulSmiles = () => {
           label="Your Email Id" 
           variant="outlined" />
           </Box><br/>
-          <Button variant="contained" type='submit'>Submit</Button>
+          <Button variant="contained" type='submit'><span>Submit</span></Button>
             </div>
     </div>
   )

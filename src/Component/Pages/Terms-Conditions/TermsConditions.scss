@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .terms{
     width: 100%;
     height: max-content;
@@ -7,9 +7,49 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Mooli", system-ui;
-    padding: 30px 0px;
+    padding: 20px 0px;
    
+    .wavy-heading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      
+      .wavy-heading {
+        background: linear-gradient(270deg, #800026, #B76E79, #800026);  
+        background-size: 300% 300%; 
+        background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        animation: wave 5s ease-in-out infinite;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 15px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: #004D2E;
+        text-align: center;
+        font-family: "Croissant One", serif;
+
+        h1 {
+            color: #800026;
+            font-family: "Croissant One", serif;
+            width: 100%;
+           
+          }
+      }
+      
+      // Animation keyframes
+      @keyframes wave {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 .conditions{
     padding: 0px 30px;
     display: flex;
@@ -17,11 +57,20 @@
     justify-content: center;
     align-items: center;
     text-align: justify;
-    h1{
-        color: maroon;
-    }
+   
     h4{
-        color: darkmagenta;
+        color: purple;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    p{
+        color: black;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 16px;
+        line-height: 25px;
+        text-align: center;
     }
 }
 }

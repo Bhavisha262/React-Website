@@ -13,7 +13,9 @@ const About = () => {
     
    <div className='about-main'>
     <div className="text1">
-<h2>About Us</h2>
+    <div className="wavy-heading-container">
+      <h1 className="wavy-heading">About Us</h1>
+    </div>
 <p>Grace Beauty is breaking down unrealistic standards of perfection.</p>
 <p>This is makeup and personal care made to feel good in, without hiding what makes you unique—because Grace Beauty is not about being someone else, but being who you are.</p>
     </div>
@@ -34,14 +36,12 @@ const About = () => {
    
 <div className="text3">
 <h2>Our Mission & Vision</h2>
-<p>We are on a mission to help everyone celebrate their individuality by redefining what beautiful means. We want to promote self-acceptance and give people the tools they need to feel less alone in the world.</p>
-<p>Our vision is to create a safe, welcoming space in beauty—and beyond—that supports mental well-being across age, gender identity, sexual orientation, race, cultural background, physical or mental ability, and perspective.</p>
+<p>We are on a Mission to help everyone celebrate their individuality by redefining what beautiful means. We want to promote self-acceptance and give people the tools they need to feel less alone in the world.</p>
+<p>Our Vision is to create a safe, welcoming space in beauty—and beyond—that supports mental well-being across age, gender identity, sexual orientation, race, cultural background, physical or mental ability, and perspective.</p>
 </div>
 <div className="image3">
-    <img src={img3} alt=''/>
+  <img src={img3} alt=''/>
 </div>
-
-
     </div>
 
 

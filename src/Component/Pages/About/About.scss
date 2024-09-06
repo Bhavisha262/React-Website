@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
 .about-main{
   background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
@@ -8,9 +7,13 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    font-family: "Mooli", system-ui;
-  
-    padding: 30px 10px;
+    padding: 20px 0px;
+
+    p{
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 16px;
+      line-height: 25px;
+    }
     .text1{
       width: 400px;
       height: 200px;
@@ -19,9 +22,48 @@
       text-align: center;
       padding: 10px;
 
-      h2{
-        color: rgb(125, 13, 13);
+      .wavy-heading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
       }
+      
+      .wavy-heading {
+        background: linear-gradient(270deg, #800026, #B76E79, #800026);  
+        background-size: 300% 300%; 
+        background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        animation: wave 5s ease-in-out infinite;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 15px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: #004D2E;
+        text-align: center;
+        font-family: "Croissant One", serif;
+      }
+      
+      // Animation keyframes
+      @keyframes wave {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      h1 {
+        color: #800026;
+        font-family: "Croissant One", serif;
+        width: 100%;
+       
+      }
+      
     }
 
     .image{
@@ -52,18 +94,28 @@
 
       .text2{
         width: 400px;
-        height: 200px;
+        height: 230px;
         background:floralwhite;
         padding: 10px;
         justify-content: center;
         align-items: center;
         text-align: center;
+        border-radius: 0px 20px 0px 20px;
+        box-shadow: 8px 10px 8px rgba(134, 5, 1, 0.347);
+        border: 1px solid #800026;
           :nth-child(2){
             color: purple;
+           
+              font-family: "Croissant One", serif;
+            
+           
           }
-        h2{
-          color: rgb(125, 13, 13);
-        }
+          h2{
+            color: #800026;
+            font-family: "Croissant One", serif;
+    
+          }
+         
       }
       .text3{
         width: 400px;
@@ -74,8 +126,11 @@
         padding: 10px;
   
         h2{
-          color: rgb(125, 13, 13);
+          color: #800026;
+          font-family: "Croissant One", serif;
+  
         }
+        
       }
 
       .image3{

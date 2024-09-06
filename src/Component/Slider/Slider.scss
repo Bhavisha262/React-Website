@@ -1,12 +1,12 @@
 @import '../MediaQuery/Mixin.scss';
 @import  'react-awesome-slider/src/core/styles.scss';
 $slider-height-percentage: 40%;
-$control-bullet-color: maroon;
-$control-bullet-active-color: maroon;
+$control-bullet-color: #800026;
+$control-bullet-active-color: #800026;
 $content-background-color: white;
-$organic-arrow-color: rgb(128, 0, 43);
+$organic-arrow-color: #800026;
 $organic-arrow-height: 40px;
-$organic-arrow-border-radius: 30%;
+
 
 .slider-main {
     height :84vh;
@@ -136,7 +136,7 @@ $organic-arrow-border-radius: 30%;
               ) / 2
           );
           height: 100%;
-          border-radius: var(--organic-arrow-border-radius);
+
           width: var(--organic-arrow-thickness);
           background-color: var(--organic-arrow-color);
           transition: transform 0.15s ease-out, background-color 0.15s ease-out;

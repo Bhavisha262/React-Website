@@ -8,9 +8,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import TextField from '@mui/material/TextField';
+import {  Box, TextField } from '@mui/material';
 import MyContext from '../Context/MyContext';
-
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 const Footer = () => {
     const validationSchema = yup.object({
         email: yup
@@ -62,18 +62,21 @@ const Footer = () => {
             <h4>Glaze your inbox with tips, tricks & exclusive content from Us.</h4>
 
             <form className='form1' onSubmit={formik.handleSubmit}>
-                <TextField 
-                id="email"
-                name="email"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email} 
-                label="Email" 
-                variant="standard" />
-            </form>
+            <Box sx={{ display: 'flex',alignItems: 'center' }}>
+        <AlternateEmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField 
+          id="email"
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email} 
+          label="Your Email Id" 
+          variant="outlined" />
+</Box>
+            </form> <br/>
        <div className="social">
-       <FaWhatsapp color='lime' />
+       <FaWhatsapp color='limegreen' />
        <FaInstagram color='magenta'/>
         <FaSquareTwitter color='rgb(0, 240, 240)' />
        <FaYoutube color='red'/>
@@ -101,8 +104,8 @@ const Footer = () => {
         <div className="box4">
             <h3>SUPPORT</h3>
            <p>We are Here from Monday to Saturday <br/>9 AM - 6 PM IST</p>
-           <p>Mobile No. : <a href='tel:8200913637'><b>8200913637</b></a></p>
-           <p>Drop Us a Note anytime at <a href="mailto:gracebeauty@gmail.com?subject=Subject%20Here&body=Body%20Here"><b>gracebeauty@gmail.com</b></a></p>
+           <p>Contact : <a href='tel:8200913637'><b>8200913637</b></a></p>
+           <p>Drop Us a Note anytime at <br/><a href="mailto:gracebeauty@gmail.com?subject=Subject%20Here&body=Body%20Here"><b>gracebeauty@gmail.com</b></a></p><br/>
            <li>&#169; Grace Beauty 2023</li>
         </div>
         </div>

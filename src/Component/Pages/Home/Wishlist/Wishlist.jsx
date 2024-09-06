@@ -16,13 +16,13 @@ const Wishlist = () => {
     <div className="wishlist-item__details">
       <h3 className="wishlist-item__name">{item.name}</h3>
       <p className="wishlist-item__price">₹449 &nbsp; <del>₹574</del></p>
-      <Button variant="contained" type='submit' onClick={()=>handleremove(item.categoryid,item.productid)}>Remove</Button>
+      <Button variant="contained" type='submit' onClick={()=>handleremove(item.categoryid,item.productid)}><span>Remove</span></Button>
     </div>
     </div>
 )
 })
 ):
-<p>no item available</p>
+<p>No Item Available</p>
 }
     </>
   

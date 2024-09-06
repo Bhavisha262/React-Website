@@ -2,12 +2,11 @@ import React, { useContext } from 'react'
 import "./User.scss"
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import {  Box, Button,  TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../../../Context/MyContext';
-
-
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const validationSchema = yup.object({
   email: yup
@@ -18,15 +17,12 @@ const validationSchema = yup.object({
   .string('Enter your password')
   .min(8, 'Password should be of minimum 8 characters length')
   .required('Password is required')
- 
-   
-  
-  
+
   });
 
 const User = () => {
   const Navigate = useNavigate();
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword] = React.useState(false);
   const{loader,setLoader,setAlert,setMessage,setToken,setCart,setWish,setOrder} = useContext(MyContext)
 
   const formik = useFormik({
@@ -78,17 +74,22 @@ const User = () => {
     
     <form className='form1' onSubmit={formik.handleSubmit}>
     
-    <TextField 
-    id="email"
-    name="email"
-    value={formik.values.email}
-    onChange={formik.handleChange}
-    error={formik.touched.email && Boolean(formik.errors.email)}
-    helperText={formik.touched.email && formik.errors.email} 
-    label="Email" 
-    variant="standard" />
+    <Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
+        <AlternateEmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField 
+          id="email"
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email} 
+          label="Your Email Id" 
+          variant="outlined" />
+    </Box>
     
-    <TextField variant="standard" 
+    <Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
+        <VisibilityIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+    <TextField 
     id="password"
     name="password"
     label="Password"
@@ -96,18 +97,19 @@ const User = () => {
     type={showPassword ? 'text' : 'password'}
     onChange={formik.handleChange}
     error={formik.touched.password && Boolean(formik.errors.password)}
-    helperText={formik.touched.password && formik.errors.password}/>
-         
+    helperText={formik.touched.password && formik.errors.password}
+    variant="outlined"/>
+    </Box> 
     
-    <Button variant="contained" type='submit'>{loader ? 'Wait...' : 'Sign In'}</Button>
-    <p>Forgot Password ?</p>
+    <Button variant="contained" type='submit'><span>{loader ? 'Wait...' : 'Sign In'}</span></Button>
+    <p onClick={() => Navigate('/forgotpassword')}>Forgot Password ?</p>
     </form>
     </div>
     <hr/>
      
 <div className="div2">
     <h1>New Member ?</h1>
-    <Button variant="contained" type='submit' onClick={() => Navigate('/new-account')}>Sign Up</Button>
+    <Button variant="contained" type='submit' onClick={() => Navigate('/new-account')}><span>Sign Up</span></Button>
     </div>
     </div>
     </div>

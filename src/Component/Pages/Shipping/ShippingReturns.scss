@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
-
-.store{
+.shipping{
     width: 100%;
     height: max-content;
     background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
@@ -10,8 +8,8 @@
     align-items: center;
     padding: 20px 0px;
 
-    .location{
-        padding: 0px 30px;
+    .returns{
+    padding: 0px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,11 +57,19 @@
           background-position: 0% 50%;
         }
       }
-    h3{
+    h4{
         color: purple;
         font-family: "Josefin Sans", sans-serif;
         font-size: 18px;
         line-height: 25px;
+    }
+
+    p{
+        color: black;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 16px;
+        line-height: 25px;
+        text-align: center;
     }
     }
 }

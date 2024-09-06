@@ -1,52 +1,179 @@
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
-$primary-color: #4CAF50;
-$error-color: #ff0000;
-$success-color: #28a745;
-
+$primary-color: #800026;
+$error-color: #a80000;
+$success-color: #009924;
 $padding: 10px;
 $border-radius: 5px;
-$border-color: #ccc;
 
-// Styles
-.payment-form-container {
+
+.payment-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  font-family: "Mooli", system-ui;
+  font-family: "Josefin Sans", sans-serif;
+  background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
 
-  .captcha-display {
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-family: "Mooli", system-ui;
-    padding: 10px;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    width: fit-content;
+  .wavy-heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }
-
-  .refresh-button,
-  .submit-button {
-    margin-bottom: 10px;
-    padding: $padding;
-    background-color: $primary-color;
-    color: #fff;
-    border: none;
-    border-radius: $border-radius;
-    font-family: "Mooli", system-ui;
-    cursor: pointer;
-    &:hover {
-      background-color: darken($primary-color, 10%);
+  
+  .wavy-heading {
+    background: linear-gradient(270deg, #800026, #B76E79, #800026); 
+    background-size: 300% 300%; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: wave 5s ease-in-out infinite;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 15px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #004D2E;
+    text-align: center;
+    font-family: "Croissant One", serif;
+  }
+  
+  // Animation keyframes
+  @keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
+  .captcha-display {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 24px;
+    font-family: "Josefin Sans", sans-serif;
+    padding: 10px;
+    border-radius: $border-radius;
+    width: fit-content;
+
+    Button {
+      background-color: floralwhite;
+      font-family: "Josefin Sans", sans-serif;
+      color: #800026; /* Initial text color */
+      position: relative;
+      overflow: hidden; /* Ensure no overflow issues */
+      border: none; /* Remove any default border */
+      padding: 8px 20px; /* Add padding for better appearance */
+      cursor: pointer; /* Add pointer cursor for button */
+      text-align: center; /* Center align text */
+      z-index: 1; /* Ensure button text is on top */
+  
+      /* Add a background color transition */
+      &::before {
+          content: ''; 
+          position: absolute;
+          bottom: 0; 
+          left: 0; 
+          width: 100%; 
+          height: 100%; 
+          background-color: #800026; /* Background color */
+          color: floralwhite; /* Text color */
+          display: flex; /* Use flexbox for centering */
+          align-items: center; /* Center vertically */
+          justify-content: center; /* Center horizontally */
+          transform: scaleX(0); 
+          transform-origin: right; 
+          transition: transform 0.5s ease; 
+          z-index: 0; /* Ensure the pseudo-element is behind the button text */
+          font-size: 16px; /* Adjust font size as needed */
+          white-space: nowrap; /* Prevent text from wrapping */
+      }
+      
+      &:hover::before {
+          transform: scaleX(1); /* Scale to full width on hover */
+          transform-origin: left; /* Scale from the left side */
+      }
+  
+      /* Ensure the button text is visible above the pseudo-element */
+      span {
+          position: relative;
+          z-index: 1; /* Ensure text is above the pseudo-element */
+          transition: color 0.5s ease; /* Smooth color transition */
+      }
+  
+      &:hover span {
+          color: floralwhite; /* Change text color on hover */
+      }
+  }
+  }
+
+ 
+
   .captcha-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     margin-bottom: 10px;
     padding: 5px;
-    width: 200px;
-    border: 1px solid $border-color;
     border-radius: $border-radius;
+
+    input{
+      padding: 5px;
+      font-family: "Josefin Sans", sans-serif;
+    }
+
+    Button {
+      background-color: floralwhite;
+      font-family: "Josefin Sans", sans-serif;
+      color: #800026; /* Initial text color */
+      position: relative;
+      overflow: hidden; /* Ensure no overflow issues */
+      border: none; /* Remove any default border */
+      padding: 8px 20px; /* Add padding for better appearance */
+      cursor: pointer; /* Add pointer cursor for button */
+      text-align: center; /* Center align text */
+      z-index: 1; /* Ensure button text is on top */
+  
+      /* Add a background color transition */
+      &::before {
+          content: ''; 
+          position: absolute;
+          bottom: 0; 
+          left: 0; 
+          width: 100%; 
+          height: 100%; 
+          background-color: #800026; /* Background color */
+          color: floralwhite; /* Text color */
+          display: flex; /* Use flexbox for centering */
+          align-items: center; /* Center vertically */
+          justify-content: center; /* Center horizontally */
+          transform: scaleX(0); 
+          transform-origin: right; 
+          transition: transform 0.5s ease; 
+          z-index: 0; /* Ensure the pseudo-element is behind the button text */
+          font-size: 16px; /* Adjust font size as needed */
+          white-space: nowrap; /* Prevent text from wrapping */
+      }
+      
+      &:hover::before {
+          transform: scaleX(1); /* Scale to full width on hover */
+          transform-origin: left; /* Scale from the left side */
+      }
+  
+      /* Ensure the button text is visible above the pseudo-element */
+      span {
+          position: relative;
+          z-index: 1; /* Ensure text is above the pseudo-element */
+          transition: color 0.5s ease; /* Smooth color transition */
+      }
+  
+      &:hover span {
+          color: floralwhite; /* Change text color on hover */
+      }
+  }
   }
 
   .message {

@@ -39,7 +39,9 @@ const FAQ = () => {
   return (
     <div className='faqs'>
         <div className="faq">
-            <h1>FAQs</h1>
+        <div className="wavy-heading-container">
+      <h1 className="wavy-heading">FAQs</h1>
+    </div>
             <b><h4>Hours of Operation</h4></b>
             <p>Our Grace Beauty support team is available: Monday-Saturday: 9AM-6PM IST. Grace Beauty support team is not available Sundays. </p>
             <b><h4>Formulas You Can Trust</h4></b>

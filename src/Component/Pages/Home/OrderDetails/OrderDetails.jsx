@@ -2,13 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import './OrderDetails.scss';
 import MyContext from '../../../Context/MyContext';
 
-
-
 const OrderDetails = () => {
   const { order, setOrder, token } = useContext(MyContext);
   const [loading, setLoading] = useState(true);
 
-  // Fetch order items on component mount
   useEffect(() => {
 
     if(!token){
@@ -17,7 +14,7 @@ const OrderDetails = () => {
     }
     const fetchOrderItems = async () => {
       try {
-        const response = await fetch('https://localhost:3025/save-order-info', {
+        const response = await fetch('https://localhost:3025/get-order-info', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,9 +32,7 @@ const OrderDetails = () => {
     };
 
     fetchOrderItems();
-  }, [order,setOrder, token]);
-
-
+  }, [setOrder, token]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -45,7 +40,9 @@ const OrderDetails = () => {
 
   return (
     <div className="order-container">
-    {order && <h1>order Details</h1>}
+    {order &&  <div className="wavy-heading-container">
+        <h1 className="wavy-heading">Order Details</h1>
+      </div>}
       {order && order.length > 0 ? (
         <>
           {order
@@ -55,21 +52,21 @@ const OrderDetails = () => {
           
               <img src={item.img} alt={item.name} className="order-item-img" />
               <div className="order-item-details">
-              <p>Order Date: {item.orderDate.slice(0,10)}</p>
                 <h3>{item.name}</h3>
                 <p>Price: ${item.price}</p>
                 <p>Quantity: {item.quantity}</p>
                 <p>Order ID: {item._id.slice(-4)}</p>
+                <p>Order Date: {item.orderDate.slice(0,10)}</p>
               </div>
             </div>
           ))}
         
         </>
       ) : (
-        <p>No Order data</p>
+        <p>No Order Data Available</p>
       )}
     </div>
   );
 };
 
-export default OrderDetails; 
+export default OrderDetails;

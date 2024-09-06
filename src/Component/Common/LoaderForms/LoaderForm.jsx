@@ -1,5 +1,5 @@
 import React, { useContext }  from 'react'
-import { BallTriangle } from 'react-loader-spinner'
+import { SpinnerDiamond} from 'spinners-react'
 import "./LoaderForm.scss"
 import MyContext from '../../Context/MyContext'
 
@@ -10,17 +10,7 @@ const LoaderForm  = () => {
     <>
     {loader && 
     <div className='loading1'>
-         
-    <BallTriangle
-    height={100}
-    width={100}
-    radius={5}
-    ariaLabel="ball-triangle-loading"
-    wrapperStyle={{}}
-    wrapperClass=""
-    visible={true}  
-    color="#aa336a"
-  />
+         <SpinnerDiamond size={50} thickness={100} speed={100} color="#800026" secondaryColor="rgba(0, 0, 0, 0.44)" />
     </div>
 }
     </>

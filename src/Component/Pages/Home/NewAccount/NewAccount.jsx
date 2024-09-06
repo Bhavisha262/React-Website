@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import {  Box, Button,  TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import "./NewAccount.scss";
 import MyContext from '../../../Context/MyContext';
-
-
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import BadgeIcon from '@mui/icons-material/Badge';
 
 const validationSchema = yup.object({
   name: yup.string('Your Name').required('Name is required'),
@@ -62,41 +63,49 @@ const NewAccount = () => {
         <div className="div1">
           <h1>Sign Up</h1>
           <form className='form1' onSubmit={formik.handleSubmit}>
-            <TextField 
-              id="name"
-              name="name"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              error={formik.touched.name && Boolean(formik.errors.name)}
-              helperText={formik.touched.name && formik.errors.name} 
-              label="Your Name" 
-              variant="standard" 
-            />
+          <Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center'}}>
+      <BadgeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+      <TextField 
+        id="name"
+        name="name"
+        value={formik.values.name}
+        onChange={formik.handleChange}
+        error={formik.touched.name && Boolean(formik.errors.name)}
+        helperText={formik.touched.name && formik.errors.name} 
+        label="Your Name" 
+        variant="outlined"
+        />
+</Box>
 
-            <TextField 
-              id="email"
-              name="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email} 
-              label="Your Email ID" 
-              variant="standard" 
-            />
+<Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
+        <AlternateEmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField 
+          id="email"
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email} 
+          label="Your Email Id" 
+          variant="outlined" />
+</Box>
 
+<Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
+        <PhoneAndroidIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField 
+          id="number"
+          name="number"
+          value={formik.values.number}
+          onChange={formik.handleChange}
+          error={formik.touched.number && Boolean(formik.errors.number)}
+          helperText={formik.touched.number && formik.errors.number} 
+          label="Your Mobile No." 
+          variant="outlined" />
+</Box>
+<Box sx={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
+<VisibilityIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
             <TextField 
-              id="number"
-              name="number"
-              value={formik.values.number}
-              onChange={formik.handleChange}
-              error={formik.touched.number && Boolean(formik.errors.number)}
-              helperText={formik.touched.number && formik.errors.number} 
-              label="Your Mobile Number" 
-              variant="standard" 
-            />
-  
-            <TextField 
-              variant="standard" 
+              variant="outlined"
               id="password"
               name="password"
               label="Your Password"
@@ -106,8 +115,9 @@ const NewAccount = () => {
               error={formik.touched.password && Boolean(formik.errors.password)}
               helperText={formik.touched.password && formik.errors.password}
             />
+      </Box>
        
-            <Button variant="contained" type='submit'>{loader ? 'Wait...' : 'Register'}</Button>
+            <Button variant="contained" type='submit'><span>{loader ? 'Wait...' : 'Register'}</span></Button>
             
             <p>Already Have an Account? &nbsp; <a onClick={() => Navigate('/user')}>Sign In</a> </p>
           </form>

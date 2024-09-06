@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 
 .shop-category{
 display: flex;
 flex-direction: column;
-font-family: "Mooli", system-ui;
+font-family: "Croissant One", serif;
 text-align: center;
 
     .image-wrapper{
@@ -16,7 +16,7 @@ text-align: center;
         transition: border 0.4s ease-in-out;
         
         &:hover{
-            border: 3px solid maroon;
+            border: 3px solid #800026;;
             transition: border 0.4s ease-in-out;
         }
        
@@ -31,6 +31,6 @@ text-align: center;
     h2 {
         font-size: 18px;
         text-align: center;
-        color: maroon;
+        color: #800026;
       }
 }

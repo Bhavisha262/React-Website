@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 .cart-main{
-    font-family: "Mooli", system-ui;
+    
     height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Josefin Sans", sans-serif;
    
+   p{
+    font-family: "Josefin Sans", sans-serif;
+   }
     h2{
-        color: rgb(125, 13, 13);
+        color: #800026;
+        font-family: "Croissant One", serif;
     }
     .cart-item{
         display: flex;
@@ -16,8 +21,9 @@
         gap: 20px;
         align-items: center;
         transition: all 0.4s;
-        padding: 5px 0px 5px 0px;
+        padding: 5px 0px 10px 0px;
         position: relative;
+        font-family: "Josefin Sans", sans-serif;
         border-bottom: 1px solid rgba(0, 0, 0, 0.212);
 
         &:hover{
@@ -35,14 +41,14 @@
        
             h3{
             font-size: 15px;
-            color: darkmagenta;
+            color: purple;
             }
             .full{
                 display: flex;
                 align-items: center;
                 gap: 20px;
                 background-color: #ffffff;
-                border: 1.5px solid maroon;
+                border: 1.5px solid #800026;
                 outline: none;
                 border-radius: 10px;
             
@@ -53,7 +59,7 @@
                 padding: 10px;
                 border: none;
                  outline: none;
-                 color: maroon;
+                 color: #800026;
                  background-color: #ffffff;
                  cursor: pointer;
                 }
@@ -65,7 +71,7 @@
               }
         .close{
             position: absolute;
-            top: 1px;
+            top: -3px;
             right: 10px;
             font-size: 20px;
             color: rgba(0, 0, 0, 0.409);
@@ -84,38 +90,78 @@
 .cart-total{
 
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-direction: column;
     padding: 10px;
     align-items: center;
     border-top: 1px solid rgba(0, 0, 0, 0.594);
 
     .value{
         display: flex;
-        flex-direction: column;
-        gap: 5px;
+        justify-content:center;
+        align-items: center;
+        gap: 10px;
         font-size: 19px;
         font-weight: 900;
     }
-
-    button{
-        padding: 8px 12px;
-        height: fit-content;
-        width: fit-content;
-        font-size: 16px;
-        color: floralwhite;
-        background-color: maroon;
-        font-family: "Mooli", system-ui;
-        border: 1px solid maroon;
-        transition: all 0.4s;
-        cursor: pointer;
-
-
-        &:hover{
-            background-color: floralwhite;
-           border: 1px solid maroon ;
-           color: maroon;
-        }
-    }
+    .check{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        Button{
+              background-color: floralwhite;
+              font-family: "Josefin Sans", sans-serif;
+              color: #800026; /* Initial text color */
+              position: relative;
+              overflow: hidden; /* Ensure no overflow issues */
+              border: none; /* Remove any default border */
+              padding: 8px 20px; /* Add padding for better appearance */
+              cursor: pointer; /* Add pointer cursor for button */
+              text-align: center; /* Center align text */
+              z-index: 1; /* Ensure button text is on top */
+          
+              /* Add a background color transition */
+              &::before {
+                  content: ''; 
+                  position: absolute;
+                  bottom: 0; 
+                  left: 0; 
+                  width: 100%; 
+                  height: 100%; 
+                  background-color: #800026; /* Background color */
+                  color: floralwhite; /* Text color */
+                  display: flex; /* Use flexbox for centering */
+                  align-items: center; /* Center vertically */
+                  justify-content: center; /* Center horizontally */
+                  transform: scaleX(0); 
+                  transform-origin: right; 
+                  transition: transform 0.5s ease; 
+                  z-index: 0; /* Ensure the pseudo-element is behind the button text */
+                  font-size: 16px; /* Adjust font size as needed */
+                  white-space: nowrap; /* Prevent text from wrapping */
+              }
+              
+              &:hover::before {
+                  transform: scaleX(1); /* Scale to full width on hover */
+                  transform-origin: left; /* Scale from the left side */
+              }
+          
+              /* Ensure the button text is visible above the pseudo-element */
+              span {
+                  position: relative;
+                  z-index: 1; /* Ensure text is above the pseudo-element */
+                  transition: color 0.5s ease; /* Smooth color transition */
+              }
+          
+              &:hover span {
+                  color: floralwhite; /* Change text color on hover */
+              }
+          
+      
+          }
+      }
+          
+   
 }
 
 

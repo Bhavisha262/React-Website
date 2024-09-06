@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import "./ShopAll.scss"
 import { useNavigate } from 'react-router-dom'
-
 import MyContext from '../Context/MyContext'
 
 const ShopAll = () => {

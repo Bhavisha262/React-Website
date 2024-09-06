@@ -15,12 +15,14 @@ import img7 from "../../Assets/Slider/Homepage_banner-02-02_1400x.jpg";
 
 
 const Slider = () => {
+
   const slider = (
     <AwesomeSlider
       animation="cubeAnimation"
       cssModule={[CoreStyles, AnimationStyles]}
       
     >
+
       <div data-src={img1} />
       <div data-src={img2} />
       <div data-src={img3} />
@@ -28,6 +30,7 @@ const Slider = () => {
       <div data-src={img5} />
       <div data-src={img6} />
       <div data-src={img7} />
+ 
     </AwesomeSlider>
   );
   

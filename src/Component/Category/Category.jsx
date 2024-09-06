@@ -11,7 +11,6 @@ const Category = () => {
     <>
 
     <div className="category-section">
-    
     <div className="title1">
     <div className="wavy-heading-container">
       <h1 className="wavy-heading">Shop By Category</h1>
