@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 .featured{
 display: flex;
 flex-direction: column;
 justify-content: center;
-margin: 20px 0;
+padding: 20px 0;
+
 align-items: center;
 width: 100%;
-height: 200px;
-font-family: "Mooli", system-ui;
+height: max-content;
+
 
 
 .wavy-heading-container {
