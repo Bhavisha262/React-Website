@@ -16,7 +16,10 @@ import Cart from '../Pages/Home/Cart/Cart';
 import Wishlist from '../Pages/Home/Wishlist/Wishlist';
 import MyContext from '../Context/MyContext';
 import { LuMenuSquare } from "react-icons/lu";
-
+import { PiShoppingCartSimple } from "react-icons/pi";
+import { IoInformationCircleOutline } from "react-icons/io5";
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { FaRegSmileWink } from "react-icons/fa";
 
 const Header = () => {
   
@@ -57,8 +60,8 @@ const Header = () => {
       </div>
       <div className="right">
       <span className='menubar' onClick={()=>setMenu(true)}> <LuMenuSquare  color='#800026' fontSize={25} /></span>
-      <div><IoMdSearch  onClick={toggleDrawer1} /></div>
-       {!Token ?  <Link to="/user"><TbUserHexagon />
+      <div className='search-icon'><IoMdSearch  onClick={toggleDrawer1} /></div>
+       {!Token ?  <Link to="/user"><TbUserHexagon className='user-icon'/>
        </Link>:
        <div className="dropdown">
        <LuUserCheck    onClick={toggleDropdown} className="dropbtn" fontSize={25}/>
@@ -72,7 +75,7 @@ const Header = () => {
         
 }
 
-      <div className="wish-icon">
+<div className="wish-icon">
         <RiHeart3Line onClick={toggleDrawer3}/> 
         <p>{wish ? wish.length:0}</p>
         </div>
@@ -90,17 +93,50 @@ const Header = () => {
                 open={menu}
                 onClose={toggleDrawer4}
                 direction='left'
-                style={{backgroundColor:'black', color:'gold' ,listStyle:'none', display:'flex', flexDirection:'column', gap:'30px',justifyContent:'center', alignItems:'center', cursor:'pointer'}}
+                style={{backgroundColor:'#800026', color:'gold' ,listStyle:'none', display:'flex', flexDirection:'column', gap:'30px',justifyContent:'center', alignItems:'center'}}
                 zIndex={99999}
+
               >
-              
-<li onClick={() => Navigate('/shop-by-category') || setMenu(false)}>Shop </li>
-<li onClick={() => Navigate('/about-us') || setMenu(false)}>About</li>
-<li onClick={() => Navigate('/contact-us') ||  setMenu(false)}>Contact</li>
-<li onClick={() => Navigate('/smiles') || setMenu(false)}>Graceful Smiles</li>
+     <div className="menu-list">  
+     <div className="search1">
+      <div class="search-container1">
+    <input type="text" id="search-bar" class="search-input1" onChange={(e) => setSearch(e.target.value)} value={search}  placeholder="Search..."/>
+    <button id="search-button" class="search-button1"><img src={search1} alt=''/></button><br/>
    
+    </div>
+    {num
+.filter((a)=>{
+  const newdata = a.name.toLowerCase()
+  const setSearch = search.toLowerCase() 
+  return(
+    setSearch && newdata.startsWith(setSearch)
+  )
+}).map((a)=>{
+  return(
+    <div className="list1">
+<li onClick={() => Navigate(`/category/${a.category_url}`) || setSearch('') || setIsOpenS(false)}  >{a.name}</li>
+</div>
+  )
+})}
+    <div>
+</div>
+</div>
+<br/>
+
+  <div className="menu-items">           
+<li onClick={() => Navigate('/shop-by-category') || setMenu(false)}> <PiShoppingCartSimple />&nbsp;Shop </li>
+<li onClick={() => Navigate('/about-us') || setMenu(false)}><IoInformationCircleOutline />&nbsp;About</li>
+<li onClick={() => Navigate('/contact-us') ||  setMenu(false)}><MdOutlineLocalPhone />&nbsp;Contact</li>
+<li onClick={() => Navigate('/smiles') || setMenu(false)}><FaRegSmileWink />&nbsp;Smiles</li>
+</div> 
+<br/>
+<div className="user-menu">
+  <li onClick={() => Navigate('/user') || setMenu(false)}><TbUserHexagon/>&nbsp; Your Account</li>
+</div>
+ 
+   </div>
    
-              </Drawer>
+       </Drawer>
              <Drawer
                 open={isOpenS}
                 onClose={toggleDrawer1}

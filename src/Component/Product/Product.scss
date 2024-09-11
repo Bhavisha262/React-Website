@@ -1,4 +1,4 @@
-
+@import "../MediaQuery/Mixin.scss";
 
 .button-with-dropdown {
   position: relative;
@@ -48,57 +48,31 @@
     margin-left: 5px;
   }
 }
-.contents{
-  position: absolute;
-  left: 10px;
-  z-index: 10;
-  display: flex;
-  padding: 10px;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid #800026;
- border-radius: 10px;
-  outline: none;
-  width: 170px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: white;
-  font-family: "Josefin Sans", sans-serif;
- 
-  option{
-    background-color: white;
-    cursor: pointer;
-    padding: 10px 10px;
-    font-family: "Josefin Sans", sans-serif;
-    border: 1px solid #800026;
-    font-size: 16px;
-    color: #800026;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  
-    
-  }
-  
- 
- }
+
 .title2{
   display: flex;
   gap: 30px;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: max-content;
   text-align: center;
 
+ 
+
   .content{
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+
+  
+  
   .wavy-heading-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     
   }
   
@@ -117,6 +91,7 @@
     font-family: "Croissant One", serif;
 
     
+    
   }
   
   // Animation keyframes
@@ -133,6 +108,46 @@
   }
   }
   
+  .contents{
+    position: absolute;
+    left: 10px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #800026;
+   border-radius: 10px;
+    outline: none;
+    width: 170px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+    font-family: "Josefin Sans", sans-serif;
+
+    @include mobile{
+      width: 80px;
+      padding: 5px;
+      left: 2px;
+      font-size: 13px;
+    }
+   
+   
+    option{
+      background-color: white;
+      cursor: pointer;
+      padding: 10px 10px;
+      font-family: "Josefin Sans", sans-serif;
+      border: 1px solid #800026;
+      font-size: 16px;
+      color: #800026;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    
+      
+    }
+    
+   
+   }
   
   
   }
@@ -154,7 +169,18 @@
     box-shadow: rgba(103, 1, 6, 0.219) 0px 25px 25px -20px,
     rgba(255, 253, 237, 0.25) 0px 25px 25px -20px;
 
+   
+    h4{
 
+      .span{
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      align-items: center;
+      font-family: "Josefin Sans", sans-serif;
+
+      }
+    }
       img {
         width: 100%;
         height: 250px;
@@ -180,13 +206,7 @@
         align-items: center;
         font-family: "Josefin Sans", sans-serif;
       }
-      h4{
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        align-items: center;
-        font-family: "Josefin Sans", sans-serif;
-      }
+     
       .button{
         display: flex;
         justify-content:space-around;

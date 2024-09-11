@@ -6,8 +6,6 @@ import { FaRegHeart } from "react-icons/fa";
 import MyContext from '../Context/MyContext';
 
 
-
-
 const Product = () => {
   const Navigate = useNavigate()
   const {products} = useParams()
@@ -82,7 +80,7 @@ const Product = () => {
                     <img src={pro.pro_main_img} alt={pro.name} onClick={() => Navigate(`/category/${Data.category_url}/${pro.url}`)} />
                     <h3>{pro.name}</h3>
                     <p>&#8377; {pro.price} &nbsp; <del>&#8377;{pro.del}</del> &nbsp; &nbsp; {pro.off}</p>
-                    <h4><span>⭐</span>{pro.ratings} |<span>☑️</span> {pro.numofverify}</h4>
+                    <h4><span>⭐</span>{pro.ratings} | <span>☑️</span> {pro.numofverify}</h4>
                    
                     <div className="button">
                   <h4><FaRegHeart fontSize={25} color='floralwhite' onClick={()=>handleWish(Data.id,pro.id,pro.pro_main_img,pro.price,pro.name)}/></h4>  

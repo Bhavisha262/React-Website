@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@import "../../MediaQuery/Mixin.scss";
 
 .store{
     width: 100%;
@@ -11,7 +11,7 @@
     padding: 20px 0px;
 
     .location{
-        padding: 0px 30px;
+    padding: 0px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +43,7 @@
             color: #800026;
             font-family: "Croissant One", serif;
             width: 100%;
-           
+          
           }
       }
       
@@ -64,6 +64,17 @@
         font-family: "Josefin Sans", sans-serif;
         font-size: 18px;
         line-height: 25px;
+    }
+
+    .map{
+      @include mobile{
+      width: 250px;
+      height: 200px;
+      }
+      @include tablet{
+        width: 450px;
+        height: 300px;
+        }
     }
     }
 }

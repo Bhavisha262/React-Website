@@ -1,4 +1,4 @@
-
+@import "../MediaQuery/Mixin.scss";
 
 .countup-main{
 display: flex;
@@ -11,6 +11,11 @@ background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
 font-size: 18px;
 font-weight: bold;
 font-family: "Josefin Sans", sans-serif;
+
+@include mobile{
+    font-size: 16px;
+    
+  }
 
 
 .vegan{

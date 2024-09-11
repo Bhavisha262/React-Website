@@ -49,7 +49,7 @@ const FAQ = () => {
             <b><h4>Inventory</h4></b>
             <p>We’re so grateful and humbled by the support of our Rare Beauty community and we appreciate you sticking by us while we work tirelessly to get products back in stock. We know it’s frustrating when you can’t find your Rare Beauty products - our teams are working as quickly as possible to get your favorite items back in stock and to make sure they’re regularly available. Thanks for being patient with us!</p>
             <b><h4>Allergy</h4></b>
-            <b><p>Q: Help! I had an allergic or other adverse reaction! </p></b>
+            <p><b>Q: Help! I had an allergic or other adverse reaction! </b></p>
             <p>A: If you have any adverse reactions to our products, please contact your health care provider immediately. If it is an emergency, please call 100. </p>
             <p>For general questions about our products, please contact our Rare Beauty support team for assistance at 1-888-892-7273 or hello@rarebeauty.com </p>
             <b><h4>My Order</h4></b>

@@ -1,3 +1,4 @@
+@import "../../MediaQuery/Mixin.scss";
 
 .access{
     width: 100%;
@@ -55,12 +56,13 @@
         color: purple;
         font-family: "Josefin Sans", sans-serif;
         font-size: 18px;
+        text-align: center;
     }
     p{
         font-size: 16px;
         font-family: "Josefin Sans", sans-serif;
         line-height: 25px;
-        text-align: center;
+        text-align: justify;
 
         b{
             color: purple;

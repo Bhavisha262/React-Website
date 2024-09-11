@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@import "../../../MediaQuery/Mixin.scss";
 
 h1{
     text-align: center;
@@ -23,7 +23,10 @@ p{
     border-radius: 20px;
     text-align: center;
 
-  
+  @include mobile{
+    flex-direction: column;
+    width: 200px;
+  }
   
     &__image {
       width: 120px;

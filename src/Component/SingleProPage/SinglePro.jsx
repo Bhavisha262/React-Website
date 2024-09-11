@@ -49,7 +49,7 @@ const SinglePro = () => {
                <ReactImageGallery items={pro.images} />
                </div>  
                <div className="box"> 
-                
+                <br/>
                 <h2>{pro.name}</h2>
                 <span>&#8377;{pro.price} &nbsp; <del>&#8377;{pro.del}</del> &nbsp; &nbsp; {pro.off}</span>
                 <h5><span>⭐</span>{pro.ratings} | <span>☑️</span> {pro.numofverify}</h5>

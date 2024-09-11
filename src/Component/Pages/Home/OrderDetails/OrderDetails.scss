@@ -1,9 +1,8 @@
-// OrderDetails.scss
+@import "../../../MediaQuery/Mixin.scss";
 
 .order-container {
   padding: 20px;
   background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
-
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -59,6 +58,10 @@
     rgba(134, 5, 1, 0.347) ;
     background-color: #fff; // Added background color for better contrast
     transition: box-shadow 0.3s ease; // Smooth transition for hover effect
+
+    @include mobile{
+      width: 250px;
+    }
 
     &:hover {
       box-shadow: 0 8px 16px rgba(87, 3, 0, 0.347); // Enhanced shadow on hover

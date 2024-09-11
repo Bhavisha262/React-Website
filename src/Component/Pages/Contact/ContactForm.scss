@@ -1,4 +1,4 @@
-
+@import "../../MediaQuery/Mixin.scss";
 
 .contact-main{
     width: 100%;
@@ -51,6 +51,11 @@
     p{
         color: black;
         font-family: "Josefin Sans", sans-serif;
+        width: 100%;
+
+        @include mobile{
+            width: 80%;
+        }
     }
     a{
         text-decoration: none;
@@ -83,6 +88,9 @@
         rgba(134, 5, 1, 0.347) 0px 25px 25px -20px;
 
 
+        @include mobile {
+            width: 80%;
+        }
         ::placeholder{
             font-family: "Josefin Sans", sans-serif;
         }

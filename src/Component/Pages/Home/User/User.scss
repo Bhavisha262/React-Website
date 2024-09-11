@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@import "../../../MediaQuery/Mixin.scss";
 
 .user-main{
     width: 100%;
@@ -14,6 +14,10 @@
         height: 350px;
         width: 5px;
         background-color: #800026;
+
+        @include mobile{
+            display: none;
+          }
     }
     h1{
         color: #800026;
@@ -35,7 +39,9 @@
         rgba(134, 5, 1, 0.347) 0px 25px 25px -20px;
 
 
-       
+       @include mobile{
+          flex-direction: column;
+       }
     
     .div1{
         width: 100%;
@@ -44,7 +50,9 @@
         align-items: center;
         flex-direction: column;
         
-        
+        @include tablet{
+            padding: 0px 20px;
+         }
 
         .form1{
             width: 100%;
@@ -119,6 +127,9 @@
         align-items: center;
         flex-direction: column;
         
+        @include tablet{
+            padding: 0px 20px;
+         }
         Button {
             background-color: floralwhite;
             font-family: "Josefin Sans", sans-serif;

@@ -3,7 +3,7 @@ $ig-floralwhite: floralwhite !default;
 $ig-maroon: #800026 !default;
 $ig-teal: #004D2E !default;
 $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
-
+@import "../MediaQuery/Mixin.scss";
 
 .single-product-page {
     display: flex;
@@ -15,10 +15,20 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     font-family: "Josefin Sans", sans-serif;
     font-weight: 500;
     
+    @include mobile{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     .product-image {
       width: 350px;
       height: 350px;
      
+      @include mobile{
+        width: 250px;
+      height: 250px;
+      }
       .image-gallery-icon {
      
         filter: drop-shadow($ig-shadow);
@@ -44,8 +54,8 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
           padding: 8px;
       
           .image-gallery-svg {
-            height: 10px;
-            width: 10px;
+            height: 20px;
+            width: 20px;
           }
         }
       
@@ -53,8 +63,8 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
           padding: 5px;
       
           .image-gallery-svg {
-            height: 6px;
-            width: 6px;
+            height: 20px;
+            width: 20px;
           }
         }
       }
@@ -74,6 +84,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     background-color: $ig-maroon ;
     color: $ig-floralwhite;
     
+   
     &:hover{
       color: $ig-floralwhite;
       background-color: $ig-teal;
@@ -82,7 +93,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
 
   @media (max-width: $ig-small-screen) {
     .image-gallery-svg {
-      height: 50px;
+      height: 30px;
       width: 30px;
     }
   }
@@ -162,7 +173,13 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   h2 {
     font-size: 24px;
     color: mediumvioletred;
-    color: light;
+   
+
+@include mobile{
+  font-size: 14px;
+  
+}
+   
   }
   h4{
     font-size: 20px;
@@ -178,6 +195,8 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   span {
     font-size: 16px;
     color:brown;
+
+    
   }
   h6{
     color: darkblue;
@@ -247,6 +266,9 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   height: max-content;
   margin: auto;
   
+  @include mobile{
+    width: 260px;
+  }
   &.open .accordion-header .arrow-icon {
     transform: rotate(180deg);
   }
@@ -282,7 +304,9 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   height: max-content;
   margin: auto;
  
-  
+  @include mobile{
+    width: 260px;
+  }
   &.open .accordion-header1 .arrow-icon1 {
     transform: rotate(180deg);
   }
@@ -317,7 +341,9 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   width: 400px;
   height: max-content;
   margin: auto;
- 
+  @include mobile{
+    width: 260px;
+  }
   
   &.open .accordion-header2 .arrow-icon2 {
     transform: rotate(180deg);
@@ -352,6 +378,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   gap: 20px;
     justify-content: center;
     align-items: center;
+
 
     h3{
       color: #800026;

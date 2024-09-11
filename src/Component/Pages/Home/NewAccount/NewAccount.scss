@@ -1,4 +1,4 @@
-
+@import "../../../MediaQuery/Mixin.scss";
 
 .new-main{
     width: 100%;
@@ -30,6 +30,10 @@
         box-shadow: rgba(103, 1, 6, 0.219) 0px 25px 25px -20px,
         rgba(134, 5, 1, 0.347) 0px 25px 25px -20px;
 
+
+        @include mobile{
+            width: 70%;
+        }
         Button {
             background-color: floralwhite;
             font-family: "Josefin Sans", sans-serif;

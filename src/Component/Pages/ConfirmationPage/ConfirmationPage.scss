@@ -1,3 +1,4 @@
+@import "../../MediaQuery/Mixin.scss";
 
 @keyframes fadeIn {
     from {
@@ -38,7 +39,10 @@
     transition: opacity 0.5s ease, transform 0.5s ease;
     background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
 
-  
+  @include mobile{
+    padding: 20px ;
+  }
+
     &.animate {
       animation: fadeIn 0.5s forwards;
     }

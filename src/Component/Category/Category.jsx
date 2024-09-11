@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Category.scss';
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../Context/MyContext';
-import up from "../../Assets/Slider/down.jpg";
+
 const Category = () => {
   const Navigate = useNavigate()
   const {num,setIsDropdown} = useContext(MyContext)
