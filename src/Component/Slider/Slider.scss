@@ -9,21 +9,32 @@ $organic-arrow-height: 40px;
 
 
 .slider-main {
-    height :84vh;
+    height :85vh;
     transition: all 1s ease-in-out;
     position :relative;
     padding: 10px;
     
     
-    
+    @include mobile_S{
+      height : 44vh;
+    }
+    @include mobile_M{
+      height : 58vh;
+    }
+    @include mobile_L{
+      height : 60vh;
+    }
+    @include tablet{
+      height : 80vh;
+    }
+    @include tablet_L{
+      height : 82vh;
+    }
+    @include laptop{
+      height : 85vh;
+    }
 
-@include mvm{
-    height: 60vh;
-}
 
-@include mv{
-    height: 30vh;
-}
 .#{$root-element} {
    
     --slider-height-percentage: #{$slider-height-percentage};

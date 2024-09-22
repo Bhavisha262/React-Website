@@ -1,22 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Croissant+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-@mixin mobile {
-    @media only screen and (max-width: 528px) {
+@mixin mobile_S {
+    @media only screen and (min-width: 250px) {
+    @content;
+    }
+    }
+@mixin mobile_M {
+    @media only screen and (min-width: 425px) {
+    @content;
+    }
+    }
+@mixin mobile_L {
+    @media only screen and (min-width: 550px) {
     @content;
     }
     }
 
 @mixin tablet {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (min-width: 768px) {
     @content;
     }
     }
 
-@mixin desktop {
-    @media only screen and (max-width: 1200px) {
+@mixin tablet_L {
+    @media only screen and (min-width: 1024px) {
     @content;
     }
     }
+
+@mixin laptop {
+    @media only screen and (min-width: 1200px) {
+    @content;
+    }
+    }
+
+// @mixin laptop_L {
+//     @media only screen and (min-width: 1440px) {
+//     @content;
+//     }
+//     }
+
+
 
 
 

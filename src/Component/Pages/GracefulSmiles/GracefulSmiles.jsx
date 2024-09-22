@@ -37,7 +37,7 @@ const GracefulSmiles = () => {
                     <img src={img} alt=''/>
                     <p>Grace Beauty’s Smiles initiative, aims to reduce the stigma associated with mental health and provide people with access to resources that support their mental health.Smiles Fund was started by Josephine Santiago as part of her commitment to addressing mental health and self-acceptance.</p>
                 </div>
-                <hr style={{width:'10px',backgroundColor:'#800026'}}/>
+                <hr/><br/>
                 <div className="founder">
                 <Button variant="contained" type='submit'><span>Donate Now</span></Button>
                 <br/>

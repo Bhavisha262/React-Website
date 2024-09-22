@@ -15,19 +15,36 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     font-family: "Josefin Sans", sans-serif;
     font-weight: 500;
     
-    @include mobile{
+    @include mobile_S{
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+    }
+    @include tablet{
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     .product-image {
       width: 350px;
       height: 350px;
      
-      @include mobile{
+      @include mobile_S{
         width: 250px;
       height: 250px;
+      }
+
+      @include mobile_M{
+        width: 300px;
+      height: 300px;
+      }
+
+      @include mobile_L{
+        width: 320px;
+      height: 320px;
+      }
+      @include tablet_L{
+        width: 350px;
+      height: 350px;
       }
       .image-gallery-icon {
      
@@ -175,10 +192,7 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
     color: mediumvioletred;
    
 
-@include mobile{
-  font-size: 14px;
-  
-}
+
    
   }
   h4{
@@ -266,8 +280,17 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   height: max-content;
   margin: auto;
   
-  @include mobile{
+  @include mobile_S{
     width: 260px;
+  }
+  @include mobile_M{
+    width: 300px;
+  }
+  @include mobile_L{
+    width: 350px;
+  }
+  @include tablet_L{
+    width: 400px;
   }
   &.open .accordion-header .arrow-icon {
     transform: rotate(180deg);
@@ -304,8 +327,17 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   height: max-content;
   margin: auto;
  
-  @include mobile{
+  @include mobile_S{
     width: 260px;
+  }
+  @include mobile_M{
+    width: 300px;
+  }
+  @include mobile_L{
+    width: 350px;
+  }
+  @include tablet_L{
+    width: 400px;
   }
   &.open .accordion-header1 .arrow-icon1 {
     transform: rotate(180deg);
@@ -341,10 +373,18 @@ $ig-shadow: 0 0.3px 0.3px lighten($ig-teal, 50%);
   width: 400px;
   height: max-content;
   margin: auto;
-  @include mobile{
+  @include mobile_S{
     width: 260px;
   }
-  
+  @include mobile_M{
+    width: 300px;
+  }
+  @include mobile_L{
+    width: 350px;
+  }
+  @include tablet_L{
+    width: 400px;
+  }
   &.open .accordion-header2 .arrow-icon2 {
     transform: rotate(180deg);
   }

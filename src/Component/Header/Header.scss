@@ -7,11 +7,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem ;
     border-bottom: 2px solid #800026;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     
-    
+   
     a{
         text-decoration: none;
         color: #800026;
@@ -28,12 +28,29 @@
         align-items: center;
         flex: 1;
         
-        @include mobile{
+        @include mobile_S{
           display: none;
         }
+        @include mobile_M{
+          display: none;
+        }
+        @include mobile_L{
+          display: none;
+        }
+        @include tablet{
+          display: none;
+        }
+        @include tablet_L{
+          display: block;
+        }
+        @include laptop{
+          display: block;
+        }
+      
+        
         ul {
           display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
           list-style: none;
           margin: 0;
@@ -44,12 +61,9 @@
           li {
             position: relative; /* Needed for positioning the ::before pseudo-element */
             margin: 0 1rem;
-           
-         
-          @include tablet{
-            margin: 0 0.5rem;
-            font-size: 13px;
-          }
+            
+          
+        
         
         &::before {
             content: ''; /* Empty content for the pseudo-element */
@@ -85,12 +99,13 @@
           }
 
           .shop{
-            width: 1070px;
+            
             overflow: auto;
             position:absolute ;
             z-index: 9999;
             transform: translateY(-420px);
             top: 47px;
+            left: 45px;
             display: flex;
             gap: 20px;
             padding: 10px;
@@ -98,9 +113,16 @@
             opacity: 0.3; 
             transition: all 0.5s ease-in-out;
             
-            @include tablet{
-              width: 700px;
-            }
+        
+          @include tablet_L{
+            width: 970px;
+            left: 0px;
+          }
+          @include laptop{
+            width: 1135px;
+            left: 5px;
+          }
+            
            
             
           }
@@ -119,7 +141,11 @@
       justify-content:flex-end;
       align-items: center;
       flex: 1;
-     
+
+      @include laptop{
+        justify-content:center;
+      }
+    
       
       img {
         width: 300px;
@@ -127,14 +153,20 @@
         display: block;
         cursor: pointer;
 
-        @include tablet{
+        @include mobile_S{
+          width: 130px;
+        }
+        @include mobile_M{
           width: 200px;
         }
-
-        @include mobile{
-          width: 150px;
-          
+        @include mobile_L{
+          width: 250px;
         }
+        @include tablet{
+          width: 300px;
+        }
+
+       
         
       }
     }
@@ -149,12 +181,22 @@
     
         .menubar{
           display: none;
-
-         
-        @include mobile{
-          display: block;
           
-        }
+          @include mobile_S{
+            display: block;
+          }
+          @include mobile_M{
+            display: block;
+          }
+          @include mobile_L{
+            display: block;
+          }
+          @include tablet{
+            display: block;
+          }
+          @include tablet_L{
+            display: none;
+          }
         }
 
  
@@ -184,13 +226,23 @@
         cursor: pointer;
         display: flex;
         justify-content: center;
+        
         align-items: center;
 
-
-        @include tablet{
-          font-size: 23px;
-          margin: 0 0.8rem;
+        
+        @include mobile_S{
+          margin: 0 0.45rem;
+          font-size: 18px;
         }
+        @include mobile_M{
+          margin: 0 0.8rem;
+        font-size: 22px;
+        }
+        @include mobile_L{
+          margin: 0 1rem;
+        font-size: 25px;
+        }
+
   
         &:hover {
           transform: scale(1.1);
@@ -204,11 +256,7 @@
         align-items: center;
         font-family: "Josefin Sans", sans-serif;
         
-      .dropbtn{
-        @include mobile{
-          display: none;
-        }
-      }
+      
       
       .dropdown-content {
         display: none;
@@ -252,7 +300,7 @@
         position: relative;
         cursor: pointer;
         
-        
+      
         p {
             position: absolute;
             transition: all 0.5s ease-in;
@@ -266,11 +314,15 @@
             justify-content: center;
             align-items: center;
             border-radius: 50%; // Changed to 50% for clarity
-            @include mobile{
-              right: 7px;
-              top: -27px;
+            @include mobile_S{
+              top: -28px;
               height: 17px;
               width: 17px;
+            }
+            @include mobile_M{
+              top: -25px;
+              height: 20px;
+              width: 20px;
             }
           
         }
@@ -284,7 +336,6 @@
 
       p {
           position: absolute;
-         
           top: -25px;
           right: 0px;
           background-color: #800026;
@@ -296,26 +347,39 @@
           align-items: center;
           border-radius: 50%; // Changed to 50% for clarity
 
-          @include mobile{
-            right: 7px;
-            top: -27px;
+          @include mobile_S{
+            top: -28px;
             height: 17px;
             width: 17px;
+          }
+          @include mobile_M{
+            top: -25px;
+            height: 20px;
+            width: 20px;
           }
       }
   }
 
   .search-icon{
-    @include mobile{
+    @include mobile_S{
       display: none;
+    }
+    @include mobile_M{
+      display: none;
+    }
+    @include mobile_L{
+      display: none;
+    }
+    @include tablet{
+      display: none;
+    }
+    @include tablet_L{
+      display: block;
     }
   }
 
-  .user-icon{
-    @include mobile{
-      display: none;
-    }
-  }
+  
+ 
     
 }
 
@@ -416,6 +480,8 @@
   gap: 15px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
+  
+  
   
   .menu-items{
     display: flex;
@@ -530,26 +596,7 @@
   }
 }
 
-.user-menu{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid gold;
-  padding: 20px 10px;
 
-  li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    &:hover{
-      color: floralwhite;
-      padding: 0 15px;
-    }
-    
-  }
-}
 
 
 }

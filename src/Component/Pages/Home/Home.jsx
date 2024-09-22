@@ -10,11 +10,10 @@ import Featured from './Featured/Featured'
 const Home = () => {
   return (
     <div>
-    
         <Slider/>
         <Featured/>
-       <Category/>
-         <Countup/> 
+        <Category/>
+        <Countup/> 
     </div>
   )
 }

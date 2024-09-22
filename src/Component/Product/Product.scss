@@ -110,7 +110,7 @@
   
   .contents{
     position: absolute;
-    left: 10px;
+    left: 20px;
     display: flex;
     padding: 10px;
     justify-content: space-around;
@@ -124,11 +124,32 @@
     background-color: white;
     font-family: "Josefin Sans", sans-serif;
 
-    @include mobile{
+    @include mobile_S{
       width: 80px;
       padding: 5px;
-      left: 2px;
+      left: 10px;
       font-size: 13px;
+    }
+
+    @include mobile_M{
+      width: 100px;
+      padding: 5px;
+      left: 20px;
+      font-size: 16px;
+    }
+
+    @include mobile_L{
+      width: 150px;
+      padding: 5px;
+      left: 20px;
+      font-size: 16px;
+    }
+
+    @include tablet{
+      width: 170px;
+      padding: 5px;
+      left: 20px;
+      font-size: 16px;
     }
    
    

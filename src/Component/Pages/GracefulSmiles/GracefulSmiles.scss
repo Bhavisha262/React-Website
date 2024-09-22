@@ -59,13 +59,42 @@
         padding: 10px 40px;
         font-family: "Josefin Sans", sans-serif;
 
-        @include mobile{
+        @include mobile_S{
             display: flex;
             flex-direction: column;
-      
             }
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
             
-              
+        hr {
+            position: relative; /* Allow positioning of the pseudo-element */
+            width: 100%; /* Full width */
+            height: 10px; /* Height of the line */
+            border: none; /* Remove default border */
+            background-color: transparent; /* Set background to transparent */
+            margin: 0; /* Reset margin */
+            overflow: hidden; /* Hide overflow for clean edges */
+        
+            &:before {
+                content: '';
+                position: absolute;
+                left: 50%; /* Center the half-circle */
+                bottom: 0; /* Align to the bottom of the hr */
+                width: 100%; /* Width of the half-circle */
+                height: 50px; /* Height of the half-circle */
+                background-color: #800026; /* Color of the half-circle */
+                border-radius: 0 0 50% 50%; /* Create a half-circle */
+                transform: translateX(-50%); /* Center it horizontally */
+            }
+
+        @include tablet{
+            display: none;
+        }
+        }
+          
  
         .pics{
             display: flex;
@@ -81,21 +110,33 @@
                 line-height: 25px;
                 text-align: justify;
           
-                @include tablet{
-                    padding: 0px 20px;
-                 }
+                // @include tablet{
+                //     padding: 0px 20px;
+                //  }
               }
             img{
                 width: 400px;
                 height: 300px;
               
-                @include mobile{
+                @include mobile_S{
                    width: 250px;
-                   height: 150px;
+                   height: 250px;
                 }
-                @include tablet{
-                    width: 300px;
+                @include mobile_M{
+                    width: 260px;
                     height: 250px;
+                 }
+                 @include mobile_L{
+                    width: 270px;
+                    height: 250px;
+                 }
+                @include tablet{
+                    width: 270px;
+                    height: 250px;
+                 }
+                 @include tablet_L{
+                    width: 400px;
+                    height: 300px;
                  }
             }
         }
@@ -166,9 +207,9 @@
             font-family: "Josefin Sans", sans-serif;
             font-size: 16px;
             line-height: 25px;
-            @include tablet{
-                padding: 0px 20px;
-             }
+            // @include tablet{
+            //     padding: 0px 20px;
+            //  }
             }
 
           
@@ -178,6 +219,26 @@
                 width: 200px;
                 height: 200px;
                 border-radius: 20px;
+                @include mobile_S{
+                    width: 250px;
+                    height: 250px;
+                 }
+                 @include mobile_M{
+                    width: 260px;
+                    height: 250px;
+                 }
+                 @include mobile_L{
+                    width: 270px;
+                    height: 250px;
+                 }
+                 @include tablet{
+                    width: 270px;
+                    height: 250px;
+                 }
+                 @include tablet_L{
+                    width: 400px;
+                    height: 300px;
+                 }
             }
         }
     }

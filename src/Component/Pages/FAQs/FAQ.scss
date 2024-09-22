@@ -23,8 +23,11 @@
    line-height: 25px;
 
 
+   @include mobile_S{
+    padding: 0 10px;
+   }
    @include tablet{
-    padding: 0 20px;
+    padding: 0 30px;
    }
 
     .wavy-heading-container {
@@ -77,12 +80,17 @@
 
     p{
       width: 100%;
-      text-align: justify;
+      text-align: center;
 
-      @include mobile{
-        width: 80%;
-
+      @include mobile_S{
+        width: 90%;
       }
+     
+      @include tablet_L{
+        width: 100%;
+      }
+     
+     
 
      
     }
@@ -98,8 +106,17 @@
         margin: auto;
         font-family: "Josefin Sans", sans-serif;
 
-        @include mobile{
+        @include mobile_S{
           width: 270px;
+        }
+        @include mobile_M{
+          width: 370px;
+        }
+        @include mobile_L{
+          width: 470px;
+        }
+        @include tablet{
+          width: 700px;
         }
 
         
@@ -134,6 +151,7 @@
           font-family: "Josefin Sans", sans-serif;
          p{
           width: 100%;
+          text-align: justify;
          }
         
         }
@@ -146,8 +164,17 @@
         height: max-content;
         margin: auto;
         
-        @include mobile{
+        @include mobile_S{
           width: 270px;
+        }
+        @include mobile_M{
+          width: 370px;
+        }
+        @include mobile_L{
+          width: 470px;
+        }
+        @include tablet{
+          width: 700px;
         }
         &.open .accordion-header1 .arrow-icon1 {
           transform: rotate(180deg);
@@ -176,6 +203,7 @@
           font-family: "Josefin Sans", sans-serif;
           p{
             width: 100%;
+            text-align: justify;
            }
         }
       }
@@ -187,8 +215,17 @@
         height: max-content;
         margin: auto;
         
-        @include mobile{
+        @include mobile_S{
           width: 270px;
+        }
+        @include mobile_M{
+          width: 370px;
+        }
+        @include mobile_L{
+          width: 470px;
+        }
+        @include tablet{
+          width: 700px;
         }
         &.open .accordion-header2 .arrow-icon2 {
           transform: rotate(180deg);
@@ -217,6 +254,7 @@
           font-family: "Josefin Sans", sans-serif;
           p{
             width: 100%;
+            text-align: justify;
            }
         }
       }
@@ -228,8 +266,17 @@
         height: max-content;
         margin: auto;
         
-        @include mobile{
+        @include mobile_S{
           width: 270px;
+        }
+        @include mobile_M{
+          width: 370px;
+        }
+        @include mobile_L{
+          width: 470px;
+        }
+        @include tablet{
+          width: 700px;
         }
         &.open .accordion-header3 .arrow-icon3 {
           transform: rotate(180deg);
@@ -258,6 +305,7 @@
           font-family: "Josefin Sans", sans-serif;
           p{
             width: 100%;
+            text-align: justify;
            }
         }
       }
@@ -269,8 +317,17 @@
         height: max-content;
         margin: auto;
         
-        @include mobile{
+        @include mobile_S{
           width: 270px;
+        }
+        @include mobile_M{
+          width: 370px;
+        }
+        @include mobile_L{
+          width: 470px;
+        }
+        @include tablet{
+          width: 700px;
         }
         &.open .accordion-header4 .arrow-icon4 {
           transform: rotate(180deg);
@@ -300,6 +357,7 @@
 
           p{
             width: 100%;
+            text-align: justify;
            }
         }
       }
@@ -312,8 +370,17 @@
         height: max-content;
         margin: auto;
         
-        @include mobile{
+        @include mobile_S{
           width: 270px;
+        }
+        @include mobile_M{
+          width: 370px;
+        }
+        @include mobile_L{
+          width: 470px;
+        }
+        @include tablet{
+          width: 700px;
         }
         &.open .accordion-header5 .arrow-icon5 {
           transform: rotate(180deg);
@@ -343,6 +410,7 @@
 
           p{
             width: 100%;
+            text-align: justify;
            }
         }
       }
@@ -354,8 +422,17 @@
         height: max-content;
         margin: auto;
         
-         @include mobile{
+        @include mobile_S{
           width: 270px;
+        }
+        @include mobile_M{
+          width: 370px;
+        }
+        @include mobile_L{
+          width: 470px;
+        }
+        @include tablet{
+          width: 700px;
         }
         &.open .accordion-header6 .arrow-icon6 {
           transform: rotate(180deg);
@@ -384,6 +461,7 @@
           font-family: "Josefin Sans", sans-serif;
           p{
             width: 100%;
+            text-align: justify;
            }
         }
       }

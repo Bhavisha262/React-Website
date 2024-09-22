@@ -83,8 +83,17 @@
       margin: auto;
       font-family: "Josefin Sans", sans-serif;
 
-      @include mobile{
+      @include mobile_S{
         width: 270px;
+      }
+      @include mobile_M{
+        width: 370px;
+      }
+      @include mobile_L{
+        width: 470px;
+      }
+      @include tablet{
+        width: 700px;
       }
 
       &.open .accordion-header .arrow-icon {
@@ -130,9 +139,17 @@
       height: max-content;
       margin: auto;
       font-family: "Josefin Sans", sans-serif;
-
-      @include mobile{
+      @include mobile_S{
         width: 270px;
+      }
+      @include mobile_M{
+        width: 370px;
+      }
+      @include mobile_L{
+        width: 470px;
+      }
+      @include tablet{
+        width: 700px;
       }
 
       &.open .accordion-header1 .arrow-icon1 {
@@ -178,9 +195,17 @@
       height: max-content;
       margin: auto;
       font-family: "Josefin Sans", sans-serif;
-
-      @include mobile{
+      @include mobile_S{
         width: 270px;
+      }
+      @include mobile_M{
+        width: 370px;
+      }
+      @include mobile_L{
+        width: 470px;
+      }
+      @include tablet{
+        width: 700px;
       }
 
       &.open .accordion-header2 .arrow-icon2 {
@@ -227,8 +252,17 @@
       margin: auto;
       font-family: "Josefin Sans", sans-serif;
 
-      @include mobile{
+      @include mobile_S{
         width: 270px;
+      }
+      @include mobile_M{
+        width: 370px;
+      }
+      @include mobile_L{
+        width: 470px;
+      }
+      @include tablet{
+        width: 700px;
       }
 
       &.open .accordion-header3 .arrow-icon3 {
@@ -275,8 +309,17 @@
       margin: auto;
       font-family: "Josefin Sans", sans-serif;
 
-      @include mobile{
+      @include mobile_S{
         width: 270px;
+      }
+      @include mobile_M{
+        width: 370px;
+      }
+      @include mobile_L{
+        width: 470px;
+      }
+      @include tablet{
+        width: 700px;
       }
 
       &.open .accordion-header4 .arrow-icon4 {
@@ -322,8 +365,17 @@
       margin: auto;
       font-family: "Josefin Sans", sans-serif;
 
-      @include mobile{
+      @include mobile_S{
         width: 270px;
+      }
+      @include mobile_M{
+        width: 370px;
+      }
+      @include mobile_L{
+        width: 470px;
+      }
+      @include tablet{
+        width: 700px;
       }
 
       &.open .accordion-header5 .arrow-icon5 {

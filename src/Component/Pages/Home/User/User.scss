@@ -15,8 +15,11 @@
         width: 5px;
         background-color: #800026;
 
-        @include mobile{
+        @include mobile_S{
             display: none;
+          }
+          @include tablet{
+            display: block;
           }
     }
     h1{
@@ -39,9 +42,14 @@
         rgba(134, 5, 1, 0.347) 0px 25px 25px -20px;
 
 
-       @include mobile{
+       @include mobile_S{
           flex-direction: column;
        }
+       
+       @include tablet{
+        flex-direction: row;
+        gap: 30px;
+     }
     
     .div1{
         width: 100%;
@@ -50,9 +58,7 @@
         align-items: center;
         flex-direction: column;
         
-        @include tablet{
-            padding: 0px 20px;
-         }
+      
 
         .form1{
             width: 100%;
@@ -127,9 +133,7 @@
         align-items: center;
         flex-direction: column;
         
-        @include tablet{
-            padding: 0px 20px;
-         }
+        
         Button {
             background-color: floralwhite;
             font-family: "Josefin Sans", sans-serif;

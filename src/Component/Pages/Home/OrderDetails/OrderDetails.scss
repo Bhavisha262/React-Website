@@ -59,8 +59,25 @@
     background-color: #fff; // Added background color for better contrast
     transition: box-shadow 0.3s ease; // Smooth transition for hover effect
 
-    @include mobile{
+    @include mobile_S{
       width: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+    @include mobile_M{
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+    @include mobile_L{
+      width: 500px;
+      display: flex;
+      flex-direction: row;
+    }
+    @include tablet{
+      width: 600px;
+      display: flex;
+      flex-direction: row;
     }
 
     &:hover {

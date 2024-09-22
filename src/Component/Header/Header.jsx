@@ -68,8 +68,8 @@ const Header = () => {
        <div className={`dropdown-content ${isDropdown ? 'show' : ''}`}>
            <Button onClick={handlelogout}>Logout</Button>
            <Button onClick={() => Navigate('/order') || setIsDropdown(false)} >Order Details</Button>
-           <Button onClick={() => Navigate('/profile')|| setIsDropdown(false)}>Your Profile</Button>
-           <Button onClick={() => Navigate('/shipping')|| setIsDropdown(false)}>Shipping Details</Button>
+           
+           <Button onClick={() => Navigate('/checkout')|| setIsDropdown(false)}>Shipping Details</Button>
        </div>
        </div>
         
@@ -93,9 +93,9 @@ const Header = () => {
                 open={menu}
                 onClose={toggleDrawer4}
                 direction='left'
-                style={{backgroundColor:'#800026', color:'gold' ,listStyle:'none', display:'flex', flexDirection:'column', gap:'30px',justifyContent:'center', alignItems:'center'}}
+                style={{width:'max-content', padding:'10px', backgroundColor:'#800026', color:'gold' ,listStyle:'none', display:'flex', flexDirection:'column', gap:'30px',justifyContent:'center', alignItems:'center', height:'100%'}}
                 zIndex={99999}
-
+                
               >
      <div className="menu-list">  
      <div className="search1">
@@ -130,9 +130,9 @@ const Header = () => {
 <li onClick={() => Navigate('/smiles') || setMenu(false)}><FaRegSmileWink />&nbsp;Smiles</li>
 </div> 
 <br/>
-<div className="user-menu">
-  <li onClick={() => Navigate('/user') || setMenu(false)}><TbUserHexagon/>&nbsp; Your Account</li>
-</div>
+
+
+
  
    </div>
    
@@ -177,7 +177,7 @@ const Header = () => {
                 onClose={toggleDrawer2}
                 direction='right' 
                 zIndex={9999}
-                style={{overflow:'auto',}}
+                style={{overflow:'auto', padding:'10px'}}
                 
               >
                 

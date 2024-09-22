@@ -10,15 +10,12 @@
   margin: 20px 0;
 
  
-
+ 
 
 .title1{
   width: 100%;
 
- 
-  @include mobile{
-    font-size: 10px;
-  }
+
   
   .wavy-heading-container {
     display: flex;
@@ -72,6 +69,8 @@
     font-family: "Croissant One", serif;
     color: floralwhite;
 
+    
+
     &:hover {
       box-shadow: 0 10px 16px pink, 0 10px 16px  plum;
     }
@@ -88,9 +87,28 @@
       justify-content: center;
       align-items: center;
 
-      @include mobile{
+      @include mobile_S{
         width: 200px;
         height: 180px;
+      }
+
+      @include mobile_M{
+        width: 230px;
+        height: 210px;
+      }
+
+      @include mobile_L{
+        width: 230px;
+        height: 210px;
+      }
+      @include tablet{
+        width: 230px;
+        height: 210px;
+      }
+
+      @include tablet_L{
+        width: 270px;
+        height: 270px;
       }
 
       &:hover {
@@ -126,8 +144,15 @@
       border-radius: 0px 0px 20px 20px;
       border: 3px solid #800026;
 
-      @include mobile{
-        width: 200px;
+      @include mobile_S{
+        width: 200px; 
+      }
+      @include mobile_M{
+        width: 230px;
+        
+      }
+      @include tablet_L{
+        width: 270px;
         
       }
      
@@ -139,9 +164,15 @@
         justify-content: center;
         align-items: center;
 
-        @include mobile{
+        @include mobile_S{
          font-size: 15px;
           
+        }
+        @include mobile_M{
+          font-size: 18px;
+        }
+        @include tablet_L{
+          font-size: 20px;
         }
       }
 

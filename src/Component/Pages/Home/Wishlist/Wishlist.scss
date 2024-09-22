@@ -23,9 +23,17 @@ p{
     border-radius: 20px;
     text-align: center;
 
-  @include mobile{
+  @include mobile_S{
     flex-direction: column;
-    width: 200px;
+    width: 250px;
+  }
+  @include mobile_M{
+    flex-direction: column;
+    width: 350px;
+  }
+  @include mobile_L{
+    flex-direction: row;
+    width: 500px;
   }
   
     &__image {

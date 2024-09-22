@@ -8,37 +8,79 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    padding: 20px ;
+    padding: 20px 0px;
+    width: 100%;
 
-    @include mobile{
+    @include mobile_S{
       display: flex;
       flex-direction: column;
+    }
+      
+    @include mobile_M{
+      display: flex;
+      flex-direction: column;
+    }
 
-      }
-      @include tablet{
-        display: flex;
-        flex-direction: column;
-  
-        }
+    @include mobile_L{
+      display: flex;
+      flex-direction: column;
+    }
 
+    @include tablet{
+      display: grid;
+      grid-template-columns: auto auto ;
+      justify-content: center;
+      align-items: center;
+    }
      
     .text1{
       width: 400px;
       height: 200px;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      text-align: justify;
       padding: 10px;
+
+      p{
+        color: black;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 16px;
+        line-height: 25px;
+        text-align: justify;
+  
+        
+      }
      
-@include mobile{
+@include mobile_S{
   width: 250px;
-  padding: 20px;
+  height: max-content;
+}
+
+@include mobile_M{
+  width: 300px;
+  height: max-content;
+}
+
+@include mobile_L{
+  width: 400px;
+  height: max-content;
 }
 
 @include tablet{
   width: 350px;
-  padding: 20px;
+  height: max-content;
 }
+
+@include tablet_L{
+  width:  380px;
+  height: max-content;
+}
+
+@include laptop{
+  width:  400px;
+  height: max-content;
+}
+
      
       .wavy-heading-container {
         display: flex;
@@ -80,23 +122,12 @@
         font-family: "Croissant One", serif;
         width: 100%;
        
-        @include mobile{
-          font-size: 20px;
-          }
+        // @include mobile{
+        //   font-size: 20px;
+        //   }
       }
 
-      p{
-        color: black;
-        font-family: "Josefin Sans", sans-serif;
-        font-size: 16px;
-        line-height: 25px;
-        
-  
-        @include mobile{
-          font-size: 14px;
-          padding: 0px 30px;
-          }
-      }
+     
       
     }
 
@@ -106,13 +137,34 @@
       align-items: center;
       height: 500px;
 
-      @include mobile{
-        display: none;
+      @include mobile_S{
+       width: 250px;
+       height: 250px;
         }
-        @include tablet{
-          width: 400px;
-          height: 350px;
+      
+      @include mobile_M{
+        width: 300px;
+        height: 300px;
           }
+        @include mobile_L{
+          width: 400px;
+          height: 400px;
+      }
+
+      @include tablet{
+        width: 300px;
+        height: 400px;
+    }
+    @include tablet_L{
+      width: 400px;
+      height: 400px;
+  }
+
+  @include laptop{
+    width: 500px;
+    height: 500px;
+}
+        
 
       img{
         width: 100%;
@@ -129,11 +181,33 @@
         justify-content: center;
         align-items: center;
 
-        @include mobile{
-          width: 270px;
-          height: 300px;
+        @include mobile_S{
+          width: 250px;
+          height: 250px;
+           }
+        
+           @include mobile_M{
+            width: 300px;
+            height: 300px;
           }
-  
+  @include mobile_L{
+  width: 400px;
+  height: 400px;
+}
+@include tablet{
+  width: 350px;
+  height: 400px;
+}
+
+@include tablet_L{
+  width: 400px;
+  height: 400px;
+}
+
+@include laptop{
+  width: 512px;
+  height: 512px;
+}
         img{
           width: 100%;
           height: 100%;
@@ -152,14 +226,35 @@
         border-radius: 0px 20px 0px 20px;
         box-shadow: 8px 10px 8px rgba(134, 5, 1, 0.347);
         border: 1px solid #800026;
-        @include mobile{
-          width: 200px;
+        @include mobile_S{
+          width: 230px;
           height: max-content;
           
         }
+        @include mobile_M{
+          width: 300px;
+          height: max-content;
+        }
+        @include mobile_L{
+          width: 400px;
+          height: max-content;
+        }
+        @include tablet{
+          width: 300px;
+          height: max-content;
+      }
+      @include tablet_L{
+        width: 400px;
+        height: max-content;
+    }
+    @include laptop{
+      width: 400px;
+      height: max-content;
+  }
           :nth-child(2){
             color: purple;
             font-family: "Croissant One", serif;
+            text-align: center;
           }
           h2{
             color: #800026;
@@ -167,7 +262,15 @@
     
           }
           p{
+            color: black;
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 16px;
             line-height: 25px;
+            text-align: justify;
+      
+            // @include mobile{
+            //   font-size: 14px;
+            //   }
           }
          
       }
@@ -179,17 +282,49 @@
         align-items: center;
         padding: 10px;
   
-        @include mobile{
-          width: 270px;
+        @include mobile_S{
+          width: 230px;
+          height: max-content;
+          
+        }
+
+        @include mobile_M{
+          width: 300px;
           height: max-content;
         }
+
+        @include mobile_L{
+          width: 400px;
+          height: max-content;
+        }
+        @include tablet{
+          width: 350px;
+          height: max-content;
+      }
+      @include tablet_L{
+        width: 400px;
+        height: max-content;
+    }
+    @include laptop{
+      width: 400px;
+      height: max-content;
+  }
         h2{
           color: #800026;
           font-family: "Croissant One", serif;
   
         }
         p{
+          color: black;
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 16px;
           line-height: 25px;
+          text-align: justify;
+    
+          // @include mobile{
+          //   font-size: 14px;
+           
+          //   }
         }
         
       }
@@ -200,11 +335,33 @@
       align-items: center;
         height: 500px;
 
-        @include mobile{
-          width: 270px;
-          height: 300px;
+        @include mobile_S{
+          width: 250px;
+          height: 250px;
+           }
+
+           @include mobile_M{
+            width: 300px;
+            height: 300px;
           }
   
+          @include mobile_L{
+            width: 400px;
+            height: 400px;
+          }
+          @include tablet{
+            width: 300px;
+            height: 400px;
+        }
+        @include tablet_L{
+          width: 400px;
+          height: 400px;
+      }
+      @include laptop{
+        width: 500px;
+        height: 500px;
+    }
+        
         img{
           width: 100%;
           height: 100%;

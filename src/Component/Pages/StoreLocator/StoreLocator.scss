@@ -17,7 +17,12 @@
     justify-content: center;
     align-items: center;
     text-align: justify;
-
+    @include mobile_S{
+      padding: 0 10px;
+     }
+     @include tablet{
+      padding: 0 30px;
+     }
     .wavy-heading-container {
         display: flex;
         justify-content: center;
@@ -67,14 +72,30 @@
     }
 
     .map{
-      @include mobile{
+      @include mobile_S{
       width: 250px;
       height: 200px;
       }
-      @include tablet{
-        width: 450px;
+
+      @include mobile_M{
+        width: 350px;
         height: 300px;
         }
+        @include mobile_L{
+          width: 450px;
+          height: 300px;
+          }
+
+          @include tablet{
+            width: 600px;
+            height: 300px;
+            }
+
+      @include tablet_L{
+        width: 700px;
+        height: 300px;
+        }
+     
     }
     }
 }
