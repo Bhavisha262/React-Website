@@ -29,7 +29,7 @@ const ChangePassword = () => {
     onSubmit: async (values, { resetForm }) => {
       setLoader(true);
       try {
-        const response = await fetch('http://localhost:3025/changepassword', {
+        const response = await fetch('https://backl-main.vercel.app/changepassword', {
           method: 'POST',
           body: JSON.stringify(values),
           headers: {

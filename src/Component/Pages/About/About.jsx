@@ -4,9 +4,6 @@ import img1 from "../../../Assets/About/about1.png"
 import img2 from "../../../Assets/About/owner 1.png"
 import img3 from "../../../Assets/About/mission.png"
 
-
-
-
 const About = () => {
    
   return (

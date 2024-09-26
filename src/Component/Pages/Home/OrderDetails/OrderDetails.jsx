@@ -14,7 +14,7 @@ const OrderDetails = () => {
     }
     const fetchOrderItems = async () => {
       try {
-        const response = await fetch('https://localhost:3025/get-order-info', {
+        const response = await fetch('https://backl-main.vercel.app/get-order-info', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
