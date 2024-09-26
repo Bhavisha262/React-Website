@@ -67,7 +67,6 @@ const Header = () => {
        <div className={`dropdown-content ${isDropdown ? 'show' : ''}`}>
            <Button onClick={handlelogout}>Logout</Button>
            <Button onClick={() => Navigate('/order') || setIsDropdown(false)} >Order Details</Button>
-           
            <Button onClick={() => Navigate('/checkout')|| setIsDropdown(false)}>Shipping Details</Button>
        </div>
        </div>

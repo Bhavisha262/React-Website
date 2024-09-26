@@ -35,9 +35,6 @@ import ShippingReturns from './Component/Pages/Shipping/ShippingReturns';
 import NoPage from './Component/Pages/Home/NoPage/NoPage';
 
 
-
-
-
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -50,8 +47,6 @@ const App = () => {
   return (
     isLoading ?
     <Loader title="Welcome to World Of Beauty" src={gif2} alt=""/>:
-
-    
     <BrowserRouter>
     <MyContextProvider>
       <Alert/> 
@@ -89,8 +84,8 @@ const App = () => {
       <Route path='/smiles' element={<GracefulSmiles/>}/>
       <Route path='/new-account' element={<NewAccount/>}/>
       <Route path='/shop-by-category' element={<Category/>}/>
-      <Route path='category/:products' element={<Product/>}/>
-      <Route path='category/:product/:single' element={<SinglePro/>}/> 
+      <Route path='/category/:products' element={<Product/>}/>
+      <Route path='/category/:product/:single' element={<SinglePro/>}/> 
       <Route path='*' element={<NoPage/>}/> 
     </Routes>
     <Footer/> 
