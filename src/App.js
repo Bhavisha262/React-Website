@@ -72,8 +72,6 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home/>}/>/
       <Route path='/user' element={<User/>}/>
-     
-
       <Route path='/checkout' element={<Checkout/>}/>
       <Route path='/payment' element={<PaymentForm/>}/>
       <Route path='/confirmation' element={<ConfirmationPage/>}/>
