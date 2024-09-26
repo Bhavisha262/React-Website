@@ -16,25 +16,25 @@ const MyContextProvider = ({children}) => {
   const[token, setToken] = useState('')
 
 useEffect(()=>{
-axios.get('http://localhost:3025/api')
+axios.get('https://backl-main.vercel.app/api')
 .then((res)=> setNum(res.data.data)
 )
 },[])
 
 useEffect(()=>{
-  axios.get('http://localhost:3025/contact-admin-table')
+  axios.get('https://backl-main.vercel.app/contact-admin-table')
   .then((res)=> setCinfo(res.data.data)
 )
 },[])
 
   useEffect(()=>{
-    axios.get('http://localhost:3025/new-admin-table')
+    axios.get('https://backl-main.vercel.app/new-admin-table')
     .then((res)=> setRegister(res.data.data)   
 )
 },[])
 
 useEffect(()=>{
-  axios.get('http://localhost:3025/order-admin-table')
+  axios.get('https://backl-main.vercel.app/order-admin-table')
   .then((res)=> setOrderadmin(res.data.data)   
 )
 },[])
@@ -100,7 +100,7 @@ const handleCart = async(categoryid,productid,img,price,name) =>{
 
   }
 
-  const response = await fetch('http://localhost:3025/add-to-cart', {
+  const response = await fetch('https://backl-main.vercel.app/add-to-cart', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ const handleWish = async(categoryid,productid,img,price,name) =>{
 
   }
 
-  const response = await fetch('http://localhost:3025/add-to-wish', {
+  const response = await fetch('https://backl-main.vercel.app/add-to-wish', {
 
     method: 'POST',
     headers: {
@@ -175,7 +175,7 @@ const handleOrder = async() =>{
 
   }
 
-  const response = await fetch('http://localhost:3025/save-order-info', {
+  const response = await fetch('https://backl-main.vercel.app/save-order-info', {
 
     method: 'POST',
     headers: {
@@ -213,7 +213,7 @@ const handleShipping = async(name,number,email,address,landmark,state,city,pinco
 
   }
 
-  const response = await fetch('http://localhost:3025/save-shipping-info', {
+  const response = await fetch('https://backl-main.vercel.app/save-shipping-info', {
 
     method: 'POST',
     headers: {
@@ -243,7 +243,7 @@ const handleShipping = async(name,number,email,address,landmark,state,city,pinco
 const handledelete = async(categoryid,productid) =>{
 
 
-  const response = await fetch('http://localhost:3025/remove-from-cart', {
+  const response = await fetch('https://backl-main.vercel.app/remove-from-cart', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -272,7 +272,7 @@ const handledelete = async(categoryid,productid) =>{
 const handleremove = async(categoryid,productid) =>{
 
 
-  const response = await fetch('http://localhost:3025/remove-from-wish', {
+  const response = await fetch('https://backl-main.vercel.app/remove-from-wish', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -310,7 +310,7 @@ const handleIncreaseQuantity = async(categoryid,productid) =>{
 
   }
 
-  const response = await fetch('http://localhost:3025/increase-quantity', {
+  const response = await fetch('https://backl-main.vercel.app/increase-quantity', {
 
     method: 'POST',
     headers: {
@@ -347,7 +347,7 @@ const handleDecreaseQuantity = async(categoryid,productid) =>{
 
   }
 
-  const response = await fetch('http://localhost:3025/decrease-quantity', {
+  const response = await fetch('https://backl-main.vercel.app/decrease-quantity', {
 
     method: 'POST',
     headers: {
