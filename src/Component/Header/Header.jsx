@@ -1,4 +1,4 @@
-import React, { useContext,useState } from 'react'
+import React, { useContext } from 'react'
 import "./Header.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../Assets/Logo/mainlogo.png"
@@ -27,7 +27,6 @@ const Header = () => {
   const Token = sessionStorage.getItem('token')
   const Navigate = useNavigate()
   
-  
 
   const [isOpenS, setIsOpenS] = React.useState(false)
     const toggleDrawer1 = () => {
@@ -41,7 +40,7 @@ const Header = () => {
   
   return (
     <>
-    <header className="header-main">
+    <div className="header-main">
       <div className="left">
         <ul>
         <div className="shop-all">
@@ -86,7 +85,7 @@ const Header = () => {
         
       </div>
    
-    </header>
+    </div>
               
               
     <Drawer
