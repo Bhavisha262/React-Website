@@ -27,8 +27,6 @@ import Checkout from './Component/Pages/Checkout/Checkout';
 import PaymentForm from './Component/Pages/PaymentForm/PaymentForm';
 import ConfirmationPage from './Component/Pages/ConfirmationPage/ConfirmationPage';
 import Home from './Component/Pages/Home/Home';
-
-
 import GotoTop from './Component/Common/GotoTop';
 import OrderDetails from './Component/Pages/Home/OrderDetails/OrderDetails';
 import ForgotPassword from './Component/Pages/Home/User/ForgotPassword/ForgotPassword';

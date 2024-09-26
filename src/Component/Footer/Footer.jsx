@@ -29,7 +29,7 @@ const Footer = () => {
         validationSchema: validationSchema,
         onSubmit: async(values, {resetForm}) => {
           setLoader(true)
-          const response = await fetch('https://backl-main.vercel.app/new-account', {
+          const response = await fetch('http://localhost:3025/new-account', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {
