@@ -4,11 +4,11 @@ import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
 import AnimationStyles from 'react-awesome-slider/src/styled/cube-animation/cube-animation.scss';
 import "./Slider.scss";
 
-import img1 from "../../Assets/Slider/img1.png";
+import img1 from "../../Assets/Slider/img1.jpg";
 import img2 from "../../Assets/Slider/img2.jpg";
 import img3 from "../../Assets/Slider/img3.png";
 import img4 from "../../Assets/Slider/img4.png";
-import img5 from "../../Assets/Slider/img5.jpg";
+import img5 from "../../Assets/Slider/img5.png";
 import img6 from "../../Assets/Slider/img6.jpg";
 import img7 from "../../Assets/Slider/img7.jpg";
 
