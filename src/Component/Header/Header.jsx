@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState} from 'react'
 import "./Header.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../Assets/Logo/mainlogo.png"
@@ -23,6 +23,7 @@ import { FaRegSmileWink } from "react-icons/fa";
 
 const Header = () => {
   
+  
   const {toggleDropdown,isDropdown,setIsDropdown,handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2} = useContext(MyContext)
   const Token = sessionStorage.getItem('token')
   const Navigate = useNavigate()
@@ -37,18 +38,21 @@ const Header = () => {
     const toggleDrawer4 = () => {
       setMenu((prevState) => !prevState)
 }
+const [isOpenB, setIsOpenB] = React.useState(false)
+const toggleDrawer5 = () => {
+    setIsOpenB((prevState) => !prevState)
+}
+
+
   
   return (
     <>
     <div className="header-main">
       <div className="left">
         <ul>
-        <div className="shop-all">
-          <li>Shop</li>
-        <span className='shop'>
-          <ShopAll/>
-        </span>
-        </div>
+        <div className="shop-all" >
+        <li onClick={toggleDrawer5} >Shop</li>
+      </div>
         <Link to="/about-us"><li>About</li></Link>
         <Link to="/contact-us"><li>Contact</li></Link>
         <Link to="/smiles"><li> Smiles</li></Link>
@@ -86,42 +90,58 @@ const Header = () => {
    
     </div>
               
-              
-    <Drawer
-                open={menu}
-                onClose={toggleDrawer4}
-                direction='left'
-                style={{width:'max-content', padding:'10px', backgroundColor:'#800026', color:'gold' ,listStyle:'none', display:'flex', flexDirection:'column', gap:'30px',justifyContent:'center', alignItems:'center', height:'100%'}}
-                zIndex={99999}
-                
-              >
-     <div className="menu-list">  
-     <div className="search1">
-      <div class="search-container1">
-    <input type="text" id="search-bar" class="search-input1" onChange={(e) => setSearch(e.target.value)} value={search}  placeholder="Search..."/>
-    <button id="search-button" class="search-button1"><img src={search1} alt=''/></button><br/>
-   
-    </div>
-    {num
+
+  
+  <Drawer
+    open={isOpenB}
+    onClose={toggleDrawer5}
+    direction='top' 
+    zIndex={99999}
+    className='shop-category'
+    style={{overflow:'auto'}}
+    
+  >
+    
+    <ShopAll/>
+    
+  </Drawer>
+
+
+  <Drawer
+            open={menu}
+            onClose={toggleDrawer4}
+            direction='left'
+            style={{width:'max-content', padding:'10px', backgroundColor:'#800026', color:'gold' ,listStyle:'none', display:'flex', flexDirection:'column', gap:'30px',justifyContent:'center', alignItems:'center', height:'100%'}}
+            zIndex={99999}
+            
+          >
+  <div className="menu-list">  
+  <div className="search1">
+  <div class="search-container1">
+<input type="text" id="search-bar" class="search-input1" onChange={(e) => setSearch(e.target.value)} value={search}  placeholder="Search..."/>
+<button id="search-button" class="search-button1"><img src={search1} alt=''/></button><br/>
+
+</div>
+{num
 .filter((a)=>{
-  const newdata = a.name.toLowerCase()
-  const setSearch = search.toLowerCase() 
-  return(
-    setSearch && newdata.startsWith(setSearch)
-  )
+const newdata = a.name.toLowerCase()
+const setSearch = search.toLowerCase() 
+return(
+setSearch && newdata.startsWith(setSearch)
+)
 }).map((a)=>{
-  return(
-    <div className="list1">
+return(
+<div className="list1">
 <li onClick={() => Navigate(`/category/${a.category_url}`) || setSearch('') || setIsOpenS(false)}  >{a.name}</li>
 </div>
-  )
+)
 })}
-    <div>
+<div>
 </div>
 </div>
 <br/>
 
-  <div className="menu-items">           
+<div className="menu-items">           
 <li onClick={() => Navigate('/shop-by-category') || setMenu(false)}> <PiShoppingCartSimple />&nbsp;Shop </li>
 <li onClick={() => Navigate('/about-us') || setMenu(false)}><IoInformationCircleOutline />&nbsp;About</li>
 <li onClick={() => Navigate('/contact-us') ||  setMenu(false)}><MdOutlineLocalPhone />&nbsp;Contact</li>
@@ -131,69 +151,69 @@ const Header = () => {
 
 
 
- 
-   </div>
-   
-       </Drawer>
-             <Drawer
-                open={isOpenS}
-                onClose={toggleDrawer1}
-                direction='top'
-                style={{height:'100px'}}
-              >
-                <div className="search">
-                <div class="search-container">
-    <input type="text" id="search-bar" class="search-input" onChange={(e) => setSearch(e.target.value)} value={search}  placeholder="Search..."/>
-    <button id="search-button" class="search-button"><img src={search1} alt=''/></button><br/>
-    </div>
-   
-    <div>
-   
-   
+
 </div>
-                </div>
-                {num
+
+  </Drawer>
+  <Drawer
+    open={isOpenS}
+    onClose={toggleDrawer1}
+    direction='top'
+    style={{height:'100px'}}
+  >
+    <div className="search">
+    <div class="search-container">
+<input type="text" id="search-bar" class="search-input" onChange={(e) => setSearch(e.target.value)} value={search}  placeholder="Search..."/>
+<button id="search-button" class="search-button"><img src={search1} alt=''/></button><br/>
+</div>
+
+<div>
+
+
+</div>
+    </div>
+    {num
 .filter((a)=>{
-  const newdata = a.name.toLowerCase()
-  const setSearch = search.toLowerCase() 
-  return(
-    setSearch && newdata.startsWith(setSearch)
-  )
+const newdata = a.name.toLowerCase()
+const setSearch = search.toLowerCase() 
+return(
+setSearch && newdata.startsWith(setSearch)
+)
 }).map((a)=>{
-  return(
-    <div className="list">
+return(
+<div className="list">
 <li onClick={() => Navigate(`/category/${a.category_url}`) || setSearch('') || setIsOpenS(false)}  >{a.name}</li>
 </div>
-  )
+)
 })}
-   
-   
-              </Drawer>
-              
-              <Drawer
-                open={isOpenC}
-                onClose={toggleDrawer2}
-                direction='right' 
-                zIndex={9999}
-                style={{overflow:'auto', padding:'10px'}}
-                
-              >
-                
-                <Cart/>
-                
-              </Drawer>
 
-              <Drawer
-                open={isOpenW}
-                onClose={toggleDrawer3}
-                direction='bottom'
-                zIndex={9999}
-                style={{overflow:'auto'}}
-              >
-                
-                <Wishlist/>
-              
-              </Drawer>
+
+  </Drawer>
+  
+  <Drawer
+    open={isOpenC}
+    onClose={toggleDrawer2}
+    direction='right' 
+    zIndex={9999}
+    style={{overflow:'auto', padding:'10px'}}
+    
+  >
+    
+    <Cart/>
+    
+  </Drawer>
+
+  <Drawer
+    open={isOpenW}
+    onClose={toggleDrawer3}
+    direction='bottom'
+    zIndex={9999}
+    style={{overflow:'auto'}}
+  >
+    
+    <Wishlist/>
+  
+  </Drawer>
     </>
 
   )

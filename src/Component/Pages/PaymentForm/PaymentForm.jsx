@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import "./PaymentForm.scss"
-import { useNavigate } from 'react-router-dom';
+import "./PaymentForm.scss";
 import MyContext from '../../Context/MyContext';
 import {Button} from '@mui/material';
 
@@ -9,7 +8,6 @@ const PaymentForm = () => {
   const {handleOrder} = useContext(MyContext)
   const [input, setInput] = useState('');
   const [message, setMessage] = useState('');
-  const Navigate = useNavigate()
 
   function generateCaptcha() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -29,6 +27,7 @@ const PaymentForm = () => {
   const handleSubmit = () => {
     if (input === captcha) {
      handleOrder()
+     
     } else {
       setMessage('Captcha did not match. Please try again.');
     }

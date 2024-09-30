@@ -63,6 +63,8 @@ const [cart, setCart] = useState(() =>{
   const savedCart = sessionStorage.getItem('cart');
   return savedCart ? JSON.parse(savedCart) : [];
 })
+
+
 const [wish, setWish] = useState(() =>{
   const savedWish = sessionStorage.getItem('wishlist');
   return savedWish ? JSON.parse(savedWish) : [];
@@ -191,6 +193,7 @@ const handleOrder = async() =>{
     setAlert(true)
     sessionStorage.getItem('order' , JSON.stringify(data.orderInfo));
     sessionStorage.getItem('cart' , JSON.stringify(data.cartInfo));
+    sessionStorage.clear('cart' , JSON.stringify(data.cartInfo));
     sessionStorage.setItem('order' , JSON.stringify(data.orderInfo));
     setMessage(data.message)
     setOrder(data.orderInfo)

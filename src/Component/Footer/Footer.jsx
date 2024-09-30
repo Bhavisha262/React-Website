@@ -24,12 +24,11 @@ const Footer = () => {
     const formik = useFormik({
         initialValues: {
         email: '',
-        password: '',
         },
         validationSchema: validationSchema,
         onSubmit: async(values, {resetForm}) => {
           setLoader(true)
-          const response = await fetch('https://backl-main.vercel.app/new-account', {
+          const response = await fetch('https://backl-main.vercel.app/newsletter', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {
@@ -51,7 +50,7 @@ const Footer = () => {
             }
             setLoader(false)
           },
-        });
+      });
   return (
     
     <div className='footer-main'>

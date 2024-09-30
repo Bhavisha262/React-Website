@@ -2,10 +2,16 @@
 
 .shop-category{
 display: flex;
-flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+padding: 30px;
 font-family: "Croissant One", serif;
 text-align: center;
 
+
+.shop-wrap{
+    display: flex;
+    flex-direction: column;
     .image-wrapper{
        
         width: 200px;
@@ -33,4 +39,5 @@ text-align: center;
         text-align: center;
         color: #800026;
       }
+    }
 }

@@ -11,6 +11,8 @@ const ShopAll = () => {
 <>
         {num.map( Data => (
          <div className='shop-category'>
+
+          <div className="shop-wrap">
          <div className="image-wrapper"  key={Data.id}  onClick={() => Navigate (`/category/${Data.category_url}`)  }>
          <img
             src={Data.category_img}
@@ -20,6 +22,7 @@ const ShopAll = () => {
           </div> 
         <div className="category-info">
           <h2>{Data.name}</h2>
+        </div>
         </div>
         </div>      
       ))}

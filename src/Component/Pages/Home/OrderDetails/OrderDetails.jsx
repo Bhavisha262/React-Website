@@ -38,6 +38,8 @@ const OrderDetails = () => {
     return <p>Loading...</p>;
   }
 
+ 
+
   return (
     <div className="order-container">
     {order &&  <div className="wavy-heading-container">

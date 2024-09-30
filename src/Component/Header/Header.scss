@@ -86,49 +86,9 @@
         }
   
 
-        .shop-all{
-          position: relative;
-         
+       
 
-          &:hover .shop{
-           
-            transform: translate(0);
-            opacity: 1; 
-            
-           
-          }
-
-          .shop{
-            
-            overflow: auto;
-            position:absolute ;
-            z-index: 9999;
-            transform: translateY(-420px);
-            top: 47px;
-            left: 45px;
-            display: flex;
-            gap: 20px;
-            padding: 10px;
-            background:linear-gradient(150deg,floralwhite,rgb(255, 206, 212), floralwhite);
-            opacity: 0.3; 
-            transition: all 0.5s ease-in-out;
-            
         
-          @include tablet_L{
-            width: 970px;
-            left: 0px;
-          }
-          @include laptop{
-            width: 1135px;
-            left: 5px;
-          }
-            
-           
-            
-          }
-
-          
-        }
         
        
 
