@@ -378,8 +378,12 @@ const handleDecreaseQuantity = async(categoryid,productid) =>{
 
 }
 
+const [isOpenB, setIsOpenB] = React.useState(false)
+const toggleDrawer5 = () => {
+  setIsOpenB((prevState) => !prevState)
+}
 return (
-<MyContext.Provider value={{handleDecreaseQuantity,handleIncreaseQuantity,orderadmin, setOrderadmin,handleShipping,shippingInfo,setShippingInfo,handleOrder,order,setOrder,toggleDropdown,isDropdown,setIsDropdown,isOpenW, setIsOpenW,toggleDrawer3,isOpenC, setIsOpenC,toggleDrawer2,handlelogout,handleremove,handleWish,wish,setWish,handledelete,cart,setCart,handleCart,search,setSearch,form,setForm,message,token,setToken,setMessage,alert,setAlert,num,loader,setLoader,cinfo, setCinfo ,register,setRegister}} >
+<MyContext.Provider value={{toggleDrawer5,isOpenB, setIsOpenB,handleDecreaseQuantity,handleIncreaseQuantity,orderadmin, setOrderadmin,handleShipping,shippingInfo,setShippingInfo,handleOrder,order,setOrder,toggleDropdown,isDropdown,setIsDropdown,isOpenW, setIsOpenW,toggleDrawer3,isOpenC, setIsOpenC,toggleDrawer2,handlelogout,handleremove,handleWish,wish,setWish,handledelete,cart,setCart,handleCart,search,setSearch,form,setForm,message,token,setToken,setMessage,alert,setAlert,num,loader,setLoader,cinfo, setCinfo ,register,setRegister}} >
 {children}
 </MyContext.Provider>
 )

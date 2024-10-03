@@ -5,7 +5,7 @@ import MyContext from '../Context/MyContext'
 
 const ShopAll = () => {
     const Navigate = useNavigate()
-    const {num} =useContext(MyContext)
+    const {num,setIsOpenB} =useContext(MyContext)
     
   return (
 <>
@@ -13,7 +13,7 @@ const ShopAll = () => {
          <div className='shop-category'>
 
           <div className="shop-wrap">
-         <div className="image-wrapper"  key={Data.id}  onClick={() => Navigate (`/category/${Data.category_url}`)  }>
+         <div className="image-wrapper"  key={Data.id}  onClick={() => Navigate (`/category/${Data.category_url}`) || setIsOpenB(false) }>
          <img
             src={Data.category_img}
             alt={Data.name}

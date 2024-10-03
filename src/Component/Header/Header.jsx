@@ -24,7 +24,7 @@ import { FaRegSmileWink } from "react-icons/fa";
 const Header = () => {
   
   
-  const {toggleDropdown,isDropdown,setIsDropdown,handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2} = useContext(MyContext)
+  const {toggleDropdown,isDropdown,setIsDropdown,handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2,toggleDrawer5,isOpenB, setIsOpenB} = useContext(MyContext)
   const Token = sessionStorage.getItem('token')
   const Navigate = useNavigate()
   
@@ -38,10 +38,8 @@ const Header = () => {
     const toggleDrawer4 = () => {
       setMenu((prevState) => !prevState)
 }
-const [isOpenB, setIsOpenB] = React.useState(false)
-const toggleDrawer5 = () => {
-    setIsOpenB((prevState) => !prevState)
-}
+
+
 
 
   
