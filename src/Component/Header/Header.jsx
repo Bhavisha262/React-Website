@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react'
+import React, { useContext} from 'react'
 import "./Header.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../Assets/Logo/mainlogo.png"
@@ -24,7 +24,7 @@ import { FaRegSmileWink } from "react-icons/fa";
 const Header = () => {
   
   
-  const {toggleDropdown,isDropdown,setIsDropdown,handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2,toggleDrawer5,isOpenB, setIsOpenB} = useContext(MyContext)
+  const {toggleDropdown,isDropdown,setIsDropdown,handlelogout,num,search,setSearch,cart,wish,isOpenW,toggleDrawer3,isOpenC,toggleDrawer2,toggleDrawer5,isOpenB} = useContext(MyContext)
   const Token = sessionStorage.getItem('token')
   const Navigate = useNavigate()
   

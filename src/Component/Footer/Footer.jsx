@@ -8,49 +8,54 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import {  Box, TextField } from '@mui/material';
+import {  Box, Button, TextField } from '@mui/material';
 import MyContext from '../Context/MyContext';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-const Footer = () => {
-    const validationSchema = yup.object({
-        email: yup
-        .string('Enter your email')
-        .email('Enter a valid email')
-        .required('Email is required'),
-    });
 
-    const{setLoader,setAlert,setMessage} = useContext(MyContext)
+const validationSchema = yup.object({
+  email: yup
+  .string('Enter your email')
+  .email('Enter a valid email')
+  .required('Email is required'),
+});
+const Footer = () => {
+   
+    const{loader,setLoader,setAlert,setMessage} = useContext(MyContext)
 
     const formik = useFormik({
-        initialValues: {
-        email: '',
-        },
-        validationSchema: validationSchema,
-        onSubmit: async(values, {resetForm}) => {
-          setLoader(true)
-          const response = await fetch('https://backl-main.vercel.app/newsletter', {
-            method: 'POST',
-            body: JSON.stringify(values),
-            headers: {
-            'Content-type': 'application/json',
-            },
-            });
-            const data = await response.json()
-    
-            if(data.success){
-            setMessage(data.message)
-            setAlert(true)
-            resetForm()
-            window.location.href='/'
-            
-            }else{
-            setMessage(data.error)
-            setAlert(true)
-             
-            }
-            setLoader(false)
+      initialValues: { 
+      email: ''
+      },
+      validationSchema: validationSchema,
+      onSubmit: async(values,{resetForm}) => {
+      
+       setLoader(true) 
+       
+        const response = await fetch('https://backl-main.vercel.app/newsletter', {
+          method: 'POST',
+          body: JSON.stringify(values),
+          headers: {
+          'Content-type': 'application/json',
           },
-      });
+          });
+  
+          const data = await response.json()
+  
+          if(data.success){
+          setMessage(data.message)
+          setAlert(true)
+          resetForm()
+          
+          }else{
+            setMessage(data.error)
+          setAlert(true)
+           
+          }
+          setLoader(false)
+         
+      },
+      
+    });
   return (
     
     <div className='footer-main'>
@@ -73,6 +78,7 @@ const Footer = () => {
           label="Your Email Id" 
           variant="outlined" />
 </Box>
+<Button variant="contained" type='submit'><span>{loader ? 'Wait...' : 'Subscribe'}</span></Button>
             </form> <br/>
        <div className="social">
        <FaWhatsapp color='limegreen' />

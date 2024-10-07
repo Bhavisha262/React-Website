@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import "./Cart.scss";
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../../../Context/MyContext';
@@ -12,17 +12,8 @@ const Cart = () => {
 
   const total= cart&& cart.reduce((a,b)=>a+(b.price*b.quantity),0)
   
-  const [count, setCount] = useState(1);
-
-  const increment = () => {
-    setCount(prevCount => prevCount + 1);
-  };
-
-  const decrement = () => {
-    if (count > 1) {
-      setCount(prevCount => prevCount - 1);
-    }
-  }
+  
+  
 
 
   return (

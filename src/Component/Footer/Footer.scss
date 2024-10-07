@@ -40,6 +40,56 @@
         display: flex;
     justify-content: center;
     align-items: center;
+
+    Button {
+        background-color: floralwhite;
+        font-family: "Josefin Sans", sans-serif;
+        color: #800026; /* Initial text color */
+        position: relative;
+        overflow: hidden; /* Ensure no overflow issues */
+        border: none; /* Remove any default border */
+        padding: 8px 20px; /* Add padding for better appearance */
+        cursor: pointer; /* Add pointer cursor for button */
+        text-align: center; /* Center align text */
+        z-index: 1; /* Ensure button text is on top */
+    
+        /* Add a background color transition */
+        &::before {
+            content: ''; 
+            position: absolute;
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: #800026; /* Background color */
+            color: floralwhite; /* Text color */
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            transform: scaleX(0); 
+            transform-origin: right; 
+            transition: transform 0.5s ease; 
+            z-index: 0; /* Ensure the pseudo-element is behind the button text */
+            font-size: 16px; /* Adjust font size as needed */
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+        
+        &:hover::before {
+            transform: scaleX(1); /* Scale to full width on hover */
+            transform-origin: left; /* Scale from the left side */
+        }
+    
+        /* Ensure the button text is visible above the pseudo-element */
+        span {
+            position: relative;
+            z-index: 1; /* Ensure text is above the pseudo-element */
+            transition: color 0.5s ease; /* Smooth color transition */
+        }
+    
+        &:hover span {
+            color: floralwhite; /* Change text color on hover */
+        }
+    }
     }
 
 .social{

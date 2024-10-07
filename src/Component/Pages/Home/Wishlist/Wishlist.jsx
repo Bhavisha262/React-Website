@@ -15,7 +15,7 @@ const Wishlist = () => {
     <img src={item.img} alt='' className="wishlist-item__image" />
     <div className="wishlist-item__details">
       <h3 className="wishlist-item__name">{item.name}</h3>
-      <p className="wishlist-item__price">₹449 &nbsp; <del>₹574</del></p>
+      <p className="wishlist-item__price">&#8377;{item.price} &nbsp; <del>&#8377;{item.del}</del></p>
       <Button variant="contained" type='submit' onClick={()=>handleremove(item.categoryid,item.productid)}><span>Remove</span></Button>
     </div>
     </div>
