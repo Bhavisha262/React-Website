@@ -47,7 +47,7 @@ const Footer = () => {
           resetForm()
           
           }else{
-            setMessage(data.error)
+          setMessage(data.error)
           setAlert(true)
            
           }
