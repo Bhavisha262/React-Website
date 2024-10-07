@@ -9,8 +9,9 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import {  Box, Button, TextField } from '@mui/material';
-import MyContext from '../Context/MyContext';
+
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import MyContext from '../Context/MyContext';
 
 const validationSchema = yup.object({
   email: yup
@@ -20,7 +21,7 @@ const validationSchema = yup.object({
 });
 const Footer = () => {
    
-    const{loader,setLoader,setAlert,setMessage} = useContext(MyContext)
+    const {loader,setLoader,setAlert,setMessage} = useContext(MyContext)
 
     const formik = useFormik({
       initialValues: { 
