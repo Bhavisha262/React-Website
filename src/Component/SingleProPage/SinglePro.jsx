@@ -3,10 +3,8 @@ import "./SinglePro.scss"
 import { useParams } from 'react-router-dom'
 import { Button } from '@mui/material';
 import ReactImageGallery from 'react-image-gallery';
-import { LuShoppingBag } from "react-icons/lu";
 import MyContext from '../Context/MyContext';
 import Link from './Link';
-import { FaRegHeart } from 'react-icons/fa';
 
 
 const SinglePro = () => {
