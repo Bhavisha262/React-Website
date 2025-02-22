@@ -52,7 +52,7 @@ const App = () => {
       <Alert/> 
      <ScrollToTop
     smooth
-    
+    viewBox="3 0 91 88"
     color="#E75480"
     height="30" 
     width="28"
