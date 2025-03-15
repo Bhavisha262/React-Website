@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import "./User.scss"
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import {  Box, Button,  TextField } from '@mui/material';
+import { Box, Button,  TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import MyContext from '../../../Context/MyContext';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
